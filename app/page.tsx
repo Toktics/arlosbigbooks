@@ -11,7 +11,7 @@ export default function Home() {
             {/* Left: Big fun logo */}
             <div className="flex justify-center order-2 md:order-1">
               <img
-                src="/images/logo-transparent.png"
+                src="/images/logo.png"
                 alt="Arlo's Big Books"
                 className="w-full max-w-md drop-shadow-2xl hover:scale-105 transition-transform duration-300"
               />
