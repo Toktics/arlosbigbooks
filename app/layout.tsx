@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Fredoka, Poppins } from "next/font/google";
 import "./globals.css";
-import Image from "next/image";
 import Link from "next/link";
 
 const fredoka = Fredoka({
@@ -38,15 +37,12 @@ export default function RootLayout({
         <header className="bg-white shadow-md sticky top-0 z-50">
           <nav className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             <Link href="/" className="block">
-              <div className="relative w-48 h-12 md:w-56 md:h-14">
-                <Image
-                  src="/images/logo-transparent.png"
-                  alt="Arlo's Big Books"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </div>
+              {/* Using regular img tag instead of Next Image to avoid conflicts */}
+              <img
+                src="/images/logo-transparent.png"
+                alt="Arlo's Big Books"
+                className="h-12 md:h-14 w-auto"
+              />
             </Link>
             
             <ul className="hidden md:flex gap-8">
