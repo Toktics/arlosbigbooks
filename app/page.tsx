@@ -48,7 +48,14 @@ export default function Home() {
         </div>
       </section>
 
-          <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto mb-8">
+      {/* Featured Book */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-5xl md:text-6xl font-bold text-center mb-16 font-[var(--font-fredoka)] text-gray-800">
+            Start with Arlo's <span className="text-red-500">Big Yawn!</span>
+          </h2>
+          
+          <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl shadow-2xl p-8 md:p-12">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="relative w-full aspect-square max-w-sm mx-auto">
                 <Image
