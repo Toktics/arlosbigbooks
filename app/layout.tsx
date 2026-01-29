@@ -33,44 +33,16 @@ export default function RootLayout({
       <body
         className={`${fredoka.variable} ${poppins.variable} antialiased font-[var(--font-poppins)]`}
       >
-        {/* Header */}
+        {/* Header with fun text instead of logo */}
         <header className="bg-white shadow-md sticky top-0 z-50">
-          <nav className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+          <nav className="max-w-7xl mx-auto px-4 py-4 flex justify-center items-center">
             <Link href="/" className="block">
-              {/* Using regular img tag instead of Next Image to avoid conflicts */}
-              <img
-                src="/images/logo-transparent.png"
-                alt="Arlo's Big Books"
-                className="h-12 md:h-14 w-auto"
-              />
+              <h1 className="text-3xl md:text-4xl font-bold text-center font-[var(--font-fredoka)]">
+                <span className="text-red-500">Arlo's</span>{" "}
+                <span className="text-blue-500">BIG</span>
+                <span className="text-gray-800">... Adventures</span>
+              </h1>
             </Link>
-            
-            <ul className="hidden md:flex gap-8">
-              <li>
-                <Link href="/" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="#about" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#contact" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
-                  Contact
-                </Link>
-              </li>
-            </ul>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button className="text-gray-800">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
           </nav>
         </header>
 
