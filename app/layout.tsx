@@ -17,8 +17,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Arlo's Big Books - Children's Picture Book Series",
-  description: "Join Arlo on BIG adventures! Playful rhyming picture books for ages 3-6 that turn everyday moments into extraordinary stories.",
+  title: "Arlo's Big Books - Playful Picture Books for Ages 3-6",
+  description: "Join Arlo on BIG adventures! Rhyming picture books that turn everyday moments into extraordinary stories. Perfect for bedtime reading.",
 };
 
 export default function RootLayout({
@@ -28,16 +28,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body
         className={`${fredoka.variable} ${poppins.variable} antialiased font-[var(--font-poppins)]`}
       >
         {/* Header */}
         <header className="bg-white shadow-md sticky top-0 z-50">
-          <nav className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+          <nav className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
             <Link href="/" className="block">
-              <div className="relative w-64 h-16">
+              <div className="relative w-48 h-12 md:w-56 md:h-14">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo-transparent.png"
                   alt="Arlo's Big Books"
                   fill
                   className="object-contain"
@@ -53,11 +56,6 @@ export default function RootLayout({
                 </Link>
               </li>
               <li>
-                <Link href="#books" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
-                  The Books
-                </Link>
-              </li>
-              <li>
                 <Link href="#about" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
                   About
                 </Link>
@@ -69,7 +67,7 @@ export default function RootLayout({
               </li>
             </ul>
 
-            {/* Mobile menu button - can add later */}
+            {/* Mobile menu button */}
             <div className="md:hidden">
               <button className="text-gray-800">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
