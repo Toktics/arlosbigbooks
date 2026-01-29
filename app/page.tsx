@@ -4,19 +4,49 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-amber-50 to-white py-16 px-4">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            <span className="block text-gray-800">Arlo's Big...</span>
-            <span className="block bg-gradient-to-r from-red-500 via-yellow-500 to-blue-500 bg-clip-text text-transparent">
-              Adventures
-            </span>
-          </h1>
-          
-          <p className="text-2xl md:text-3xl text-gray-700 mb-8 max-w-3xl mx-auto font-medium">
-            Playful, rhyming picture books about the little moments that turn into BIG adventures.
-          </p>
+      {/* New Hero Section */}
+      <section className="bg-gradient-to-b from-yellow-50 to-white py-16 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Left: Big fun logo */}
+            <div className="flex justify-center order-2 md:order-1">
+              <img
+                src="/images/logo-transparent.png"
+                alt="Arlo's Big Books"
+                className="w-full max-w-md drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            
+            {/* Right: Welcome text */}
+            <div className="text-center md:text-left space-y-6 order-1 md:order-2">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-[var(--font-fredoka)] leading-tight">
+                Welcome to <span className="text-red-500">Arlo's</span>{" "}
+                <span className="text-blue-500">BIG</span> world
+              </h1>
+              
+              <p className="text-2xl md:text-3xl text-gray-800 leading-relaxed font-semibold">
+                Funny, heartwarming picture books where little problems turn into{" "}
+                <span className="text-red-500">BIG</span> adventures.
+              </p>
+              
+              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
+                Join Arlo in a world where yawns grow huge, ideas get bigger, and ordinary days become extraordinary.
+              </p>
+              
+              <div className="pt-4">
+                <a 
+                  href="https://www.amazon.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-red-500 text-white px-10 py-5 rounded-full text-xl font-bold uppercase tracking-wide shadow-2xl hover:bg-red-600 hover:scale-105 transition-all duration-300 font-[var(--font-fredoka)]"
+                >
+                  Get the Books! 📚
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
           <div className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 max-w-4xl mx-auto mb-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
