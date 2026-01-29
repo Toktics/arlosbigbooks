@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlo's Big Books - Homepage Mock-up</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: white;
+        }
+
+        .header {
+            background: white;
+            padding: 25px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo .word {
+            display: inline-block;
+        }
+
+        .logo .a { color: #FF4444; }
+        .logo .r { color: #4488FF; }
+        .logo .l { color: #FFD700; }
+        .logo .o { color: #44DD44; }
+        .logo .s { color: #FF44DD; }
+        .logo .big { color: #FF8844; }
+        .logo .books { color: #8844FF; }
+
+        nav ul {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #FF4444;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #FF4444;
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: white;
+            padding: 100px 20px 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 80px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            line-height: 1.1;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 .word-arlo {
+            color: #FF4444;
+            text-shadow: 3px 3px 0px rgba(255,68,68,0.2);
+        }
+
+        .hero h1 .word-big {
+            color: #FFD700;
+            text-shadow: 3px 3px 0px rgba(255,215,0,0.2);
+        }
+
+        .hero h1 .word-adventures {
+            color: #4488FF;
+            text-shadow: 3px 3px 0px rgba(68,136,255,0.2);
+        }
+
+        .hero p {
+            font-size: 26px;
+            color: #555;
+            margin-bottom: 50px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 400;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #FF4444;
+            color: white;
+            padding: 20px 50px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 6px 0px #CC3333;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 9px 0px #CC3333;
+        }
+
+        .cta-button:active {
+            transform: translateY(3px);
+            box-shadow: 0 3px 0px #CC3333;
+        }
+
+        /* Featured Book Section */
+        .featured-book {
+            background: #FFF8E1;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 64px;
+            text-align: center;
+            margin-bottom: 70px;
+            color: #FF4444;
+            font-weight: 700;
+            text-shadow: 4px 4px 0px rgba(255,68,68,0.15);
+            letter-spacing: -2px;
+        }
+
+        .book-showcase {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            background: white;
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .book-image {
+            text-align: center;
+        }
+
+        .book-cover-placeholder {
+            width: 100%;
+            max-width: 450px;
+            aspect-ratio: 1;
+            background: #FFF8E1;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 48px;
+            color: #FF4444;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+            margin: 0 auto;
+            border: 8px solid white;
+        }
+
+        .book-info h3 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 48px;
+            margin-bottom: 25px;
+            color: #FF4444;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .book-info p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .book-details {
+            background: #FFF8E1;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 3px solid #FFD700;
+        }
+
+        .book-details ul {
+            list-style: none;
+        }
+
+        .book-details li {
+            padding: 10px 0;
+            font-size: 17px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .book-details li::before {
+            content: "★ ";
+            color: #FFD700;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .amazon-button {
+            display: inline-block;
+            background: #FF9900;
+            color: white;
+            padding: 18px 45px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 20px;
+            transition: all 0.3s;
+            box-shadow: 0 6px 0px #CC7700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .amazon-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 9px 0px #CC7700;
+        }
+
+        .amazon-button:active {
+            transform: translateY(3px);
+            box-shadow: 0 3px 0px #CC7700;
+        }
+
+        /* Coming Soon Section */
+        .coming-soon {
+            background: #E3F2FD;
+            padding: 100px 20px;
+        }
+
+        .coming-soon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .coming-soon-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border: 4px solid transparent;
+        }
+
+        .coming-soon-card:hover {
+            transform: translateY(-8px);
+            border-color: #4488FF;
+        }
+
+        .coming-soon-card h4 {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 32px;
+            color: #4488FF;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .coming-soon-card p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #FFD700;
+            color: #333;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 0px #CCB000;
+        }
+
+        /* About Series Section */
+        .about-series {
+            background: white;
+            padding: 100px 20px;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 22px;
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 35px;
+        }
+
+        .author-signature {
+            font-family: 'Fredoka', sans-serif;
+            font-size: 28px;
+            color: #FF4444;
+            margin-top: 50px;
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: #2C2C2C;
+            color: white;
+            padding: 60px 20px 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer strong {
+            color: #FFD700;
+            font-size: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .social-links a:hover {
+            color: #FFD700;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .hero p {
+                font-size: 20px;
+            }
+
+            .book-showcase {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 40px 30px;
+            }
+
+            .section-title {
+                font-size: 42px;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 20px;
+            }
+
+            .logo {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <span class="word">
+                    <span class="a">A</span><span class="r">R</span><span class="l">L</span><span class="o">O</span><span class="s">'S</span>
+                </span>
+                <span class="word big">BIG</span>
+                <span class="word books">BOOKS</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#books">The Books</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>
+                <span class="word-arlo">Arlo's</span> 
+                <span class="word-big">BIG</span> 
+                <span class="word-adventures">Adventures!</span>
+            </h1>
+            <p>Where everyday moments become EXTRAORDINARY adventures for little readers!</p>
+            <a href="#books" class="cta-button">Discover Arlo's World</a>
+        </div>
+    </section>
+
+    <!-- Featured Book Section -->
+    <section class="featured-book" id="books">
+        <div class="container">
+            <h2 class="section-title">Now Available</h2>
+            <div class="book-showcase">
+                <div class="book-image">
+                    <div class="book-cover-placeholder">
+                        [Book Cover Image]
+                    </div>
+                </div>
+                <div class="book-info">
+                    <h3>Arlo's Big Yawn!</h3>
+                    <p>Little Arlo wouldn't go to sleep when told... and one BIG YAWN changes everything!</p>
+                    <p>When Arlo stays up too late playing games, his morning yawn becomes ENORMOUS - swallowing shoes, phones, chairs, and even Dad's car! Join Arlo on this hilarious bedtime adventure where he learns that listening to Mum about bedtime might just save the world from being sucked into a giant yawn.</p>
+                    
+                    <div class="book-details">
+                        <ul>
+                            <li>Perfect for ages 3-6</li>
+                            <li>Playful rhyming text</li>
+                            <li>Teaches bedtime routines & consequences</li>
+                            <li>Beautiful full-color illustrations</li>
+                            <li>Great for bedtime reading!</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#" class="amazon-button">Available on Amazon</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon">
+        <div class="container">
+            <h2 class="section-title">More BIG Adventures Coming Soon!</h2>
+            <div class="coming-soon-grid">
+                <div class="coming-soon-card">
+                    <h4>Arlo's Big Head!</h4>
+                    <p>Learn something new? Oh no, oh NO! Arlo's head starts to GROW and GROW!</p>
+                    <span class="badge">Coming 2026</span>
+                </div>
+                <div class="coming-soon-card">
+                    <h4>Arlo's Big Journey!</h4>
+                    <p>Every car trip feels like it takes FOREVER... until it really does!</p>
+                    <span class="badge">In Development</span>
+                </div>
+                <div class="coming-soon-card">
+                    <h4>Arlo's Big House!</h4>
+                    <p>Friends are coming over but where IS everyone? A hide-and-seek adventure!</p>
+                    <span class="badge">In Development</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Series -->
+    <section class="about-series" id="about">
+        <div class="container">
+            <h2 class="section-title">About Gan Gan's Arlo's Big Picture Book Series</h2>
+            <div class="about-content">
+                <p>Every child knows that little things can feel BIG - especially when you're small! The Arlo's Big series celebrates those everyday childhood experiences with humor, heart, and a touch of magic.</p>
+                
+                <p>Through playful rhymes and vibrant illustrations, young readers follow Arlo as ordinary moments - a yawn, learning something new, waiting in the car - transform into extraordinary adventures. Each story carries a gentle lesson about patience, responsibility, and growing up, all wrapped in laughter and imagination.</p>
+                
+                <p>Perfect for bedtime stories, classroom reading, or any time you want to turn the ordinary into something wonderful!</p>
+                
+                <p class="author-signature">— by Martin King</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <p><strong>Get in touch!</strong></p>
+            <p>Email: hello@arlosbigbooks.com</p>
+            <p>For school visits, bulk orders, or general inquiries</p>
+            
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+            </div>
+            
+            <p style="margin-top: 40px; font-size: 14px; color: #999;">
+                © 2026 Arlo's Big Books. All rights reserved.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
