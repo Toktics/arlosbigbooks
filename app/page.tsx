@@ -112,7 +112,7 @@ export default function Home() {
       {/* About the Book */}
       <section className="pt-0 pb-12 px-4 bg-white relative overflow-visible">
         <div className="max-w-4xl mx-auto relative">
-          <div className="bg-amber-50 rounded-3xl p-8 md:p-12 mb-8 relative">
+          <div className="bg-amber-50 rounded-3xl p-8 md:p-12 mb-8 relative pt-32 md:pt-36">
             {/* Arlo Bed Yawn character - at top of yellow box, pushed up to overlap */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
               <img
@@ -123,16 +123,18 @@ export default function Home() {
             </div>
             
             {/* Animated Arlo Yawn Stretch - bottom right corner of yellow box */}
-            <motion.img
-              src={`/images/characters/ArloYawnStretch.gif?v=${Date.now()}`}
-              alt="Arlo Yawning and Stretching"
-              className="absolute right-4 md:right-8 bottom-4 md:bottom-8 w-40 md:w-48 h-auto z-20"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: false, amount: 0.5 }}
-              transition={{ duration: 0.3 }}
-              key={Math.random()} // Force re-render to restart GIF
-            />
+            <div className="absolute right-4 md:right-8 bottom-4 md:bottom-8 z-20">
+              <motion.img
+                src={`/images/characters/ArloYawnStretch.gif?v=${Date.now()}`}
+                alt="Arlo Yawning and Stretching"
+                className="w-40 md:w-48 h-auto"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ duration: 0.3 }}
+                key={Math.random()} // Force re-render to restart GIF
+              />
+            </div>
             <h3 className="text-3xl font-bold mb-6">
               <span className="text-red-500">A</span>
               <span className="text-blue-500">R</span>
