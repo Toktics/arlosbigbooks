@@ -110,15 +110,16 @@ export default function Home() {
       </section>
 
       {/* About the Book */}
-      <section className="py-20 px-4 bg-white relative overflow-hidden">
-        {/* Arlo Bed Yawn character - positioned on the right side of yellow box */}
-        <img
-          src="/images/characters/ArloBedYawn.png"
-          alt="Arlo Yawning"
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-56 md:w-72 h-auto z-20"
-        />
-        
-        <div className="max-w-4xl mx-auto relative z-10">
+      <section className="py-20 px-4 bg-white relative">
+        <div className="max-w-4xl mx-auto relative">
+          {/* Arlo Bed Yawn character - centered at top where 'About the Book' was */}
+          <div className="flex justify-center mb-8">
+            <img
+              src="/images/characters/ArloBedYawn.png"
+              alt="Arlo Yawning"
+              className="w-56 md:w-64 h-auto"
+            />
+          </div>
           <div className="bg-amber-50 rounded-3xl p-8 md:p-12 mb-8">
             <h3 className="text-3xl font-bold mb-6">
               <span className="text-red-500">A</span>
