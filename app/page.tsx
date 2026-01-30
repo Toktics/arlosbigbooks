@@ -64,7 +64,7 @@ export default function Home() {
       {/* Featured Book */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl md:text-6xl font-bold text-center mb-16 font-[var(--font-fredoka)] text-gray-800">
+          <h2 className="text-4xl font-bold text-center mb-16 font-[var(--font-fredoka)] text-gray-800">
             Start with Arlo's <span className="text-red-500">Big Yawn!</span>
           </h2>
           
@@ -110,7 +110,7 @@ export default function Home() {
       {/* About the Book */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
             About the Book
           </h2>
           
@@ -152,7 +152,7 @@ export default function Home() {
       {/* About the Series */}
       <section className="py-20 px-4 bg-blue-50">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-bold mb-8 text-gray-800">
+          <h2 className="text-4xl font-bold mb-8 text-gray-800">
             About the Arlo's Big... Series
           </h2>
           
@@ -207,7 +207,7 @@ export default function Home() {
       {/* Coming Soon */}
       <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
             More BIG Adventures Coming Soon!
           </h2>
 
@@ -262,7 +262,7 @@ export default function Home() {
       {/* Why Parents and Teachers Love These Books */}
       <section className="py-20 px-4 bg-gradient-to-br from-amber-50 to-orange-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
             Why Parents and Teachers Love These Books
           </h2>
           
@@ -309,7 +309,7 @@ export default function Home() {
       {/* Meet the Creator */}
       <section id="about" className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-bold mb-8 text-gray-800">
+          <h2 className="text-4xl font-bold mb-8 text-gray-800">
             Meet the Creator
           </h2>
           
@@ -342,7 +342,7 @@ export default function Home() {
       {/* Newsletter Signup */}
       <section className="py-20 px-4 bg-gradient-to-br from-red-500 to-orange-500 text-white">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-5xl font-bold mb-6">
+          <h2 className="text-4xl font-bold mb-6">
             Stay in the Loop!
           </h2>
           <p className="text-2xl mb-8">
