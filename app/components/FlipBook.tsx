@@ -11,7 +11,7 @@ export default function FlipBook() {
   const [isScrolling, setIsScrolling] = useState(false)
   const bookRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(bookRef, { amount: 0.5 })
-  const scrollTimeoutRef = useRef<NodeJS.Timeout>()
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const handleScroll = () => {
