@@ -113,7 +113,7 @@ export default function Home() {
       <section className="py-12 px-4 bg-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative">
           {/* Arlo Bed Yawn character - centered, overlapping white/yellow boundary */}
-          <div className="flex justify-center mb-0 -mb-32">
+          <div className="flex justify-center mb-0 -mb-40">
             <img
               src="/images/characters/ArloBedYawn.png"
               alt="Arlo Yawning"
@@ -125,7 +125,7 @@ export default function Home() {
             <motion.img
               src="/images/characters/ArloYawnStretch.gif"
               alt="Arlo Yawning and Stretching"
-              className="absolute right-8 top-8 w-48 md:w-56 h-auto z-20"
+              className="absolute right-4 md:right-8 top-4 md:top-8 w-40 md:w-48 h-auto z-20"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: false, amount: 0.5 }}
