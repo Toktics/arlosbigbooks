@@ -85,7 +85,7 @@ export default function FlipBook() {
   const isClosed = bookState === 'closed-front' || bookState === 'closed-back'
 
   return (
-    <div ref={bookRef} className="relative w-full aspect-square max-w-sm mx-auto">
+    <div ref={bookRef} className="relative w-full aspect-square max-w-sm mx-auto z-10">
       <AnimatePresence mode="wait">
         {bookState === 'closed-front' && (
           <motion.div
@@ -118,7 +118,7 @@ export default function FlipBook() {
           >
             {/* Left page - full size */}
             <div
-              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
+              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => handleBookClick('left')}
             >
               <img
@@ -126,14 +126,14 @@ export default function FlipBook() {
                 alt="Page 1"
                 className="w-full h-full object-cover"
               />
-              {/* Left arrow */}
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-red-500 text-5xl font-bold opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 rounded-full w-12 h-12 flex items-center justify-center">
-                ←
+              {/* Left arrow - always visible */}
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                ‹
               </div>
             </div>
             {/* Right page - full size */}
             <div
-              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
+              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => handleBookClick('right')}
             >
               <img
@@ -141,9 +141,9 @@ export default function FlipBook() {
                 alt="Page 2"
                 className="w-full h-full object-cover"
               />
-              {/* Right arrow */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-5xl font-bold opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 rounded-full w-12 h-12 flex items-center justify-center">
-                →
+              {/* Right arrow - always visible */}
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                ›
               </div>
             </div>
           </motion.div>
@@ -161,7 +161,7 @@ export default function FlipBook() {
           >
             {/* Left page - full size */}
             <div
-              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
+              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => handleBookClick('left')}
             >
               <img
@@ -169,14 +169,14 @@ export default function FlipBook() {
                 alt="Page 3"
                 className="w-full h-full object-cover"
               />
-              {/* Left arrow */}
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-red-500 text-5xl font-bold opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 rounded-full w-12 h-12 flex items-center justify-center">
-                ←
+              {/* Left arrow - always visible */}
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                ‹
               </div>
             </div>
             {/* Right page - full size */}
             <div
-              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
+              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
               onClick={() => handleBookClick('right')}
             >
               <img
@@ -184,9 +184,9 @@ export default function FlipBook() {
                 alt="Page 4"
                 className="w-full h-full object-cover"
               />
-              {/* Right arrow */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-5xl font-bold opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 rounded-full w-12 h-12 flex items-center justify-center">
-                →
+              {/* Right arrow - always visible */}
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                ›
               </div>
             </div>
           </motion.div>
