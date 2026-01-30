@@ -1,5 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 
 export default function Home() {
   return (
@@ -37,6 +40,26 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Animated Mouse Driving Across */}
+      <div className="relative w-full overflow-hidden py-4">
+        <motion.div
+          initial={{ x: '-100%' }}
+          animate={{ x: '100vw' }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: 'linear'
+          }}
+          className="absolute"
+        >
+          <img
+            src="/images/characters/MouseInCar.png"
+            alt="Mouse driving"
+            className="w-24 h-24 object-contain"
+          />
+        </motion.div>
+      </div>
 
       {/* Featured Book */}
       <section className="py-20 px-4 bg-white">
