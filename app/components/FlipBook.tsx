@@ -1,12 +1,52 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
+import { useState, useEffect, useRef } from 'react'
 
 type BookState = 'closed-front' | 'open-page-1-2' | 'open-page-3-4' | 'closed-back'
 
 export default function FlipBook() {
   const [bookState, setBookState] = useState<BookState>('closed-front')
+  const [showHint, setShowHint] = useState(false)
+  const [isScrolling, setIsScrolling] = useState(false)
+  const bookRef = useRef<HTMLDivElement>(null)
+  const isInView = useInView(bookRef, { amount: 0.5 })
+  const scrollTimeoutRef = useRef<NodeJS.Timeout>()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolling(true)
+      setShowHint(false)
+      
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current)
+      }
+      
+      scrollTimeoutRef.current = setTimeout(() => {
+        setIsScrolling(false)
+      }, 150)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current)
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    if (isInView && !isScrolling && isClosed) {
+      const timer = setTimeout(() => {
+        setShowHint(true)
+      }, 500)
+      return () => clearTimeout(timer)
+    } else {
+      setShowHint(false)
+    }
+  }, [isInView, isScrolling, bookState])
 
   const handleBookClick = (side?: 'left' | 'right') => {
     if (bookState === 'closed-front') {
@@ -37,7 +77,7 @@ export default function FlipBook() {
   const isClosed = bookState === 'closed-front' || bookState === 'closed-back'
 
   return (
-    <div className="relative w-full aspect-square max-w-sm mx-auto">
+    <div ref={bookRef} className="relative w-full aspect-square max-w-sm mx-auto">
       <AnimatePresence mode="wait">
         {bookState === 'closed-front' && (
           <motion.div
@@ -162,12 +202,13 @@ export default function FlipBook() {
         )}
       </AnimatePresence>
 
-      {/* Click hint - only show when closed */}
-      {isClosed && (
+      {/* Click hint - only show when stopped scrolling and in view */}
+      {isClosed && showHint && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 10 }}
+          transition={{ duration: 0.3 }}
           className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold pointer-events-none"
         >
           Click to open! 📖
