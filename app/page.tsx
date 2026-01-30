@@ -415,58 +415,70 @@ export default function Home() {
               🎨 ARLO'S BIG ACTIVITY ZONE
             </h2>
             <p className="text-2xl text-white font-semibold drop-shadow-md">
-              FREE printables for fun learning at home and in the classroom!
+              Bring Arlo's adventures home with FREE printables!
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6 mb-12">
-            {/* Activity Card 1 - Red Background */}
+            {/* Activity Card 1 - Aria's Coloring Pages - Red/Pink */}
             <motion.div 
-              className="bg-gradient-to-br from-red-400 to-red-500 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden"
-              whileHover={{ scale: 1.03, y: -8 }}
-            >
-              {/* White burst/star shape behind character - you'll add character image here */}
-              <div className="absolute top-1/2 right-8 -translate-y-1/2 w-48 h-48 bg-white opacity-90 rounded-full" 
-                   style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} 
-              />
-              
-              <div className="relative z-10">
-                <h3 className="text-4xl font-bold text-white mb-3 font-[var(--font-fredoka)] drop-shadow-md">
-                  There's a<br/>Unicorn...
-                </h3>
-                <p className="text-xl text-white mb-4 leading-relaxed font-semibold drop-shadow-sm">
-                  Coloring & drawing fun! Perfect for ages 3–6 to bring bedtime stories to life.
-                </p>
-                <button className="bg-white text-red-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-red-50 transition-colors shadow-lg">
-                  Download FREE
-                </button>
-              </div>
-            </motion.div>
-
-            {/* Activity Card 2 - Purple Background */}
-            <motion.div 
-              className="bg-gradient-to-br from-purple-400 to-purple-500 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden"
+              className="bg-gradient-to-br from-pink-400 to-red-400 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden"
               whileHover={{ scale: 1.03, y: -8 }}
             >
               {/* White burst/star shape behind character */}
               <div className="absolute top-1/2 right-8 -translate-y-1/2 w-48 h-48 bg-white opacity-90 rounded-full" 
                    style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} 
               />
+              {/* Character Image */}
+              <img 
+                src="/images/characters/Aria.png" 
+                alt="Aria" 
+                className="absolute top-1/2 right-8 -translate-y-1/2 w-40 h-40 object-contain z-10"
+              />
               
-              <div className="relative z-10">
+              <div className="relative z-20">
                 <h3 className="text-4xl font-bold text-white mb-3 font-[var(--font-fredoka)] drop-shadow-md">
-                  There's a<br/>Monster...
+                  Aria's<br/>Coloring Pages
                 </h3>
                 <p className="text-xl text-white mb-4 leading-relaxed font-semibold drop-shadow-sm">
-                  Reading & rhyming games! Joyful learning activities for early readers.
+                  Bring Arlo's Big Yawn to life! Perfect for ages 3–6.
                 </p>
-                <button className="bg-white text-purple-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-purple-50 transition-colors shadow-lg">
+                <button className="bg-white text-pink-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-pink-50 transition-colors shadow-lg">
                   Download FREE
                 </button>
               </div>
             </motion.div>
 
-            {/* Activity Card 3 - Yellow/Orange Background */}
+            {/* Activity Card 2 - Mateo's Word Fun - Blue */}
+            <motion.div 
+              className="bg-gradient-to-br from-blue-400 to-indigo-500 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden"
+              whileHover={{ scale: 1.03, y: -8 }}
+            >
+              {/* White burst/star shape behind character */}
+              <div className="absolute top-1/2 right-8 -translate-y-1/2 w-48 h-48 bg-white opacity-90 rounded-full" 
+                   style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} 
+              />
+              {/* Character Image */}
+              <img 
+                src="/images/characters/Mateo.png" 
+                alt="Mateo" 
+                className="absolute top-1/2 right-8 -translate-y-1/2 w-40 h-40 object-contain z-10"
+              />
+              
+              <div className="relative z-20">
+                <h3 className="text-4xl font-bold text-white mb-3 font-[var(--font-fredoka)] drop-shadow-md">
+                  Mateo's<br/>Word Fun
+                </h3>
+                <p className="text-xl text-white mb-4 leading-relaxed font-semibold drop-shadow-sm">
+                  Rhyming games and read-aloud prompts for little learners!
+                </p>
+                <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors shadow-lg">
+                  Download FREE
+                </button>
+              </div>
+            </motion.div>
+
+            {/* Activity Card 3 - Charlie's Story Time - Yellow/Orange */}
             <motion.div 
               className="bg-gradient-to-br from-yellow-400 to-orange-400 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden"
               whileHover={{ scale: 1.03, y: -8 }}
@@ -475,13 +487,19 @@ export default function Home() {
               <div className="absolute top-1/2 right-8 -translate-y-1/2 w-48 h-48 bg-white opacity-90 rounded-full" 
                    style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} 
               />
+              {/* Character Image */}
+              <img 
+                src="/images/characters/Charlie.png" 
+                alt="Charlie" 
+                className="absolute top-1/2 right-8 -translate-y-1/2 w-40 h-40 object-contain z-10"
+              />
               
-              <div className="relative z-10">
+              <div className="relative z-20">
                 <h3 className="text-4xl font-bold text-white mb-3 font-[var(--font-fredoka)] drop-shadow-md">
-                  There's a<br/>Dinosaur...
+                  Charlie's<br/>Story Time
                 </h3>
                 <p className="text-xl text-white mb-4 leading-relaxed font-semibold drop-shadow-sm">
-                  Bedtime story prompts! Turn reading time into laugh-out-loud fun.
+                  Make bedtime stories interactive and silly!
                 </p>
                 <button className="bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-50 transition-colors shadow-lg">
                   Download FREE
@@ -489,24 +507,30 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Activity Card 4 - Teal/Green Background */}
+            {/* Activity Card 4 - Luca's Create Your Own - Green */}
             <motion.div 
-              className="bg-gradient-to-br from-teal-400 to-green-400 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden"
+              className="bg-gradient-to-br from-green-400 to-teal-400 rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300 relative overflow-hidden"
               whileHover={{ scale: 1.03, y: -8 }}
             >
               {/* White burst/star shape behind character */}
               <div className="absolute top-1/2 right-8 -translate-y-1/2 w-48 h-48 bg-white opacity-90 rounded-full" 
                    style={{ clipPath: "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)" }} 
               />
+              {/* Character Image */}
+              <img 
+                src="/images/characters/Luca.png" 
+                alt="Luca" 
+                className="absolute top-1/2 right-8 -translate-y-1/2 w-40 h-40 object-contain z-10"
+              />
               
-              <div className="relative z-10">
+              <div className="relative z-20">
                 <h3 className="text-4xl font-bold text-white mb-3 font-[var(--font-fredoka)] drop-shadow-md">
-                  There's a<br/>Dragon...
+                  Luca's<br/>Create Your Own
                 </h3>
                 <p className="text-xl text-white mb-4 leading-relaxed font-semibold drop-shadow-sm">
-                  Create your own BIG adventure! Perfect for classroom activities and home.
+                  Draw Arlo's next BIG adventure — what grows huge next?
                 </p>
-                <button className="bg-white text-teal-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-teal-50 transition-colors shadow-lg">
+                <button className="bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition-colors shadow-lg">
                   Download FREE
                 </button>
               </div>
@@ -516,7 +540,7 @@ export default function Home() {
           {/* Bottom tagline */}
           <div className="text-center bg-white rounded-3xl p-8 shadow-2xl">
             <p className="text-2xl text-gray-800 font-bold leading-relaxed">
-              Learning through <span className="text-red-500">play</span>, <span className="text-blue-500">laughter</span>, and <span className="text-green-500">imagination</span> — bringing parents, teachers, and children together for joyful reading, one <span className="text-orange-500">BIG</span> bedtime story at a time.
+              Learning through <span className="text-red-500">play</span>, <span className="text-blue-500">laughter</span>, and <span className="text-green-500">imagination</span> — one <span className="text-orange-500">BIG</span> moment at a time.
             </p>
           </div>
         </div>
