@@ -8,17 +8,17 @@ export default function Home() {
       <section className="bg-gradient-to-b from-yellow-50 to-white py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Left: Big fun logo */}
-            <div className="flex justify-center order-2 md:order-1">
+            {/* Big colorful logo - appears FIRST on mobile */}
+            <div className="flex justify-center order-1 md:order-1">
               <img
                 src="/images/logo.png"
                 alt="Arlo's Big Books"
-                className="w-full max-w-md drop-shadow-2xl hover:scale-105 transition-transform duration-300"
+                className="w-full max-w-lg drop-shadow-2xl hover:scale-105 transition-transform duration-300"
               />
             </div>
             
-            {/* Right: Welcome text */}
-            <div className="text-center md:text-left space-y-6 order-1 md:order-2">
+            {/* Welcome text - appears SECOND on mobile */}
+            <div className="text-center md:text-left space-y-6 order-2 md:order-2">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-[var(--font-fredoka)] leading-tight">
                 Welcome to <span className="text-red-500">Arlo's</span>{" "}
                 <span className="text-blue-500">BIG</span> world
