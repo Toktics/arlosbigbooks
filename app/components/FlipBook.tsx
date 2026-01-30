@@ -16,7 +16,7 @@ export default function FlipBook() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolling(true)
-      setShowHint(false)
+      setShowHint(false) // Hide hint immediately when scrolling starts
       
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current)
@@ -38,9 +38,15 @@ export default function FlipBook() {
   }, [])
 
   useEffect(() => {
+    const isClosed = bookState === 'closed-front' || bookState === 'closed-back'
+    
+    // Only show hint if: in view, not scrolling, and book is closed
     if (isInView && !isScrolling && isClosed) {
       const timer = setTimeout(() => {
-        setShowHint(true)
+        // Double-check conditions before showing
+        if (isInView && !isScrolling) {
+          setShowHint(true)
+        }
       }, 500)
       return () => clearTimeout(timer)
     } else {
@@ -49,6 +55,8 @@ export default function FlipBook() {
   }, [isInView, isScrolling, bookState])
 
   const handleBookClick = (side?: 'left' | 'right') => {
+    setShowHint(false) // Hide hint immediately when book is clicked
+    
     if (bookState === 'closed-front') {
       // Open to first pages
       setBookState('open-page-1-2')
