@@ -39,18 +39,18 @@ export default function RootLayout({
       >
         {/* Header with logo, colorful text, and navigation */}
         <header className="bg-white shadow-md sticky top-0 z-50">
-          <nav className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-            {/* Left: Logo */}
-            <Link href="/" className="flex-shrink-0">
+          <nav className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+            {/* Left: Logo - appears first on mobile */}
+            <Link href="/" className="flex-shrink-0 order-1">
               <img
                 src="/images/ArloLogo.png"
                 alt="Arlo Logo"
-                className="h-12 md:h-16 w-auto"
+                className="h-16 md:h-20 w-auto"
               />
             </Link>
             
-            {/* Center: Colorful text */}
-            <div className="flex-1 text-center px-4">
+            {/* Center: Colorful text - appears second on mobile */}
+            <div className="flex-1 text-center px-4 order-2">
               <h1 className="text-xl md:text-3xl font-bold font-[var(--font-fredoka)] leading-tight">
                 <span className="text-red-500">Welcome</span>{" "}
                 <span className="text-blue-500">to</span>{" "}
@@ -61,8 +61,8 @@ export default function RootLayout({
               </h1>
             </div>
             
-            {/* Right: Navigation */}
-            <ul className="hidden md:flex gap-6 flex-shrink-0">
+            {/* Right: Navigation - appears third on mobile */}
+            <ul className="hidden md:flex gap-6 flex-shrink-0 order-3">
               <li>
                 <Link href="/" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
                   Home
