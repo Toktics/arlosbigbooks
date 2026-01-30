@@ -207,13 +207,13 @@ export default function Home() {
       <section className="py-20 px-4 bg-blue-50 relative overflow-hidden">
         {/* Animated Flapping Cockerel - starts visible, flies away left */}
         <motion.div
-          className="absolute left-8 md:left-16 top-12 md:top-16 z-10"
+          className="absolute left-4 md:left-16 top-4 md:top-12 z-10"
           initial={{ x: 0, y: 0, opacity: 1 }}
           animate={{
-            y: [0, -15, 0, -10, 0, -15, 0, -10, 0, -200],
-            x: [0, 5, 0, -5, 0, 5, 0, -5, 0, -300],
-            rotate: [-5, 5, -5, 3, -5, 5, -5, 3, -5, -45],
-            opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+            y: [0, -15, 0, -10, 0, -15, 0, -10, 0, -15, 0, -200],
+            x: [0, 5, 0, -5, 0, 5, 0, -5, 0, 5, 0, -300],
+            rotate: [-5, 5, -5, 3, -5, 5, -5, 3, -5, 5, -5, -45],
+            opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
           }}
           transition={{
             duration: 7,
@@ -240,13 +240,13 @@ export default function Home() {
 
         {/* Animated Brown Bird - flies in from right after cockerel leaves */}
         <motion.div
-          className="absolute right-8 md:right-16 top-16 md:top-20 z-10"
+          className="absolute right-4 md:right-16 top-8 md:top-16 z-10"
           initial={{ x: 300, y: -200, opacity: 0 }}
           animate={{
-            y: [-200, -15, 0, -10, 0, -15, 0, -10, 0],
-            x: [300, 5, 0, -5, 0, 5, 0, -5, 0],
-            rotate: [45, 5, -5, 3, -5, 5, -5, 3, -5],
-            opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1],
+            y: [-200, -15, 0, -10, 0, -15, 0, -10, 0, -15, 0],
+            x: [300, 5, 0, -5, 0, 5, 0, -5, 0, 5, 0],
+            rotate: [45, 5, -5, 3, -5, 5, -5, 3, -5, 5, -5],
+            opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
           }}
           transition={{
             duration: 7,
