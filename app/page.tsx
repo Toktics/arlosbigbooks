@@ -205,21 +205,21 @@ export default function Home() {
 
       {/* About the Series */}
       <section className="py-20 px-4 bg-blue-50 relative overflow-hidden">
-        {/* Animated Flapping Cockerel - starts visible, flies away left */}
+        {/* Animated Flapping Cockerel - 0-5s visible, 5.5-20s hidden */}
         <motion.div
           className="absolute left-4 md:left-16 top-4 md:top-12 z-10"
           initial={{ x: 0, y: 0, opacity: 1 }}
           animate={{
-            y: [0, -15, 0, -10, 0, -15, 0, -10, 0, -15, 0, -200],
-            x: [0, 5, 0, -5, 0, 5, 0, -5, 0, 5, 0, -300],
-            rotate: [-5, 5, -5, 3, -5, 5, -5, 3, -5, 5, -5, -45],
-            opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+            y: [0, -15, 0, -10, 0, -15, 0, -200],
+            x: [0, 5, 0, -5, 0, 5, 0, -300],
+            rotate: [-5, 5, -5, 3, -5, 5, -5, -45],
+            opacity: [1, 1, 1, 1, 1, 1, 0.8, 0],
           }}
-          transition={{
-            duration: 7,
-            repeat: Infinity,
-            repeatDelay: 0,
-            ease: "easeInOut",
+          transition={{  
+          duration: 20,
+          times: [0, 0.05, 0.1, 0.15, 0.2, 0.22, 0.24, 0.25],
+          repeat: Infinity,
+          ease: "easeInOut",
           }}
         >
           <motion.img
@@ -238,20 +238,20 @@ export default function Home() {
           />
         </motion.div>
 
-        {/* Animated Brown Bird - flies in from right after cockerel leaves */}
+        {/* Animated Brown Bird - 10-15s visible, rest hidden */}
         <motion.div
           className="absolute right-4 md:right-16 top-8 md:top-16 z-10"
-          initial={{ x: 300, y: -200, opacity: 0 }}
+          initial={{ x: 250, y: -150, opacity: 0 }}
           animate={{
-            y: [-200, -15, 0, -10, 0, -15, 0, -10, 0, -15, 0],
-            x: [300, 5, 0, -5, 0, 5, 0, -5, 0, 5, 0],
-            rotate: [45, 5, -5, 3, -5, 5, -5, 3, -5, 5, -5],
-            opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+            y: [-150, -15, 0, -10, 0, -15, 0, -150],
+            x: [250, 5, 0, -5, 0, 5, 0, -250],
+            rotate: [45, 5, -5, 3, -5, 5, -5, -45],
+            opacity: [0, 1, 1, 1, 1, 1, 0.8, 0],
           }}
           transition={{
-            duration: 7,
+            duration: 20,
+            times: [0.5, 0.55, 0.6, 0.65, 0.7, 0.72, 0.74, 0.75],
             repeat: Infinity,
-            repeatDelay: 0,
             ease: "easeInOut",
           }}
         >
