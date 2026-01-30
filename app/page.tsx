@@ -44,6 +44,9 @@ export default function Home() {
             
             {/* Welcome text - appears SECOND on mobile */}
             <div className="text-center md:text-left space-y-3 order-2 md:order-2">
+              <div className="inline-block bg-red-500 text-white px-6 py-2 rounded-full font-bold text-lg mb-2">
+                Perfect for Ages 3–6
+              </div>
               <h1 className="text-4xl font-bold font-[var(--font-fredoka)] leading-tight">
                 Welcome to <span className="text-red-500">Arlo's</span>{" "}
                 <span className="text-blue-500">BIG</span> world

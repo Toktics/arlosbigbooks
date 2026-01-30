@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fredoka, Poppins } from "next/font/google";
+import { Fredoka, Andika } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 
@@ -9,10 +9,10 @@ const fredoka = Fredoka({
   weight: ["400", "600", "700"],
 });
 
-const poppins = Poppins({
+const andika = Andika({
   subsets: ["latin"],
-  variable: "--font-poppins",
-  weight: ["400", "600", "700"],
+  variable: "--font-andika",
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${fredoka.variable} ${poppins.variable} antialiased font-[var(--font-poppins)]`}
+        className={`${fredoka.variable} ${andika.variable} antialiased font-[var(--font-andika)]`}
       >
         <Header />
         {children}
