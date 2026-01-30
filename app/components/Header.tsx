@@ -34,17 +34,22 @@ export default function Header() {
         <ul className="hidden md:flex gap-6 flex-shrink-0 order-3">
           <li>
             <Link href="/" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
-              Home
+              HOME
             </Link>
           </li>
           <li>
             <Link href="#about" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
-              About
+              ABOUT
+            </Link>
+          </li>
+          <li>
+            <Link href="#author" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
+              AUTHOR
             </Link>
           </li>
           <li>
             <Link href="#contact" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
-              Contact
+              CONTACT
             </Link>
           </li>
         </ul>
@@ -75,7 +80,7 @@ export default function Header() {
                 className="block px-4 py-3 text-gray-800 font-semibold hover:bg-red-50 hover:text-red-500 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Home
+                HOME
               </Link>
             </li>
             <li>
@@ -84,7 +89,16 @@ export default function Header() {
                 className="block px-4 py-3 text-gray-800 font-semibold hover:bg-red-50 hover:text-red-500 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                About
+                ABOUT
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="#author" 
+                className="block px-4 py-3 text-gray-800 font-semibold hover:bg-red-50 hover:text-red-500 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                AUTHOR
               </Link>
             </li>
             <li>
@@ -93,7 +107,7 @@ export default function Header() {
                 className="block px-4 py-3 text-gray-800 font-semibold hover:bg-red-50 hover:text-red-500 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Contact
+                CONTACT
               </Link>
             </li>
           </ul>

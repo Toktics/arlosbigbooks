@@ -207,7 +207,7 @@ export default function Home() {
       </section>
 
       {/* About the Series */}
-      <section className="py-20 px-4 bg-blue-50 relative overflow-hidden">
+      <section id="about" className="py-20 px-4 bg-blue-50 relative overflow-hidden">
         {/* Animated Flapping Cockerel - 0-5s visible, 5.5-20s hidden */}
         <motion.div
           className="absolute left-4 md:left-16 top-4 md:top-12 z-10"
@@ -431,7 +431,7 @@ export default function Home() {
       </section>
 
       {/* Meet the Author */}
-      <section id="about" className="py-20 px-4 bg-white">
+      <section id="author" className="py-20 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-8 text-gray-800 text-center">
             Meet the Author
