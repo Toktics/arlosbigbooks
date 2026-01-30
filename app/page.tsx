@@ -9,22 +9,7 @@ import { useRef, useState, useEffect } from 'react'
 
 export default function Home() {
   const aboutSectionRef = useRef(null)
-  const isAboutInView = useInView(aboutSectionRef, { amount: 0.5 })
-  const [isScrolling, setIsScrolling] = useState(false)
-
-  useEffect(() => {
-    let timeout: NodeJS.Timeout
-    const handleScroll = () => {
-      setIsScrolling(true)
-      clearTimeout(timeout)
-      timeout = setTimeout(() => setIsScrolling(false), 150)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      clearTimeout(timeout)
-    }
-  }, [])
+  const isAboutInView = useInView(aboutSectionRef, { amount: 0.5, once: true })
 
   return (
     <main className="min-h-screen bg-white">
@@ -147,14 +132,11 @@ export default function Home() {
             
             {/* Animated Arlo Yawn Stretch - bottom right corner of yellow box */}
             <div className="absolute right-4 md:right-8 bottom-4 md:bottom-8 z-20">
-              <motion.img
-                key={isAboutInView && !isScrolling ? `gif-${Date.now()}` : 'frozen'}
-                src={`/images/characters/ArloYawnStretch.gif${isAboutInView && !isScrolling ? `?v=${Date.now()}` : ''}`}
+              <img
+                src="/images/characters/ArloYawnStretch.gif"
                 alt="Arlo"
                 className="w-40 md:w-48 h-auto"
-                initial={{ opacity: 1 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0 }}
+                style={{ display: isAboutInView ? 'block' : 'none' }}
               />
             </div>
             <div className="pr-0 pb-52 md:pb-0 md:pr-56">
