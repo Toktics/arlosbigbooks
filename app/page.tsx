@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import FlipBook from './components/FlipBook'
+import CoverFlip from './components/CoverFlip'
 import { useRef, useState, useEffect } from 'react'
 
 export default function Home() {
@@ -272,11 +273,10 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
               <div className="relative w-full aspect-square mb-6">
-                <Image
-                  src="/images/books/big-head-cover.png"
-                  alt="Arlo's Big Head"
-                  fill
-                  className="object-contain"
+                <CoverFlip
+                  frontCover="/images/books/book-cover-front(2).png"
+                  backCover="/images/books/book-cover-back(2).png"
+                  title="Arlo's Big Head"
                 />
               </div>
               <h3 className="text-2xl font-bold text-blue-500 mb-3">Arlo's Big Head!</h3>
@@ -289,8 +289,12 @@ export default function Home() {
             </div>
 
             <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 shadow-lg">
-              <div className="flex items-center justify-center h-64 bg-gradient-to-br from-amber-100 to-orange-100 rounded-2xl mb-6">
-                <p className="text-7xl">🚗</p>
+              <div className="relative w-full aspect-square mb-6">
+                <CoverFlip
+                  frontCover="/images/books/book-cover-front(3).png"
+                  backCover="/images/books/book-cover-back(3).png"
+                  title="Arlo's Big Journey"
+                />
               </div>
               <h3 className="text-2xl font-bold text-blue-500 mb-3">Arlo's Big Journey!</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
@@ -302,8 +306,12 @@ export default function Home() {
             </div>
 
             <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl p-8 shadow-lg">
-              <div className="flex items-center justify-center h-64 bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl mb-6">
-                <p className="text-7xl">🏠</p>
+              <div className="relative w-full aspect-square mb-6">
+                <CoverFlip
+                  frontCover="/images/books/book-cover-front(4).png"
+                  backCover="/images/books/book-cover-back(4).png"
+                  title="Arlo's Big House"
+                />
               </div>
               <h3 className="text-2xl font-bold text-blue-500 mb-3">Arlo's Big House!</h3>
               <p className="text-gray-700 leading-relaxed mb-4">
