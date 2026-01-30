@@ -159,7 +159,7 @@ export default function Home() {
                 ) : (
                   <motion.img
                     key="static"
-                    src="/images/characters/ArloBedYawn.png"
+                    src="/images/characters/ArloStaticGif.png"
                     alt="Arlo Sleeping"
                     className="w-40 md:w-48 h-auto"
                     initial={{ opacity: 1 }}
