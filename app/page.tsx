@@ -146,24 +146,14 @@ export default function Home() {
               <AnimatePresence mode="wait">
                 {isAboutInView && !isScrolling ? (
                   <motion.img
-                    key={`gif-${Date.now()}`}
-                    src={`/images/characters/ArloYawnStretch.gif?v=${Date.now()}`}
+                    key="gif-active"
+                    src="/images/characters/ArloYawnStretch.gif"
                     alt="Arlo Yawning and Stretching"
                     className="w-40 md:w-48 h-auto"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    onLoad={(e) => {
-                      // GIF will play once automatically
-                      // After 3 seconds (gif duration), replace with static image
-                      setTimeout(() => {
-                        const img = e.currentTarget
-                        if (img) {
-                          img.src = '/images/characters/ArloBedYawn.png'
-                        }
-                      }, 3000)
-                    }}
                   />
                 ) : (
                   <motion.img
@@ -173,6 +163,7 @@ export default function Home() {
                     className="w-40 md:w-48 h-auto"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   />
                 )}
