@@ -238,19 +238,19 @@ export default function Home() {
           />
         </motion.div>
 
-        {/* Animated Brown Bird - 10-15s visible, rest hidden */}
+        {/* Animated Brown Bird - 10-15s visible, flies away at end */}
         <motion.div
           className="absolute right-4 md:right-16 top-8 md:top-16 z-10"
           initial={{ x: 250, y: -150, opacity: 0 }}
           animate={{
-            y: [-150, -15, 0, -10, 0, -15, 0, -150],
-            x: [250, 5, 0, -5, 0, 5, 0, -250],
-            rotate: [45, 5, -5, 3, -5, 5, -5, -45],
-            opacity: [0, 1, 1, 1, 1, 1, 0.8, 0],
+            y: [-150, -15, 0, -10, 0, -15, 0, -10, 0, -150],
+            x: [250, 5, 0, -5, 0, 5, 0, -5, 0, 300],
+            rotate: [45, 5, -5, 3, -5, 5, -5, 3, -5, 45],
+            opacity: [0, 1, 1, 1, 1, 1, 1, 1, 0.8, 0],
           }}
           transition={{
             duration: 20,
-            times: [0.5, 0.55, 0.6, 0.65, 0.7, 0.72, 0.74, 0.75],
+            times: [0.5, 0.525, 0.55, 0.6, 0.625, 0.65, 0.675, 0.7, 0.73, 0.75],
             repeat: Infinity,
             ease: "easeInOut",
           }}
