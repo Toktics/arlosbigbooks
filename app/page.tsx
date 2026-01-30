@@ -9,7 +9,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Big colorful logo - appears FIRST on mobile */}
-            <div className="flex justify-center order-1 md:order-1 mb-2 md:mb-0">
+            <div className="flex justify-center order-1 md:order-1 mb-0 md:mb-0">
               <img
                 src="/images/logo.png"
                 alt="Arlo's Big Books"
@@ -19,7 +19,7 @@ export default function Home() {
             </div>
             
             {/* Welcome text - appears SECOND on mobile */}
-            <div className="text-center md:text-left space-y-6 order-2 md:order-2">
+            <div className="text-center md:text-left space-y-3 order-2 md:order-2">
               <h1 className="text-4xl font-bold font-[var(--font-fredoka)] leading-tight">
                 Welcome to <span className="text-red-500">Arlo's</span>{" "}
                 <span className="text-blue-500">BIG</span> world

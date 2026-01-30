@@ -39,7 +39,7 @@ export default function RootLayout({
       >
         {/* Header with logo, colorful text, and navigation */}
         <header className="bg-white shadow-md sticky top-0 z-50">
-          <nav className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center">
+          <nav className="max-w-7xl mx-auto px-4 py-3 flex flex-wrap justify-between items-center gap-4">
             {/* Left: Logo - appears first on mobile */}
             <Link href="/" className="flex-shrink-0 order-1">
               <img
