@@ -37,7 +37,7 @@ export default function FlipBook() {
   const isClosed = bookState === 'closed-front' || bookState === 'closed-back'
 
   return (
-    <div className="relative w-full aspect-square max-w-sm mx-auto perspective-1000">
+    <div className="relative w-full aspect-square max-w-sm mx-auto">
       <AnimatePresence mode="wait">
         {bookState === 'closed-front' && (
           <motion.div
@@ -65,29 +65,37 @@ export default function FlipBook() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="absolute inset-0 grid grid-cols-2 gap-1"
+            className="absolute inset-0 flex gap-0"
           >
-            {/* Left page - clickable */}
+            {/* Left page - clickable with arrow */}
             <div
-              className="cursor-pointer hover:opacity-90 transition-opacity"
+              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
               onClick={() => handleBookClick('left')}
             >
               <img
                 src="/images/books/book-page-01.png"
                 alt="Page 1"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
+              {/* Left arrow */}
+              <div className="absolute left-2 top-1/2 -translate-y-1/2 text-red-500 text-4xl font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                ←
+              </div>
             </div>
-            {/* Right page - clickable */}
+            {/* Right page - clickable with arrow */}
             <div
-              className="cursor-pointer hover:opacity-90 transition-opacity"
+              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
               onClick={() => handleBookClick('right')}
             >
               <img
                 src="/images/books/book-page-02.png"
                 alt="Page 2"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
+              {/* Right arrow */}
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 text-red-500 text-4xl font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                →
+              </div>
             </div>
           </motion.div>
         )}
@@ -99,29 +107,37 @@ export default function FlipBook() {
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="absolute inset-0 grid grid-cols-2 gap-1"
+            className="absolute inset-0 flex gap-0"
           >
-            {/* Left page - clickable */}
+            {/* Left page - clickable with arrow */}
             <div
-              className="cursor-pointer hover:opacity-90 transition-opacity"
+              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
               onClick={() => handleBookClick('left')}
             >
               <img
                 src="/images/books/book-page-03.png"
                 alt="Page 3"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
+              {/* Left arrow */}
+              <div className="absolute left-2 top-1/2 -translate-y-1/2 text-red-500 text-4xl font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                ←
+              </div>
             </div>
-            {/* Right page - clickable */}
+            {/* Right page - clickable with arrow */}
             <div
-              className="cursor-pointer hover:opacity-90 transition-opacity"
+              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
               onClick={() => handleBookClick('right')}
             >
               <img
                 src="/images/books/book-page-04.png"
                 alt="Page 4"
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
+              {/* Right arrow */}
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 text-red-500 text-4xl font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+                →
+              </div>
             </div>
           </motion.div>
         )}
