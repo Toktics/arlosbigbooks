@@ -279,13 +279,11 @@ export default function Home() {
                   title="Arlo's Big Head"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-blue-500 mb-3">Arlo's Big Head!</h3>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Learn something new? Oh no, oh NO! Arlo's head starts to GROW and GROW!
-              </p>
-              <span className="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold text-sm">
-                Coming 2026
-              </span>
+              <div className="text-center">
+                <span className="inline-block bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold text-sm">
+                  Coming Soon
+                </span>
+              </div>
             </div>
 
             <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-3xl p-8 shadow-lg">
@@ -296,13 +294,11 @@ export default function Home() {
                   title="Arlo's Big Journey"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-blue-500 mb-3">Arlo's Big Journey!</h3>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Every car trip feels like it takes FOREVER... until it really does!
-              </p>
-              <span className="inline-block bg-gray-300 text-gray-700 px-6 py-2 rounded-full font-bold text-sm">
-                In Development
-              </span>
+              <div className="text-center">
+                <span className="inline-block bg-gray-300 text-gray-700 px-6 py-2 rounded-full font-bold text-sm">
+                  Coming 2026
+                </span>
+              </div>
             </div>
 
             <div className="bg-gradient-to-br from-green-50 to-blue-50 rounded-3xl p-8 shadow-lg">
@@ -313,13 +309,11 @@ export default function Home() {
                   title="Arlo's Big House"
                 />
               </div>
-              <h3 className="text-2xl font-bold text-blue-500 mb-3">Arlo's Big House!</h3>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Friends are coming over but where IS everyone? A hide-and-seek adventure!
-              </p>
-              <span className="inline-block bg-gray-300 text-gray-700 px-6 py-2 rounded-full font-bold text-sm">
-                In Development
-              </span>
+              <div className="text-center">
+                <span className="inline-block bg-gray-300 text-gray-700 px-6 py-2 rounded-full font-bold text-sm">
+                  Coming 2026
+                </span>
+              </div>
             </div>
           </div>
         </div>
