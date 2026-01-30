@@ -123,7 +123,7 @@ export default function Home() {
           <div className="bg-amber-50 rounded-3xl p-8 md:p-12 mb-8 relative">
             {/* Animated Arlo Yawn Stretch - bottom right corner of yellow box */}
             <motion.img
-              src="/images/characters/ArloYawnStretch.gif"
+              src={`/images/characters/ArloYawnStretch.gif?v=${Date.now()}`}
               alt="Arlo Yawning and Stretching"
               className="absolute right-4 md:right-8 bottom-4 md:bottom-8 w-40 md:w-48 h-auto z-20"
               initial={{ opacity: 0 }}
