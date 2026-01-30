@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* New Hero Section */}
-      <section className="bg-gradient-to-b from-yellow-50 to-white py-16 px-4 pb-8">
+      <section className="bg-gradient-to-b from-yellow-50 to-white py-16 px-4 pb-2">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Big colorful logo - appears FIRST on mobile */}
@@ -54,10 +54,18 @@ export default function Home() {
           }}
           className="absolute top-2"
         >
-          <img
+          <motion.img
             src="/images/characters/MouseInCar.png"
             alt="Mouse driving"
             className="w-32 h-32 object-contain"
+            animate={{
+              y: [0, -2, 0, -2, 0]
+            }}
+            transition={{
+              duration: 0.5,
+              repeat: Infinity,
+              ease: 'easeInOut'
+            }}
           />
         </motion.div>
       </div>
