@@ -367,28 +367,130 @@ export default function Home() {
 
       {/* Arlo's Activity Zone */}
       <section className="py-20 px-4 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 relative overflow-hidden">
-        {/* Floating fun shapes */}
+        {/* Lava Lamp Effect - Multiple organic blobs */}
         <motion.div
-          className="absolute top-10 left-10 w-16 h-16 bg-blue-500 rounded-full opacity-20"
-          animate={{ y: [0, -20, 0], rotate: [0, 180, 360] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute w-64 h-64 rounded-full opacity-30 blur-3xl"
+          style={{ 
+            background: 'radial-gradient(circle, rgba(255,255,0,0.8) 0%, rgba(255,200,0,0.4) 50%, transparent 100%)',
+            left: '10%',
+            top: '80%'
+          }}
+          animate={{
+            y: [-100, -400, -100],
+            x: [-30, 30, -30],
+            scale: [1, 1.3, 0.9, 1.2, 1],
+            rotate: [0, 180, 360]
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
         />
+        
         <motion.div
-          className="absolute top-20 right-20 w-12 h-12 bg-green-500 opacity-20"
-          animate={{ y: [0, 20, 0], rotate: [0, -180, -360] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-          style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }}
+          className="absolute w-96 h-96 rounded-full opacity-25 blur-3xl"
+          style={{ 
+            background: 'radial-gradient(circle, rgba(255,100,0,0.8) 0%, rgba(255,150,0,0.4) 50%, transparent 100%)',
+            right: '15%',
+            top: '70%'
+          }}
+          animate={{
+            y: [50, -450, 50],
+            x: [20, -40, 20],
+            scale: [1.2, 0.8, 1.4, 1],
+            rotate: [0, -180, -360]
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
         />
+        
         <motion.div
-          className="absolute bottom-10 left-1/4 w-20 h-20 bg-purple-500 opacity-20"
-          animate={{ x: [0, 30, 0], rotate: [0, 90, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-          style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
+          className="absolute w-80 h-80 rounded-full opacity-20 blur-3xl"
+          style={{ 
+            background: 'radial-gradient(circle, rgba(255,69,0,0.9) 0%, rgba(255,120,0,0.5) 50%, transparent 100%)',
+            left: '40%',
+            top: '90%'
+          }}
+          animate={{
+            y: [0, -500, 0],
+            x: [-50, 50, -50],
+            scale: [1, 1.5, 0.7, 1.3, 1],
+            rotate: [0, 90, 180, 270, 360]
+          }}
+          transition={{
+            duration: 30,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 5
+          }}
         />
+        
         <motion.div
-          className="absolute bottom-20 right-1/3 w-14 h-14 bg-pink-500 rounded-full opacity-20"
-          animate={{ y: [0, -30, 0], scale: [1, 1.2, 1] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute w-72 h-72 rounded-full opacity-35 blur-3xl"
+          style={{ 
+            background: 'radial-gradient(circle, rgba(255,215,0,0.7) 0%, rgba(255,180,0,0.4) 50%, transparent 100%)',
+            left: '60%',
+            top: '85%'
+          }}
+          animate={{
+            y: [80, -380, 80],
+            x: [40, -20, 40],
+            scale: [0.9, 1.4, 1.1, 0.8, 1.2, 0.9],
+            rotate: [0, -90, -180, -270, -360]
+          }}
+          transition={{
+            duration: 22,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 8
+          }}
+        />
+        
+        <motion.div
+          className="absolute w-56 h-56 rounded-full opacity-30 blur-3xl"
+          style={{ 
+            background: 'radial-gradient(circle, rgba(255,140,0,0.8) 0%, rgba(255,100,0,0.5) 50%, transparent 100%)',
+            right: '5%',
+            top: '75%'
+          }}
+          animate={{
+            y: [120, -420, 120],
+            x: [-25, 35, -25],
+            scale: [1.1, 0.9, 1.5, 1, 1.3, 1.1],
+            rotate: [0, 120, 240, 360]
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 12
+          }}
+        />
+        
+        <motion.div
+          className="absolute w-88 h-88 rounded-full opacity-28 blur-3xl"
+          style={{ 
+            background: 'radial-gradient(circle, rgba(255,200,50,0.7) 0%, rgba(255,160,0,0.4) 50%, transparent 100%)',
+            left: '25%',
+            top: '95%'
+          }}
+          animate={{
+            y: [-50, -480, -50],
+            x: [30, -30, 30],
+            scale: [1.3, 0.85, 1.6, 0.95, 1.3],
+            rotate: [0, 200, 360]
+          }}
+          transition={{
+            duration: 28,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3
+          }}
         />
         
         <div className="max-w-6xl mx-auto relative z-10">
