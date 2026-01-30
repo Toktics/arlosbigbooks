@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* New Hero Section */}
-      <section className="bg-gradient-to-b from-yellow-50 to-white py-16 px-4">
+      <section className="bg-gradient-to-b from-yellow-50 to-white py-16 px-4 pb-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Big colorful logo - appears FIRST on mobile */}
@@ -42,27 +42,28 @@ export default function Home() {
       </section>
 
       {/* Animated Mouse Driving Across */}
-      <div className="relative w-full overflow-hidden py-4">
+      <div className="relative w-full overflow-hidden h-32 bg-gradient-to-b from-white to-transparent">
         <motion.div
-          initial={{ x: '-100%' }}
-          animate={{ x: '100vw' }}
+          initial={{ x: '-150px' }}
+          animate={{ x: 'calc(100vw + 150px)' }}
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: 'linear'
+            ease: 'linear',
+            repeatDelay: 2
           }}
-          className="absolute"
+          className="absolute top-8"
         >
           <img
             src="/images/characters/MouseInCar.png"
             alt="Mouse driving"
-            className="w-24 h-24 object-contain"
+            className="w-32 h-32 object-contain"
           />
         </motion.div>
       </div>
 
       {/* Featured Book */}
-      <section className="py-20 px-4 bg-white">
+      <section className="py-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 font-[var(--font-fredoka)] text-gray-800">
             Start with Arlo's <span className="text-red-500">Big Yawn!</span>
