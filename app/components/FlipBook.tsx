@@ -139,11 +139,11 @@ export default function FlipBook() {
             <motion.div
               key="pages-1-2-desktop"
               initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
+              animate={{ scale: 1, opacity: 1, width: '200%' }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="hidden md:flex absolute inset-0 gap-0 bg-white md:w-[200%]"
-              style={{ width: '100%' }}
+              className="hidden md:flex absolute inset-0 gap-0 bg-white"
+              style={{ width: '200%', left: '0' }}
             >
               <div
                 className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
@@ -206,11 +206,11 @@ export default function FlipBook() {
             <motion.div
               key="pages-3-4-desktop"
               initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
+              animate={{ scale: 1, opacity: 1, width: '200%' }}
               exit={{ scale: 0.95, opacity: 0 }}
               transition={{ duration: 0.4 }}
-              className="hidden md:flex absolute inset-0 gap-0 bg-white md:w-[200%]"
-              style={{ width: '100%' }}
+              className="hidden md:flex absolute inset-0 gap-0 bg-white"
+              style={{ width: '200%', left: '0' }}
             >
               <div
                 className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
