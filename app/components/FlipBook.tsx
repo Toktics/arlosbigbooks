@@ -138,18 +138,35 @@ export default function FlipBook() {
               transition={{ duration: 0.4 }}
               className="md:hidden absolute inset-0 bg-white"
             >
-              <div className="relative w-full h-full cursor-pointer" onClick={() => handleBookClick('right', true)}>
+              <div className="relative w-full h-full">
                 <img
                   src={mobilePageIndex === 0 ? "/images/books/book-page-01.png" : "/images/books/book-page-02.png"}
                   alt={`Page ${mobilePageIndex + 1}`}
                   className="w-full h-full object-contain"
                 />
-                {/* Both arrows on mobile */}
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
-                  ‹
+                {/* Left arrow - goes back */}
+                <div 
+                  className="absolute left-0 top-0 w-1/2 h-full cursor-pointer"
+                  onClick={() => {
+                    if (mobilePageIndex === 0) {
+                      setBookState('closed-front')
+                    } else {
+                      setMobilePageIndex(mobilePageIndex - 1)
+                    }
+                  }}
+                >
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                    ‹
+                  </div>
                 </div>
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
-                  ›
+                {/* Right arrow - goes forward */}
+                <div 
+                  className="absolute right-0 top-0 w-1/2 h-full cursor-pointer"
+                  onClick={() => handleBookClick('right', true)}
+                >
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                    ›
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -205,18 +222,36 @@ export default function FlipBook() {
               transition={{ duration: 0.4 }}
               className="md:hidden absolute inset-0 bg-white"
             >
-              <div className="relative w-full h-full cursor-pointer" onClick={() => handleBookClick('right', true)}>
+              <div className="relative w-full h-full">
                 <img
                   src={mobilePageIndex === 2 ? "/images/books/book-page-03.png" : "/images/books/book-page-04.png"}
                   alt={`Page ${mobilePageIndex + 1}`}
                   className="w-full h-full object-contain"
                 />
-                {/* Both arrows on mobile */}
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
-                  ‹
+                {/* Left arrow - goes back */}
+                <div 
+                  className="absolute left-0 top-0 w-1/2 h-full cursor-pointer"
+                  onClick={() => {
+                    if (mobilePageIndex === 2) {
+                      setBookState('open-page-1-2')
+                      setMobilePageIndex(1)
+                    } else {
+                      setMobilePageIndex(mobilePageIndex - 1)
+                    }
+                  }}
+                >
+                  <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                    ‹
+                  </div>
                 </div>
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
-                  ›
+                {/* Right arrow - goes forward */}
+                <div 
+                  className="absolute right-0 top-0 w-1/2 h-full cursor-pointer"
+                  onClick={() => handleBookClick('right', true)}
+                >
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                    ›
+                  </div>
                 </div>
               </div>
             </motion.div>
