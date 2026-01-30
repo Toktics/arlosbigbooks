@@ -78,7 +78,7 @@ export default function Home() {
             Start with Arlo's <span className="text-red-500">Big Yawn!</span>
           </h2>
           
-          <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl shadow-2xl p-8 md:p-12">
+          <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl p-8 md:p-12">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <FlipBook />
               
@@ -109,10 +109,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* About the Book */}
-      <section className="pt-0 pb-12 px-4 bg-white relative overflow-visible">
+      {/* About the Book - Full width yellow background */}
+      <section className="py-12 px-4 bg-gradient-to-br from-yellow-50 to-orange-50">
         <div className="max-w-4xl mx-auto relative">
-          <div className="bg-amber-50 rounded-3xl p-8 md:p-12 mb-8 relative pt-32 md:pt-36">
+          <div className="bg-white rounded-3xl p-8 md:p-12 mb-8 relative pt-32 md:pt-36">
             {/* Arlo Bed Yawn character - at top of yellow box, pushed up to overlap */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
               <img
