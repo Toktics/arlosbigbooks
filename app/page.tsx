@@ -110,10 +110,10 @@ export default function Home() {
       </section>
 
       {/* About the Book */}
-      <section className="pt-4 pb-12 px-4 bg-white relative overflow-hidden">
+      <section className="pt-0 pb-12 px-4 bg-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative">
           {/* Arlo Bed Yawn character - centered, overlapping white/yellow boundary */}
-          <div className="flex justify-center mb-0 -mb-48">
+          <div className="flex justify-center mb-0 -mb-56">
             <img
               src="/images/characters/ArloBedYawn.png"
               alt="Arlo Yawning"
