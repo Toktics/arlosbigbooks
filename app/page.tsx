@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* New Hero Section */}
-      <section className="bg-gradient-to-b from-yellow-50 to-white py-16 px-4 pb-2">
+      <section className="bg-gradient-to-b from-yellow-50 to-white py-16 px-4 pb-0">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Big colorful logo - appears FIRST on mobile */}
@@ -42,7 +42,7 @@ export default function Home() {
       </section>
 
       {/* Animated Mouse Driving Across */}
-      <div className="relative w-full overflow-hidden h-24 -mt-2">
+      <div className="relative w-full overflow-hidden h-28 -mt-4">
         <motion.div
           initial={{ x: '-150px' }}
           animate={{ x: 'calc(100vw + 150px)' }}
@@ -71,7 +71,7 @@ export default function Home() {
       </div>
 
       {/* Featured Book */}
-      <section className="pt-2 pb-12 px-4 bg-white">
+      <section className="pt-0 pb-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 font-[var(--font-fredoka)] text-gray-800">
             Start with Arlo's <span className="text-red-500">Big Yawn!</span>
