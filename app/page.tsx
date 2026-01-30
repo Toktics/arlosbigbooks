@@ -111,11 +111,11 @@ export default function Home() {
 
       {/* About the Book */}
       <section className="py-20 px-4 bg-white relative overflow-hidden">
-        {/* Arlo Bed Yawn character - positioned across white/yellow boundary */}
+        {/* Arlo Bed Yawn character - positioned in the yellow area */}
         <img
           src="/images/characters/ArloBedYawn.png"
           alt="Arlo Yawning"
-          className="absolute right-0 top-0 w-64 h-auto z-0 opacity-90"
+          className="absolute right-8 md:right-16 top-32 w-48 md:w-64 h-auto z-20"
         />
         
         <div className="max-w-4xl mx-auto relative z-10">
