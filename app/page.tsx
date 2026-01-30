@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import FlipBook from './components/FlipBook'
 
 export default function Home() {
   return (
@@ -79,15 +80,7 @@ export default function Home() {
           
           <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-3xl shadow-2xl p-8 md:p-12">
             <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="relative w-full aspect-square max-w-sm mx-auto">
-                <Image
-                  src="/images/books/big-yawn-cover.png"
-                  alt="Arlo's Big Yawn"
-                  fill
-                  className="object-contain drop-shadow-2xl"
-                  priority
-                />
-              </div>
+              <FlipBook />
               
               <div className="text-left">
                 <h2 className="text-4xl md:text-5xl font-bold text-red-500 mb-4">
