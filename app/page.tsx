@@ -383,50 +383,118 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Parents and Teachers Love These Books */}
-      <section className="py-20 px-4 bg-gradient-to-br from-amber-50 to-orange-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-            Why Parents and Teachers Love These Books
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-5xl mb-4">📖</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">Read-Aloud Rhythms</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Joyful rhyming text that kids want to hear again and again.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-5xl mb-4">💫</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">Relatable Moments</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Everyday experiences made big and exciting.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-5xl mb-4">😄</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">Laugh-Out-Loud Fun</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Silly, surprising, and visually engaging stories.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
-              <div className="text-5xl mb-4">🎓</div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">Learning Through Play</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Helping children understand routines, emotions, and curiosity.
-              </p>
-            </div>
+      {/* Arlo's Activity Zone */}
+      <section className="py-20 px-4 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 relative overflow-hidden">
+        {/* Floating fun shapes */}
+        <motion.div
+          className="absolute top-10 left-10 w-16 h-16 bg-blue-500 rounded-full opacity-20"
+          animate={{ y: [0, -20, 0], rotate: [0, 180, 360] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div
+          className="absolute top-20 right-20 w-12 h-12 bg-green-500 opacity-20"
+          animate={{ y: [0, 20, 0], rotate: [0, -180, -360] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          style={{ clipPath: "polygon(50% 0%, 0% 100%, 100% 100%)" }}
+        />
+        <motion.div
+          className="absolute bottom-10 left-1/4 w-20 h-20 bg-purple-500 opacity-20"
+          animate={{ x: [0, 30, 0], rotate: [0, 90, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          style={{ clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)" }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-1/3 w-14 h-14 bg-pink-500 rounded-full opacity-20"
+          animate={{ y: [0, -30, 0], scale: [1, 1.2, 1] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold text-white mb-4 font-[var(--font-fredoka)] drop-shadow-lg">
+              🎨 ARLO'S ACTIVITY ZONE
+            </h2>
+            <p className="text-2xl text-white font-semibold drop-shadow-md">
+              FREE printables for fun learning at home and in the classroom!
+            </p>
           </div>
           
-          <p className="text-xl text-center text-gray-700 mt-12 font-semibold">
-            These books bring parents and children together — bedtime after bedtime.
-          </p>
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            {/* Activity Card 1 */}
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -5 }}
+            >
+              <div className="text-6xl mb-4">🖍️</div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3 font-[var(--font-fredoka)">
+                Coloring & Drawing Fun
+              </h3>
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+                Help parents and teachers bring bedtime stories to life! Perfect for ages 3–6, these read-aloud activity sheets turn Arlo's adventures into creative playtime.
+              </p>
+              <button className="bg-red-500 text-white px-6 py-3 rounded-full font-bold hover:bg-red-600 transition-colors w-full">
+                Download FREE Coloring Pages
+              </button>
+            </motion.div>
+
+            {/* Activity Card 2 */}
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -5 }}
+            >
+              <div className="text-6xl mb-4">📚</div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3 font-[var(--font-fredoka)">
+                Reading & Rhyming Games
+              </h3>
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+                Joyful learning activities for early readers! These fun rhyming exercises help children build reading skills while parents enjoy interactive storytime together.
+              </p>
+              <button className="bg-blue-500 text-white px-6 py-3 rounded-full font-bold hover:bg-blue-600 transition-colors w-full">
+                Download FREE Reading Activities
+              </button>
+            </motion.div>
+
+            {/* Activity Card 3 */}
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -5 }}
+            >
+              <div className="text-6xl mb-4">🎭</div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3 font-[var(--font-fredoka)">
+                Bedtime Story Prompts
+              </h3>
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+                Make every bedtime an adventure! Teachers and parents love these playful prompts that spark imagination and turn reading time into laugh-out-loud fun.
+              </p>
+              <button className="bg-green-500 text-white px-6 py-3 rounded-full font-bold hover:bg-green-600 transition-colors w-full">
+                Download FREE Story Cards
+              </button>
+            </motion.div>
+
+            {/* Activity Card 4 */}
+            <motion.div 
+              className="bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-300"
+              whileHover={{ scale: 1.02, y: -5 }}
+            >
+              <div className="text-6xl mb-4">✨</div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3 font-[var(--font-fredoka)">
+                Create Your Own BIG Adventure
+              </h3>
+              <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+                What grows BIG next? Let kids unleash their creativity with templates designed for imaginative play and learning. Perfect for classroom activities or fun at home!
+              </p>
+              <button className="bg-purple-500 text-white px-6 py-3 rounded-full font-bold hover:bg-purple-600 transition-colors w-full">
+                Download FREE Drawing Templates
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Bottom tagline */}
+          <div className="text-center bg-white rounded-3xl p-8 shadow-2xl">
+            <p className="text-2xl text-gray-800 font-bold leading-relaxed">
+              Learning through <span className="text-red-500">play</span>, <span className="text-blue-500">laughter</span>, and <span className="text-green-500">imagination</span> — bringing parents, teachers, and children together for joyful reading, one <span className="text-orange-500">BIG</span> bedtime story at a time.
+            </p>
+          </div>
         </div>
       </section>
 
