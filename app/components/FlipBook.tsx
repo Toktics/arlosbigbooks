@@ -7,6 +7,7 @@ type BookState = 'closed-front' | 'open-page-1-2' | 'open-page-3-4' | 'closed-ba
 
 export default function FlipBook() {
   const [bookState, setBookState] = useState<BookState>('closed-front')
+  const [mobilePageIndex, setMobilePageIndex] = useState(0) // 0=page1, 1=page2, 2=page3, 3=page4
   const [showHint, setShowHint] = useState(false)
   const [isScrolling, setIsScrolling] = useState(false)
   const bookRef = useRef<HTMLDivElement>(null)
@@ -54,9 +55,35 @@ export default function FlipBook() {
     }
   }, [isInView, isScrolling, bookState])
 
-  const handleBookClick = (side?: 'left' | 'right') => {
+  const handleBookClick = (side?: 'left' | 'right', isMobile = false) => {
     setShowHint(false) // Hide hint immediately when book is clicked
     
+    if (isMobile) {
+      // Mobile: cycle through individual pages
+      if (bookState === 'closed-front') {
+        setBookState('open-page-1-2')
+        setMobilePageIndex(0) // Show page 1
+      } else if (bookState === 'open-page-1-2') {
+        if (mobilePageIndex === 0) {
+          setMobilePageIndex(1) // Show page 2
+        } else {
+          setBookState('open-page-3-4')
+          setMobilePageIndex(2) // Show page 3
+        }
+      } else if (bookState === 'open-page-3-4') {
+        if (mobilePageIndex === 2) {
+          setMobilePageIndex(3) // Show page 4
+        } else {
+          setBookState('closed-back')
+        }
+      } else if (bookState === 'closed-back') {
+        setBookState('open-page-3-4')
+        setMobilePageIndex(3)
+      }
+      return
+    }
+    
+    // Desktop: existing logic
     if (bookState === 'closed-front') {
       // Open to first pages
       setBookState('open-page-1-2')
@@ -107,89 +134,137 @@ export default function FlipBook() {
         )}
 
         {bookState === 'open-page-1-2' && (
-          <motion.div
-            key="pages-1-2"
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="absolute inset-0 flex gap-0 bg-white md:w-[200%]"
-            style={{ width: '100%' }}
-          >
-            {/* Left page - full size */}
-            <div
-              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
-              onClick={() => handleBookClick('left')}
+          <>
+            {/* Desktop: Two pages side by side */}
+            <motion.div
+              key="pages-1-2-desktop"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="hidden md:flex absolute inset-0 gap-0 bg-white md:w-[200%]"
+              style={{ width: '100%' }}
             >
-              <img
-                src="/images/books/book-page-01.png"
-                alt="Page 1"
-                className="w-full h-full object-cover"
-              />
-              {/* Left arrow - always visible */}
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
-                ‹
+              <div
+                className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => handleBookClick('left')}
+              >
+                <img
+                  src="/images/books/book-page-01.png"
+                  alt="Page 1"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                  ‹
+                </div>
               </div>
-            </div>
-            {/* Right page - full size */}
-            <div
-              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
-              onClick={() => handleBookClick('right')}
+              <div
+                className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => handleBookClick('right')}
+              >
+                <img
+                  src="/images/books/book-page-02.png"
+                  alt="Page 2"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                  ›
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* Mobile: One page at a time */}
+            <motion.div
+              key={`page-${mobilePageIndex}-mobile`}
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="md:hidden absolute inset-0 bg-white"
             >
-              <img
-                src="/images/books/book-page-02.png"
-                alt="Page 2"
-                className="w-full h-full object-cover"
-              />
-              {/* Right arrow - always visible */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
-                ›
+              <div className="relative w-full h-full cursor-pointer" onClick={() => handleBookClick('right', true)}>
+                <img
+                  src={mobilePageIndex === 0 ? "/images/books/book-page-01.png" : "/images/books/book-page-02.png"}
+                  alt={`Page ${mobilePageIndex + 1}`}
+                  className="w-full h-full object-contain"
+                />
+                {/* Both arrows on mobile */}
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                  ‹
+                </div>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                  ›
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
 
         {bookState === 'open-page-3-4' && (
-          <motion.div
-            key="pages-3-4"
-            initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="absolute inset-0 flex gap-0 bg-white md:w-[200%]"
-            style={{ width: '100%' }}
-          >
-            {/* Left page - full size */}
-            <div
-              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
-              onClick={() => handleBookClick('left')}
+          <>
+            {/* Desktop: Two pages side by side */}
+            <motion.div
+              key="pages-3-4-desktop"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="hidden md:flex absolute inset-0 gap-0 bg-white md:w-[200%]"
+              style={{ width: '100%' }}
             >
-              <img
-                src="/images/books/book-page-03.png"
-                alt="Page 3"
-                className="w-full h-full object-cover"
-              />
-              {/* Left arrow - always visible */}
-              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
-                ‹
+              <div
+                className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => handleBookClick('left')}
+              >
+                <img
+                  src="/images/books/book-page-03.png"
+                  alt="Page 3"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                  ‹
+                </div>
               </div>
-            </div>
-            {/* Right page - full size */}
-            <div
-              className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
-              onClick={() => handleBookClick('right')}
+              <div
+                className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity"
+                onClick={() => handleBookClick('right')}
+              >
+                <img
+                  src="/images/books/book-page-04.png"
+                  alt="Page 4"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                  ›
+                </div>
+              </div>
+            </motion.div>
+            
+            {/* Mobile: One page at a time */}
+            <motion.div
+              key={`page-${mobilePageIndex}-mobile-34`}
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="md:hidden absolute inset-0 bg-white"
             >
-              <img
-                src="/images/books/book-page-04.png"
-                alt="Page 4"
-                className="w-full h-full object-cover"
-              />
-              {/* Right arrow - always visible */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
-                ›
+              <div className="relative w-full h-full cursor-pointer" onClick={() => handleBookClick('right', true)}>
+                <img
+                  src={mobilePageIndex === 2 ? "/images/books/book-page-03.png" : "/images/books/book-page-04.png"}
+                  alt={`Page ${mobilePageIndex + 1}`}
+                  className="w-full h-full object-contain"
+                />
+                {/* Both arrows on mobile */}
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                  ‹
+                </div>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+                  ›
+                </div>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
 
         {bookState === 'closed-back' && (
