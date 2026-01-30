@@ -205,7 +205,7 @@ export default function Home() {
 
       {/* About the Series */}
       <section className="py-20 px-4 bg-blue-50 relative overflow-hidden">
-        {/* Animated Flapping Cockerel */}
+        {/* Animated Flapping Cockerel - starts visible, flies away left */}
         <motion.div
           className="absolute left-8 md:left-16 top-12 md:top-16 z-10"
           initial={{ x: 0, y: 0, opacity: 1 }}
@@ -226,6 +226,39 @@ export default function Home() {
             src="/images/characters/Cockerel.png"
             alt="Flapping Cockerel"
             className="w-32 md:w-40 h-auto"
+            animate={{
+              scaleX: [1, 1.1, 1, 0.9, 1],
+              scaleY: [1, 0.9, 1, 1.1, 1],
+            }}
+            transition={{
+              duration: 0.3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </motion.div>
+
+        {/* Animated Brown Bird - flies in from right after cockerel leaves */}
+        <motion.div
+          className="absolute right-8 md:right-16 top-16 md:top-20 z-10"
+          initial={{ x: 300, y: -200, opacity: 0 }}
+          animate={{
+            y: [-200, -15, 0, -10, 0, -15, 0, -10, 0],
+            x: [300, 5, 0, -5, 0, 5, 0, -5, 0],
+            rotate: [45, 5, -5, 3, -5, 5, -5, 3, -5],
+            opacity: [0, 1, 1, 1, 1, 1, 1, 1, 1],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            repeatDelay: 0,
+            ease: "easeInOut",
+          }}
+        >
+          <motion.img
+            src="/images/characters/BrownBird.png"
+            alt="Flying Brown Bird"
+            className="w-28 md:w-36 h-auto"
             animate={{
               scaleX: [1, 1.1, 1, 0.9, 1],
               scaleY: [1, 0.9, 1, 1.1, 1],
