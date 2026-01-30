@@ -220,7 +220,37 @@ export default function Home() {
       </section>
 
       {/* About the Series */}
-      <section className="py-20 px-4 bg-blue-50">
+      <section className="py-20 px-4 bg-blue-50 relative overflow-hidden">
+        {/* Animated Flapping Cockerel */}
+        <motion.div
+          className="absolute left-8 md:left-16 top-12 md:top-16 z-10"
+          animate={{
+            y: [0, -15, 0, -10, 0],
+            x: [0, 5, 0, -5, 0],
+            rotate: [-5, 5, -5, 3, -5],
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <motion.img
+            src="/images/characters/Cockerel.png"
+            alt="Flapping Cockerel"
+            className="w-20 md:w-28 h-auto"
+            animate={{
+              scaleX: [1, 1.1, 1, 0.9, 1],
+              scaleY: [1, 0.9, 1, 1.1, 1],
+            }}
+            transition={{
+              duration: 0.3,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          />
+        </motion.div>
+        
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8 text-gray-800">
             About the Arlo's Big... Series
