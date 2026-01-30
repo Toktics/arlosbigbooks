@@ -146,8 +146,8 @@ export default function Home() {
               <AnimatePresence mode="wait">
                 {isAboutInView && !isScrolling ? (
                   <motion.img
-                    key="gif-active"
-                    src="/images/characters/ArloYawnStretch.gif"
+                    key={`gif-${Date.now()}`}
+                    src={`/images/characters/ArloYawnStretch.gif?v=${Date.now()}`}
                     alt="Arlo Yawning and Stretching"
                     className="w-40 md:w-48 h-auto"
                     initial={{ opacity: 0 }}
@@ -155,21 +155,11 @@ export default function Home() {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   />
-                ) : (
-                  <motion.img
-                    key="static"
-                    src="/images/characters/ArloBedYawn.png"
-                    alt="Arlo Sleeping"
-                    className="w-40 md:w-48 h-auto"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
-                  />
-                )}
+                ) : null}
               </AnimatePresence>
             </div>
-            <h3 className="text-3xl font-bold mb-6">
+            <div className="pr-0 md:pr-56">
+              <h3 className="text-3xl font-bold mb-6">
               <span className="text-red-500">A</span>
               <span className="text-blue-500">R</span>
               <span className="text-yellow-500">L</span>
@@ -213,6 +203,7 @@ export default function Home() {
               With lively rhyming text and vibrant illustrations, <em>Arlo's Big Yawn</em> is a book kids ask to hear again… and again.
             </p>
           </div>
+        </div>
         </div>
       </section>
 
