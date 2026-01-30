@@ -453,7 +453,7 @@ export default function Home() {
                   Mateo's<br/>Word Fun
                 </h3>
                 <p className="text-xl text-white mb-4 leading-relaxed font-semibold drop-shadow-sm">
-                  Rhyming games and read-aloud prompts for little learners!
+                  Rhyming games and read-aloud prompts for kids!
                 </p>
                 <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors shadow-lg">
                   Download FREE
@@ -477,7 +477,7 @@ export default function Home() {
                 className="absolute top-1/2 right-8 -translate-y-1/2 w-40 h-40 object-contain z-10"
               />
               
-              <div className="relative z-20">
+              <div className="relative z-20 max-w-[60%]">
                 <h3 className="text-4xl font-bold text-white mb-3 font-[var(--font-fredoka)] drop-shadow-md">
                   Charlie's<br/>Story Time
                 </h3>
