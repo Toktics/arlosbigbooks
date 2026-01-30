@@ -42,7 +42,7 @@ export default function Home() {
       </section>
 
       {/* Animated Mouse Driving Across */}
-      <div className="relative w-full overflow-hidden h-28 -mt-12 md:-mt-12">
+      <div className="relative w-full overflow-hidden h-28 -mt-16 md:-mt-16">
         <motion.div
           initial={{ x: '-150px' }}
           animate={{ x: 'calc(100vw + 150px)' }}
