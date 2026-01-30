@@ -170,7 +170,7 @@ export default function Home() {
                 )}
               </AnimatePresence>
             </div>
-            <div className="pr-0 md:pr-56">
+            <div className="pr-0 pb-52 md:pb-0 md:pr-56">
               <h3 className="text-3xl font-bold mb-6">
               <span className="text-red-500">A</span>
               <span className="text-blue-500">R</span>
