@@ -121,11 +121,11 @@ export default function Home() {
             />
           </div>
           <div className="bg-amber-50 rounded-3xl p-8 md:p-12 mb-8 relative">
-            {/* Animated Arlo Yawn Stretch - top right of yellow box */}
+            {/* Animated Arlo Yawn Stretch - bottom right corner of yellow box */}
             <motion.img
               src="/images/characters/ArloYawnStretch.gif"
               alt="Arlo Yawning and Stretching"
-              className="absolute right-4 md:right-8 top-4 md:top-8 w-40 md:w-48 h-auto z-20"
+              className="absolute right-4 md:right-8 bottom-4 md:bottom-8 w-40 md:w-48 h-auto z-20"
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: false, amount: 0.5 }}
