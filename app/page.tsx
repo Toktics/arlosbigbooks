@@ -32,17 +32,6 @@ export default function Home() {
               <p className="text-xl md:text-2xl text-gray-600 leading-relaxed">
                 Join Arlo in a world where yawns grow huge, ideas get bigger, and ordinary days become extraordinary.
               </p>
-              
-              <div className="pt-4">
-                <a 
-                  href="https://www.amazon.com" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-red-500 text-white px-10 py-5 rounded-full text-xl font-bold uppercase tracking-wide shadow-2xl hover:bg-red-600 hover:scale-105 transition-all duration-300 font-[var(--font-fredoka)]"
-                >
-                  Get the Books! 📚
-                </a>
-              </div>
             </div>
           </div>
         </div>
