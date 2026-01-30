@@ -110,14 +110,30 @@ export default function Home() {
       </section>
 
       {/* About the Book */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-            About the Book
-          </h2>
-          
+      <section className="py-20 px-4 bg-white relative overflow-hidden">
+        {/* Arlo Bed Yawn character - positioned across white/yellow boundary */}
+        <img
+          src="/images/characters/ArloBedYawn.png"
+          alt="Arlo Yawning"
+          className="absolute right-0 top-0 w-64 h-auto z-0 opacity-90"
+        />
+        
+        <div className="max-w-4xl mx-auto relative z-10">
           <div className="bg-amber-50 rounded-3xl p-8 md:p-12 mb-8">
-            <h3 className="text-3xl font-bold text-red-500 mb-6">Arlo's Big Yawn</h3>
+            <h3 className="text-3xl font-bold mb-6">
+              <span className="text-red-500">A</span>
+              <span className="text-blue-500">R</span>
+              <span className="text-yellow-500">L</span>
+              <span className="text-green-500">O</span>
+              <span className="text-orange-500">'</span>
+              <span className="text-purple-500">S</span>
+              <span className="text-gray-800"> Big </span>
+              <span className="text-red-500">Y</span>
+              <span className="text-blue-500">A</span>
+              <span className="text-yellow-500">W</span>
+              <span className="text-green-500">N</span>
+              <span className="text-orange-500">!</span>
+            </h3>
             <p className="text-xl text-gray-700 mb-6 leading-relaxed italic">
               Sometimes big things start with a tiny moment.
             </p>
