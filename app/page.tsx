@@ -2,10 +2,29 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence, useInView } from 'framer-motion'
 import FlipBook from './components/FlipBook'
+import { useRef, useState, useEffect } from 'react'
 
 export default function Home() {
+  const aboutSectionRef = useRef(null)
+  const isAboutInView = useInView(aboutSectionRef, { amount: 0.5 })
+  const [isScrolling, setIsScrolling] = useState(false)
+
+  useEffect(() => {
+    let timeout: NodeJS.Timeout
+    const handleScroll = () => {
+      setIsScrolling(true)
+      clearTimeout(timeout)
+      timeout = setTimeout(() => setIsScrolling(false), 150)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      clearTimeout(timeout)
+    }
+  }, [])
+
   return (
     <main className="min-h-screen bg-white">
       {/* New Hero Section */}
@@ -110,7 +129,7 @@ export default function Home() {
       </section>
 
       {/* About the Book - Full width yellow background */}
-      <section className="py-12 px-4 bg-gradient-to-br from-yellow-50 to-orange-50">
+      <section ref={aboutSectionRef} className="py-12 px-4 bg-gradient-to-br from-yellow-50 to-orange-50">
         <div className="max-w-4xl mx-auto relative">
           <div className="bg-white rounded-3xl p-8 md:p-12 mb-8 relative pt-32 md:pt-36">
             {/* Arlo Bed Yawn character - at top of yellow box, pushed up to overlap */}
@@ -124,16 +143,40 @@ export default function Home() {
             
             {/* Animated Arlo Yawn Stretch - bottom right corner of yellow box */}
             <div className="absolute right-4 md:right-8 bottom-4 md:bottom-8 z-20">
-              <motion.img
-                src={`/images/characters/ArloYawnStretch.gif?v=${Date.now()}`}
-                alt="Arlo Yawning and Stretching"
-                className="w-40 md:w-48 h-auto"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: false, amount: 0.5 }}
-                transition={{ duration: 0.3 }}
-                key={Math.random()} // Force re-render to restart GIF
-              />
+              <AnimatePresence mode="wait">
+                {isAboutInView && !isScrolling ? (
+                  <motion.img
+                    key={`gif-${Date.now()}`}
+                    src={`/images/characters/ArloYawnStretch.gif?v=${Date.now()}`}
+                    alt="Arlo Yawning and Stretching"
+                    className="w-40 md:w-48 h-auto"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    onLoad={(e) => {
+                      // GIF will play once automatically
+                      // After 3 seconds (gif duration), replace with static image
+                      setTimeout(() => {
+                        const img = e.currentTarget
+                        if (img) {
+                          img.src = '/images/characters/ArloBedYawn.png'
+                        }
+                      }, 3000)
+                    }}
+                  />
+                ) : (
+                  <motion.img
+                    key="static"
+                    src="/images/characters/ArloBedYawn.png"
+                    alt="Arlo Sleeping"
+                    className="w-40 md:w-48 h-auto"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  />
+                )}
+              </AnimatePresence>
             </div>
             <h3 className="text-3xl font-bold mb-6">
               <span className="text-red-500">A</span>
