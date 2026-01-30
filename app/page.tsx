@@ -110,17 +110,18 @@ export default function Home() {
       </section>
 
       {/* About the Book */}
-      <section className="pt-0 pb-12 px-4 bg-white relative overflow-hidden">
+      <section className="pt-0 pb-12 px-4 bg-white relative overflow-visible">
         <div className="max-w-4xl mx-auto relative">
-          {/* Arlo Bed Yawn character - centered, overlapping white/yellow boundary */}
-          <div className="flex justify-center mb-0 -mb-96">
-            <img
-              src="/images/characters/ArloBedYawn.png"
-              alt="Arlo Yawning"
-              className="w-56 md:w-64 h-auto relative z-10"
-            />
-          </div>
           <div className="bg-amber-50 rounded-3xl p-8 md:p-12 mb-8 relative">
+            {/* Arlo Bed Yawn character - at top of yellow box, pushed up to overlap */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+              <img
+                src="/images/characters/ArloBedYawn.png"
+                alt="Arlo Yawning"
+                className="w-56 md:w-64 h-auto"
+              />
+            </div>
+            
             {/* Animated Arlo Yawn Stretch - bottom right corner of yellow box */}
             <motion.img
               src={`/images/characters/ArloYawnStretch.gif?v=${Date.now()}`}
