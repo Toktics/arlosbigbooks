@@ -208,21 +208,24 @@ export default function Home() {
         {/* Animated Flapping Cockerel */}
         <motion.div
           className="absolute left-8 md:left-16 top-12 md:top-16 z-10"
+          initial={{ x: 0, y: 0, opacity: 1 }}
           animate={{
-            y: [0, -15, 0, -10, 0],
-            x: [0, 5, 0, -5, 0],
-            rotate: [-5, 5, -5, 3, -5],
+            y: [0, -15, 0, -10, 0, -15, 0, -10, 0, -200],
+            x: [0, 5, 0, -5, 0, 5, 0, -5, 0, -300],
+            rotate: [-5, 5, -5, 3, -5, 5, -5, 3, -5, -45],
+            opacity: [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
           }}
           transition={{
-            duration: 2,
+            duration: 7,
             repeat: Infinity,
+            repeatDelay: 0,
             ease: "easeInOut",
           }}
         >
           <motion.img
             src="/images/characters/Cockerel.png"
             alt="Flapping Cockerel"
-            className="w-20 md:w-28 h-auto"
+            className="w-32 md:w-40 h-auto"
             animate={{
               scaleX: [1, 1.1, 1, 0.9, 1],
               scaleY: [1, 0.9, 1, 1.1, 1],
