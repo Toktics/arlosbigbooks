@@ -102,12 +102,13 @@ export default function FlipBook() {
           <motion.div
             key="pages-1-2"
             initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            animate={{ scale: 1, opacity: 1, width: '200%' }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.4 }}
             className="absolute inset-0 flex gap-0"
+            style={{ width: '200%', left: '0' }}
           >
-            {/* Left page - clickable with arrow */}
+            {/* Left page - full size */}
             <div
               className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
               onClick={() => handleBookClick('left')}
@@ -118,11 +119,11 @@ export default function FlipBook() {
                 className="w-full h-full object-cover"
               />
               {/* Left arrow */}
-              <div className="absolute left-2 top-1/2 -translate-y-1/2 text-red-500 text-4xl font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-red-500 text-5xl font-bold opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 rounded-full w-12 h-12 flex items-center justify-center">
                 ←
               </div>
             </div>
-            {/* Right page - clickable with arrow */}
+            {/* Right page - full size */}
             <div
               className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
               onClick={() => handleBookClick('right')}
@@ -133,7 +134,7 @@ export default function FlipBook() {
                 className="w-full h-full object-cover"
               />
               {/* Right arrow */}
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 text-red-500 text-4xl font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-5xl font-bold opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 rounded-full w-12 h-12 flex items-center justify-center">
                 →
               </div>
             </div>
@@ -144,12 +145,13 @@ export default function FlipBook() {
           <motion.div
             key="pages-3-4"
             initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            animate={{ scale: 1, opacity: 1, width: '200%' }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.4 }}
             className="absolute inset-0 flex gap-0"
+            style={{ width: '200%', left: '0' }}
           >
-            {/* Left page - clickable with arrow */}
+            {/* Left page - full size */}
             <div
               className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
               onClick={() => handleBookClick('left')}
@@ -160,11 +162,11 @@ export default function FlipBook() {
                 className="w-full h-full object-cover"
               />
               {/* Left arrow */}
-              <div className="absolute left-2 top-1/2 -translate-y-1/2 text-red-500 text-4xl font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute left-4 top-1/2 -translate-y-1/2 text-red-500 text-5xl font-bold opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 rounded-full w-12 h-12 flex items-center justify-center">
                 ←
               </div>
             </div>
-            {/* Right page - clickable with arrow */}
+            {/* Right page - full size */}
             <div
               className="relative w-1/2 cursor-pointer hover:opacity-90 transition-opacity group"
               onClick={() => handleBookClick('right')}
@@ -175,7 +177,7 @@ export default function FlipBook() {
                 className="w-full h-full object-cover"
               />
               {/* Right arrow */}
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 text-red-500 text-4xl font-bold opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 text-red-500 text-5xl font-bold opacity-0 group-hover:opacity-100 transition-opacity bg-white/80 rounded-full w-12 h-12 flex items-center justify-center">
                 →
               </div>
             </div>
