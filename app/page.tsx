@@ -42,7 +42,7 @@ export default function Home() {
       </section>
 
       {/* Animated Mouse Driving Across */}
-      <div className="relative w-full overflow-hidden h-20">
+      <div className="relative w-full overflow-hidden h-24 -mt-2">
         <motion.div
           initial={{ x: '-150px' }}
           animate={{ x: 'calc(100vw + 150px)' }}
@@ -71,7 +71,7 @@ export default function Home() {
       </div>
 
       {/* Featured Book */}
-      <section className="pt-4 pb-12 px-4 bg-white">
+      <section className="pt-2 pb-12 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 font-[var(--font-fredoka)] text-gray-800">
             Start with Arlo's <span className="text-red-500">Big Yawn!</span>
