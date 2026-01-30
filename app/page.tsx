@@ -151,12 +151,23 @@ export default function Home() {
                     src={`/images/characters/ArloYawnStretch.gif?v=${Date.now()}`}
                     alt="Arlo Yawning and Stretching"
                     className="w-40 md:w-48 h-auto"
-                    initial={{ opacity: 0 }}
+                    initial={{ opacity: 1 }}
                     animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    exit={{ opacity: 1 }}
+                    transition={{ duration: 0 }}
                   />
-                ) : null}
+                ) : (
+                  <motion.img
+                    key="static"
+                    src="/images/characters/ArloBedYawn.png"
+                    alt="Arlo Sleeping"
+                    className="w-40 md:w-48 h-auto"
+                    initial={{ opacity: 1 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 1 }}
+                    transition={{ duration: 0 }}
+                  />
+                )}
               </AnimatePresence>
             </div>
             <div className="pr-0 md:pr-56">
