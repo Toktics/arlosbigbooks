@@ -144,31 +144,15 @@ export default function Home() {
             
             {/* Animated Arlo Yawn Stretch - bottom right corner of yellow box */}
             <div className="absolute right-4 md:right-8 bottom-4 md:bottom-8 z-20">
-              <AnimatePresence mode="wait">
-                {isAboutInView && !isScrolling ? (
-                  <motion.img
-                    key={`gif-${Date.now()}`}
-                    src={`/images/characters/ArloYawnStretch.gif?v=${Date.now()}`}
-                    alt="Arlo Yawning and Stretching"
-                    className="w-40 md:w-48 h-auto"
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 1 }}
-                    transition={{ duration: 0 }}
-                  />
-                ) : (
-                  <motion.img
-                    key="static"
-                    src="/images/characters/ArloStaticGif.png"
-                    alt="Arlo Sleeping"
-                    className="w-40 md:w-48 h-auto"
-                    initial={{ opacity: 1 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 1 }}
-                    transition={{ duration: 0 }}
-                  />
-                )}
-              </AnimatePresence>
+              <motion.img
+                key={isAboutInView && !isScrolling ? `gif-${Date.now()}` : 'frozen'}
+                src={`/images/characters/ArloYawnStretch.gif${isAboutInView && !isScrolling ? `?v=${Date.now()}` : ''}`}
+                alt="Arlo"
+                className="w-40 md:w-48 h-auto"
+                initial={{ opacity: 1 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0 }}
+              />
             </div>
             <div className="pr-0 pb-52 md:pb-0 md:pr-56">
               <h3 className="text-3xl font-bold mb-6">
