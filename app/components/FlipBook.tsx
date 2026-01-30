@@ -110,11 +110,11 @@ export default function FlipBook() {
           <motion.div
             key="pages-1-2"
             initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1, width: '200%' }}
+            animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="absolute inset-0 flex gap-0 bg-white"
-            style={{ width: '200%', left: '0' }}
+            className="absolute inset-0 flex gap-0 bg-white md:w-[200%]"
+            style={{ width: '100%' }}
           >
             {/* Left page - full size */}
             <div
@@ -153,11 +153,11 @@ export default function FlipBook() {
           <motion.div
             key="pages-3-4"
             initial={{ scale: 0.95, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1, width: '200%' }}
+            animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.95, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="absolute inset-0 flex gap-0 bg-white"
-            style={{ width: '200%', left: '0' }}
+            className="absolute inset-0 flex gap-0 bg-white md:w-[200%]"
+            style={{ width: '100%' }}
           >
             {/* Left page - full size */}
             <div
