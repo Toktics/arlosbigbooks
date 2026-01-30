@@ -1,63 +1,15 @@
 'use client'
 
-import { motion, AnimatePresence, useInView } from 'framer-motion'
-import { useState, useEffect, useRef } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from 'react'
 
 type BookState = 'closed-front' | 'open-page-1-2' | 'open-page-3-4' | 'closed-back'
 
 export default function FlipBook() {
   const [bookState, setBookState] = useState<BookState>('closed-front')
   const [mobilePageIndex, setMobilePageIndex] = useState(0) // 0=page1, 1=page2, 2=page3, 3=page4
-  const [showHint, setShowHint] = useState(false)
-  const [isScrolling, setIsScrolling] = useState(false)
-  const bookRef = useRef<HTMLDivElement>(null)
-  const isInView = useInView(bookRef, { amount: 0.5 })
-  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolling(true)
-      setShowHint(false) // Hide hint immediately when scrolling starts
-      
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current)
-      }
-      
-      scrollTimeoutRef.current = setTimeout(() => {
-        setIsScrolling(false)
-      }, 150)
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      if (scrollTimeoutRef.current) {
-        clearTimeout(scrollTimeoutRef.current)
-      }
-    }
-  }, [])
-
-  useEffect(() => {
-    const isClosed = bookState === 'closed-front' || bookState === 'closed-back'
-    
-    // Only show hint if: in view, not scrolling, and book is closed
-    if (isInView && !isScrolling && isClosed) {
-      const timer = setTimeout(() => {
-        // Double-check conditions before showing
-        if (isInView && !isScrolling) {
-          setShowHint(true)
-        }
-      }, 500)
-      return () => clearTimeout(timer)
-    } else {
-      setShowHint(false)
-    }
-  }, [isInView, isScrolling, bookState])
 
   const handleBookClick = (side?: 'left' | 'right', isMobile = false) => {
-    setShowHint(false) // Hide hint immediately when book is clicked
-    
     if (isMobile) {
       // Mobile: cycle through individual pages
       if (bookState === 'closed-front') {
@@ -112,7 +64,7 @@ export default function FlipBook() {
   const isClosed = bookState === 'closed-front' || bookState === 'closed-back'
 
   return (
-    <div ref={bookRef} className="relative w-full aspect-square max-w-sm mx-auto z-10">
+    <div className="relative w-full aspect-square max-w-sm mx-auto z-10">
       <AnimatePresence mode="wait">
         {bookState === 'closed-front' && (
           <motion.div
@@ -130,6 +82,10 @@ export default function FlipBook() {
               alt="Arlo's Big Yawn - Front Cover"
               className="w-full h-full object-contain drop-shadow-2xl"
             />
+            {/* Right arrow on front cover */}
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+              ›
+            </div>
           </motion.div>
         )}
 
@@ -283,22 +239,13 @@ export default function FlipBook() {
               alt="Arlo's Big Yawn - Back Cover"
               className="w-full h-full object-contain drop-shadow-2xl"
             />
+            {/* Left arrow on back cover */}
+            <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-800 text-6xl font-light pointer-events-none">
+              ‹
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      {/* Click hint - only show when stopped scrolling and in view */}
-      {isClosed && showHint && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 0.3 }}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold pointer-events-none"
-        >
-          Click to open! 📖
-        </motion.div>
-      )}
     </div>
   )
 }
