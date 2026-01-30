@@ -110,7 +110,7 @@ export default function Home() {
       </section>
 
       {/* About the Book */}
-      <section className="py-12 px-4 bg-white relative">
+      <section className="py-12 px-4 bg-white relative overflow-hidden">
         <div className="max-w-4xl mx-auto relative">
           {/* Arlo Bed Yawn character - centered, overlapping white/yellow boundary */}
           <div className="flex justify-center mb-0 -mb-32">
@@ -120,7 +120,18 @@ export default function Home() {
               className="w-56 md:w-64 h-auto relative z-10"
             />
           </div>
-          <div className="bg-amber-50 rounded-3xl p-8 md:p-12 mb-8">
+          <div className="bg-amber-50 rounded-3xl p-8 md:p-12 mb-8 relative">
+            {/* Animated Arlo Yawn Stretch - top right of yellow box */}
+            <motion.img
+              src="/images/characters/ArloYawnStretch.gif"
+              alt="Arlo Yawning and Stretching"
+              className="absolute right-8 top-8 w-48 md:w-56 h-auto z-20"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: false, amount: 0.5 }}
+              transition={{ duration: 0.3 }}
+              key={Math.random()} // Force re-render to restart GIF
+            />
             <h3 className="text-3xl font-bold mb-6">
               <span className="text-red-500">A</span>
               <span className="text-blue-500">R</span>
