@@ -476,14 +476,18 @@ export default function Home() {
               
               <div className="relative z-20 max-w-[55%] pr-2">
                 <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3 font-[var(--font-fredoka)] drop-shadow-md">
-                  Aria's<br/>Coloring Pages
+                  Aria's<br/>Colouring Pages
                 </h3>
                 <p className="text-lg md:text-xl text-white mb-3 md:mb-4 leading-relaxed font-semibold drop-shadow-sm">
                   Bring Arlo's Big Yawn to life! Perfect for ages 3–6.
                 </p>
-                <button className="bg-white text-pink-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-pink-50 transition-colors shadow-lg">
+                <a 
+                  href="/activity-sheets/AriasColouringPages.pdf"
+                  download
+                  className="inline-block bg-white text-pink-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-pink-50 transition-colors shadow-lg"
+                >
                   Download FREE
-                </button>
+                </a>
               </div>
             </motion.div>
 
@@ -510,9 +514,13 @@ export default function Home() {
                 <p className="text-lg md:text-xl text-white mb-3 md:mb-4 leading-relaxed font-semibold drop-shadow-sm">
                   Rhyming games and read-aloud prompts for kids!
                 </p>
-                <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors shadow-lg">
+                <a 
+                  href="/activity-sheets/MateosWordFun.pdf"
+                  download
+                  className="inline-block bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors shadow-lg"
+                >
                   Download FREE
-                </button>
+                </a>
               </div>
             </motion.div>
 
@@ -539,9 +547,13 @@ export default function Home() {
                 <p className="text-lg md:text-xl text-white mb-3 md:mb-4 leading-relaxed font-semibold drop-shadow-sm">
                   Make bedtime stories interactive and silly!
                 </p>
-                <button className="bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-50 transition-colors shadow-lg">
+                <a 
+                  href="/activity-sheets/CharliesStoryTime.pdf"
+                  download
+                  className="inline-block bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-50 transition-colors shadow-lg"
+                >
                   Download FREE
-                </button>
+                </a>
               </div>
             </motion.div>
 
@@ -568,9 +580,13 @@ export default function Home() {
                 <p className="text-lg md:text-xl text-white mb-3 md:mb-4 leading-relaxed font-semibold drop-shadow-sm">
                   Draw Arlo's next BIG adventure — what grows huge next?
                 </p>
-                <button className="bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition-colors shadow-lg">
+                <a 
+                  href="/activity-sheets/LucasCreateYourOwn.pdf"
+                  download
+                  className="inline-block bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition-colors shadow-lg"
+                >
                   Download FREE
-                </button>
+                </a>
               </div>
             </motion.div>
           </div>
