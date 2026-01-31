@@ -643,14 +643,14 @@ export default function Home() {
             <img 
               src="/images/Outside.png" 
               alt="Hand-drawn illustration" 
-              className="absolute top-4 right-4 w-24 h-24 md:w-32 md:h-32 opacity-20 rotate-12"
+              className="absolute -top-12 -right-12 w-48 h-48 md:w-64 md:h-64 rotate-12"
             />
             
             {/* Hand-drawn image - bottom left */}
             <img 
               src="/images/Inside.png" 
               alt="Hand-drawn illustration" 
-              className="absolute bottom-4 left-4 w-24 h-24 md:w-32 md:h-32 opacity-20 -rotate-12"
+              className="absolute -bottom-12 -left-12 w-48 h-48 md:w-64 md:h-64 -rotate-12"
             />
             
             <p className="text-xl text-gray-700 mb-6 leading-relaxed">
