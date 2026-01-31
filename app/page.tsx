@@ -369,11 +369,12 @@ export default function Home() {
       <section className="py-20 px-4 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 relative overflow-hidden">
         {/* Lava Lamp Effect - Multiple organic blobs */}
         <motion.div
-          className="absolute w-64 h-64 rounded-full opacity-30 blur-3xl"
+          className="absolute w-64 h-64 rounded-full blur-3xl"
           style={{ 
-            background: 'radial-gradient(circle, rgba(255,255,0,0.8) 0%, rgba(255,200,0,0.4) 50%, transparent 100%)',
+            background: 'radial-gradient(circle, rgba(255,255,0,0.6) 0%, rgba(255,200,0,0.3) 50%, transparent 100%)',
             left: '10%',
-            bottom: '0%'
+            top: '60%',
+            zIndex: 1
           }}
           animate={{
             y: [-100, -400, -100],
@@ -389,11 +390,12 @@ export default function Home() {
         />
         
         <motion.div
-          className="absolute w-96 h-96 rounded-full opacity-25 blur-3xl"
+          className="absolute w-96 h-96 rounded-full blur-3xl"
           style={{ 
-            background: 'radial-gradient(circle, rgba(255,100,0,0.8) 0%, rgba(255,150,0,0.4) 50%, transparent 100%)',
+            background: 'radial-gradient(circle, rgba(255,100,0,0.5) 0%, rgba(255,150,0,0.25) 50%, transparent 100%)',
             right: '15%',
-            bottom: '10%'
+            top: '50%',
+            zIndex: 1
           }}
           animate={{
             y: [50, -450, 50],
@@ -410,11 +412,12 @@ export default function Home() {
         />
         
         <motion.div
-          className="absolute w-80 h-80 rounded-full opacity-20 blur-3xl"
+          className="absolute w-80 h-80 rounded-full blur-3xl"
           style={{ 
-            background: 'radial-gradient(circle, rgba(255,69,0,0.9) 0%, rgba(255,120,0,0.5) 50%, transparent 100%)',
+            background: 'radial-gradient(circle, rgba(255,69,0,0.4) 0%, rgba(255,120,0,0.2) 50%, transparent 100%)',
             left: '40%',
-            bottom: '-10%'
+            top: '70%',
+            zIndex: 1
           }}
           animate={{
             y: [0, -500, 0],
@@ -431,11 +434,12 @@ export default function Home() {
         />
         
         <motion.div
-          className="absolute w-72 h-72 rounded-full opacity-35 blur-3xl"
+          className="absolute w-72 h-72 rounded-full blur-3xl"
           style={{ 
-            background: 'radial-gradient(circle, rgba(255,215,0,0.7) 0%, rgba(255,180,0,0.4) 50%, transparent 100%)',
+            background: 'radial-gradient(circle, rgba(255,215,0,0.5) 0%, rgba(255,180,0,0.25) 50%, transparent 100%)',
             left: '60%',
-            bottom: '5%'
+            top: '65%',
+            zIndex: 1
           }}
           animate={{
             y: [80, -380, 80],
@@ -452,11 +456,12 @@ export default function Home() {
         />
         
         <motion.div
-          className="absolute w-56 h-56 rounded-full opacity-30 blur-3xl"
+          className="absolute w-56 h-56 rounded-full blur-3xl"
           style={{ 
-            background: 'radial-gradient(circle, rgba(255,140,0,0.8) 0%, rgba(255,100,0,0.5) 50%, transparent 100%)',
+            background: 'radial-gradient(circle, rgba(255,140,0,0.5) 0%, rgba(255,100,0,0.25) 50%, transparent 100%)',
             right: '5%',
-            bottom: '15%'
+            top: '55%',
+            zIndex: 1
           }}
           animate={{
             y: [120, -420, 120],
@@ -473,11 +478,12 @@ export default function Home() {
         />
         
         <motion.div
-          className="absolute w-88 h-88 rounded-full opacity-28 blur-3xl"
+          className="absolute w-88 h-88 rounded-full blur-3xl"
           style={{ 
-            background: 'radial-gradient(circle, rgba(255,200,50,0.7) 0%, rgba(255,160,0,0.4) 50%, transparent 100%)',
+            background: 'radial-gradient(circle, rgba(255,200,50,0.45) 0%, rgba(255,160,0,0.22) 50%, transparent 100%)',
             left: '25%',
-            bottom: '-5%'
+            top: '75%',
+            zIndex: 1
           }}
           animate={{
             y: [-50, -480, -50],
