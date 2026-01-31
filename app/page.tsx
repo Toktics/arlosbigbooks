@@ -638,19 +638,19 @@ export default function Home() {
             Meet the Author
           </h2>
           
-          <div className="bg-blue-50 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-            {/* Hand-drawn image - top right */}
+          <div className="bg-blue-50 rounded-3xl p-8 md:p-12 relative overflow-visible">
+            {/* Hand-drawn image - top right - pushed into white margin */}
             <img 
               src="/images/Outside.png" 
               alt="Hand-drawn illustration" 
-              className="absolute -top-12 -right-12 w-48 h-48 md:w-64 md:h-64 rotate-12"
+              className="absolute -top-24 -right-24 md:-top-32 md:-right-32 w-48 h-48 md:w-64 md:h-64 rotate-12 z-10"
             />
             
-            {/* Hand-drawn image - bottom left */}
+            {/* Hand-drawn image - bottom left - pushed into white margin */}
             <img 
               src="/images/Inside.png" 
               alt="Hand-drawn illustration" 
-              className="absolute -bottom-12 -left-12 w-48 h-48 md:w-64 md:h-64 -rotate-12"
+              className="absolute -bottom-24 -left-24 md:-bottom-32 md:-left-32 w-48 h-48 md:w-64 md:h-64 -rotate-12 z-10"
             />
             
             <p className="text-xl text-gray-700 mb-6 leading-relaxed">
