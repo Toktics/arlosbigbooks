@@ -704,9 +704,33 @@ export default function Home() {
           <p className="text-gray-500 text-sm mb-2">
             Arlo's Big... is a children's picture book series for ages 3–6 by Martin King
           </p>
-          <p className="text-gray-500 text-sm">
+          <p className="text-gray-500 text-sm mb-4">
             © 2026 Martin King. All rights reserved.
           </p>
+          
+          {/* Legal Links */}
+          <div className="flex justify-center gap-6 mt-6 flex-wrap">
+            <a 
+              href="/privacy" 
+              className="text-gray-400 hover:text-yellow-400 transition-colors text-sm"
+            >
+              Privacy Policy
+            </a>
+            <span className="text-gray-600">•</span>
+            <a 
+              href="/cookies" 
+              className="text-gray-400 hover:text-yellow-400 transition-colors text-sm"
+            >
+              Cookie Policy
+            </a>
+            <span className="text-gray-600">•</span>
+            <a 
+              href="/terms" 
+              className="text-gray-400 hover:text-yellow-400 transition-colors text-sm"
+            >
+              Terms & Conditions
+            </a>
+          </div>
         </div>
       </footer>
     </main>
