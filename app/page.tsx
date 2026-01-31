@@ -366,19 +366,19 @@ export default function Home() {
       </section>
 
       {/* Arlo's Activity Zone */}
-      <section className="py-20 px-4 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 relative overflow-hidden">
-        {/* Lava Lamp Effect - Solid colors with lower opacity, bigger blur */}
+      <section className="py-20 px-4 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 relative overflow-visible">
+        {/* Lava Lamp Effect - Higher opacity, visible colors, stay within bounds */}
         <motion.div
-          className="absolute w-80 h-80 rounded-full bg-purple-600 opacity-20 blur-3xl"
+          className="absolute w-80 h-80 rounded-full bg-purple-600 opacity-30 blur-3xl pointer-events-none"
           style={{ 
-            left: '5%',
-            top: '20%',
-            zIndex: 5
+            left: '10%',
+            top: '25%',
+            zIndex: 1
           }}
           animate={{
-            y: [0, -80, 0],
-            x: [0, 40, 0],
-            scale: [1, 1.3, 1],
+            y: [0, -60, 0],
+            x: [0, 30, 0],
+            scale: [1, 1.2, 1],
           }}
           transition={{
             duration: 12,
@@ -388,16 +388,16 @@ export default function Home() {
         />
         
         <motion.div
-          className="absolute w-72 h-72 rounded-full bg-red-700 opacity-25 blur-3xl"
+          className="absolute w-72 h-72 rounded-full bg-red-800 opacity-35 blur-3xl pointer-events-none"
           style={{ 
-            right: '8%',
-            top: '35%',
-            zIndex: 5
+            right: '10%',
+            top: '30%',
+            zIndex: 1
           }}
           animate={{
-            y: [0, 60, 0],
-            x: [0, -30, 0],
-            scale: [1, 1.2, 1],
+            y: [0, 50, 0],
+            x: [0, -25, 0],
+            scale: [1, 1.15, 1],
           }}
           transition={{
             duration: 15,
@@ -408,16 +408,16 @@ export default function Home() {
         />
         
         <motion.div
-          className="absolute w-64 h-64 rounded-full bg-orange-600 opacity-20 blur-3xl"
+          className="absolute w-64 h-64 rounded-full bg-orange-700 opacity-30 blur-3xl pointer-events-none"
           style={{ 
             left: '45%',
-            top: '55%',
-            zIndex: 5
+            top: '50%',
+            zIndex: 1
           }}
           animate={{
-            y: [0, -50, 0],
-            x: [0, 25, 0],
-            scale: [1, 1.4, 1],
+            y: [0, -40, 0],
+            x: [0, 20, 0],
+            scale: [1, 1.3, 1],
           }}
           transition={{
             duration: 18,
@@ -428,15 +428,15 @@ export default function Home() {
         />
         
         <motion.div
-          className="absolute w-96 h-96 rounded-full bg-yellow-300 opacity-15 blur-3xl"
+          className="absolute w-96 h-96 rounded-full bg-pink-500 opacity-25 blur-3xl pointer-events-none"
           style={{ 
             right: '15%',
-            top: '60%',
-            zIndex: 5
+            top: '55%',
+            zIndex: 1
           }}
           animate={{
-            y: [0, 70, 0],
-            scale: [1, 1.25, 1],
+            y: [0, 60, 0],
+            scale: [1, 1.2, 1],
           }}
           transition={{
             duration: 20,
