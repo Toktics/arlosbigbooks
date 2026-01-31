@@ -16,8 +16,9 @@ const andika = Andika({
 });
 
 export const metadata: Metadata = {
-  title: "Arlo's Big Books - Playful Picture Books for Ages 3-6",
-  description: "Join Arlo on BIG adventures! Rhyming picture books that turn everyday moments into extraordinary stories. Perfect for bedtime reading.",
+  title: "Arlo's Big Books | Rhyming Picture Books & Bedtime Stories for Kids Ages 3-6",
+  description: "Funny, heartwarming rhyming picture books for ages 3-6. Perfect bedtime stories for read-aloud time with preschoolers. Start with Arlo's Big Yawn - a silly, imaginative adventure!",
+  keywords: "picture books for kids, bedtime stories, rhyming books, children's books ages 3-6, preschool books, funny bedtime stories, read aloud books, toddler picture books",
   icons: {
     icon: [
       { url: '/favicon.ico' },

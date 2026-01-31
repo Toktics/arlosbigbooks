@@ -38,6 +38,11 @@ export default function Header() {
             </Link>
           </li>
           <li>
+            <Link href="/characters" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
+              CHARACTERS
+            </Link>
+          </li>
+          <li>
             <Link href="#about" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
               ABOUT
             </Link>
@@ -81,6 +86,15 @@ export default function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 HOME
+              </Link>
+            </li>
+            <li>
+              <Link 
+                href="/characters" 
+                className="block px-4 py-3 text-gray-800 font-semibold hover:bg-red-50 hover:text-red-500 transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                CHARACTERS
               </Link>
             </li>
             <li>
