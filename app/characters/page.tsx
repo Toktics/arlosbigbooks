@@ -203,32 +203,21 @@ export default function Characters() {
                    transform: flipped['arlo'] ? 'rotateY(180deg)' : 'rotateY(0deg)'
                  }}>
               
-              {/* FRONT - Messy crayon fill */}
+              {/* FRONT - Crayon texture background */}
               <div className="relative rounded-[40%_60%_70%_30%/60%_40%_60%_40%] p-8 shadow-2xl border-8 border-red-500 hover:scale-105 transition-all duration-300 overflow-hidden"
-                   style={{ 
+                   style={{
                      filter: 'drop-shadow(4px 4px 0px rgba(220, 38, 38, 0.3))',
                      backfaceVisibility: 'hidden',
                      background: 'white',
                    }}>
-                {/* Diagonal crayon scribble fill - like a child colored it in */}
-                <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }} viewBox="0 0 400 400">
-                  <defs>
-                    <pattern id="arlo-scribble" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-                      <line x1="0" y1="2" x2="20" y2="2" stroke="#EF4444" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                      <line x1="0" y1="7" x2="20" y2="7" stroke="#DC2626" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
-                      <line x1="0" y1="12" x2="20" y2="12" stroke="#F87171" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                      <line x1="0" y1="17" x2="20" y2="17" stroke="#FCA5A5" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
-                    </pattern>
-                  </defs>
-                  <ellipse cx="200" cy="200" rx="180" ry="180" fill="url(#arlo-scribble)"/>
-                </svg>
-                
+                {/* Crayon texture PNG background */}
+                <img
+                  src="/images/crayons/Arlo.png"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                />
+
                 <div className="text-center relative z-10">
-                  <img 
-                    src="/images/characters/ArloBedYawn.png" 
-                    alt="Arlo"
-                    className="w-36 h-36 md:w-44 md:h-44 mx-auto mb-4 drop-shadow-lg"
-                  />
                   <h2 className="text-4xl md:text-5xl font-bold text-gray-800 font-[var(--font-fredoka)] drop-shadow-sm">
                     Arlo
                   </h2>
