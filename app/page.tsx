@@ -572,23 +572,18 @@ export default function Home() {
             Meet the Author
           </h2>
           
-          {/* Extra padding on mobile for top/bottom images, normal padding on desktop where images are in margins */}
-          <div className="bg-blue-50 rounded-3xl p-8 md:p-12 relative overflow-visible pt-24 pb-24 md:pt-12 md:pb-12">
-            {/* Hand-drawn image - top center on mobile, top right margin on desktop */}
-            <img 
-              src="/images/Outside.png" 
-              alt="Hand-drawn illustration" 
-              className="absolute -top-4 left-1/2 -translate-x-1/2 md:left-auto md:-translate-x-0 md:-top-32 md:-right-32 w-32 h-32 md:w-64 md:h-64 rotate-12 z-10"
-            />
+          {/* Container with space for decorative images */}
+          <div className="bg-blue-50 rounded-3xl p-8 md:p-12 relative overflow-visible">
+            {/* Hand-drawn image - floats top center on mobile, top right on desktop */}
+            <div className="float-none md:float-right mb-4 md:mb-0 md:ml-6 md:-mr-20 md:-mt-20 flex justify-center md:block">
+              <img 
+                src="/images/Outside.png" 
+                alt="Hand-drawn illustration" 
+                className="w-32 h-32 md:w-56 md:h-56 rotate-12"
+              />
+            </div>
             
-            {/* Hand-drawn image - bottom center on mobile, bottom left margin on desktop */}
-            <img 
-              src="/images/Inside.png" 
-              alt="Hand-drawn illustration" 
-              className="absolute -bottom-4 left-1/2 -translate-x-1/2 md:left-0 md:-translate-x-0 md:-bottom-32 md:-left-32 w-32 h-32 md:w-64 md:h-64 -rotate-12 z-10"
-            />
-            
-            <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+            <p className="text-xl text-gray-700 mb-6 leading-relaxed clear-none">
               Martin King writes stories that are full of imagination, adventure, and the kind of moments that make children giggle at bedtime.
             </p>
             
@@ -607,6 +602,15 @@ export default function Home() {
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               Years later, along came his grandson Arlo, and everything changed again. Evenings filled with nursery rhymes, bedtime stories, and tiny everyday adventures reignited Martin's love of storytelling, and led to the creation of <em>Arlo's Big Yawn</em>, the first book in the <em>Arlo's Big</em> picture book series.
             </p>
+            
+            {/* Hand-drawn image - floats bottom center on mobile, bottom left on desktop */}
+            <div className="float-none md:float-left mt-4 md:mt-0 md:mr-6 md:-ml-20 md:-mb-20 flex justify-center md:block">
+              <img 
+                src="/images/Inside.png" 
+                alt="Hand-drawn illustration" 
+                className="w-32 h-32 md:w-56 md:h-56 -rotate-12"
+              />
+            </div>
             
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
               When Martin was little, his own mum read Ladybird books with him every night. Every few weeks, a new one would arrive, and bedtime became something magical. He still has those books today, and now writes stories to create those same memories for his grandson, who lovingly calls him Gan Gan.
