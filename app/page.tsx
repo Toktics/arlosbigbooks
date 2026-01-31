@@ -373,7 +373,7 @@ export default function Home() {
           style={{ 
             background: 'radial-gradient(circle, rgba(255,255,0,0.8) 0%, rgba(255,200,0,0.4) 50%, transparent 100%)',
             left: '10%',
-            top: '80%'
+            bottom: '0%'
           }}
           animate={{
             y: [-100, -400, -100],
@@ -393,7 +393,7 @@ export default function Home() {
           style={{ 
             background: 'radial-gradient(circle, rgba(255,100,0,0.8) 0%, rgba(255,150,0,0.4) 50%, transparent 100%)',
             right: '15%',
-            top: '70%'
+            bottom: '10%'
           }}
           animate={{
             y: [50, -450, 50],
@@ -414,7 +414,7 @@ export default function Home() {
           style={{ 
             background: 'radial-gradient(circle, rgba(255,69,0,0.9) 0%, rgba(255,120,0,0.5) 50%, transparent 100%)',
             left: '40%',
-            top: '90%'
+            bottom: '-10%'
           }}
           animate={{
             y: [0, -500, 0],
@@ -435,7 +435,7 @@ export default function Home() {
           style={{ 
             background: 'radial-gradient(circle, rgba(255,215,0,0.7) 0%, rgba(255,180,0,0.4) 50%, transparent 100%)',
             left: '60%',
-            top: '85%'
+            bottom: '5%'
           }}
           animate={{
             y: [80, -380, 80],
@@ -456,7 +456,7 @@ export default function Home() {
           style={{ 
             background: 'radial-gradient(circle, rgba(255,140,0,0.8) 0%, rgba(255,100,0,0.5) 50%, transparent 100%)',
             right: '5%',
-            top: '75%'
+            bottom: '15%'
           }}
           animate={{
             y: [120, -420, 120],
@@ -477,7 +477,7 @@ export default function Home() {
           style={{ 
             background: 'radial-gradient(circle, rgba(255,200,50,0.7) 0%, rgba(255,160,0,0.4) 50%, transparent 100%)',
             left: '25%',
-            top: '95%'
+            bottom: '-5%'
           }}
           animate={{
             y: [-50, -480, -50],
