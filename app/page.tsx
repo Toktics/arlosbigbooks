@@ -686,15 +686,18 @@ export default function Home() {
           <p className="text-lg mb-2">Email: hello@arlosbigbooks.com</p>
           <p className="text-gray-400 mb-8">For school visits, bulk orders, or general inquiries</p>
           
-          <div className="flex justify-center gap-8 mb-12">
-            <a href="#" className="text-white hover:text-yellow-400 transition-colors text-lg font-semibold">
-              Instagram
-            </a>
-            <a href="#" className="text-white hover:text-yellow-400 transition-colors text-lg font-semibold">
-              Facebook
-            </a>
-            <a href="#" className="text-white hover:text-yellow-400 transition-colors text-lg font-semibold">
-              Twitter
+          <div className="flex justify-center mb-12">
+            <a 
+              href="https://www.instagram.com/arlosbigbooks" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-transform hover:scale-110 duration-300"
+            >
+              <img 
+                src="/images/insta.png" 
+                alt="Follow us on Instagram @arlosbigbooks" 
+                className="w-16 h-16"
+              />
             </a>
           </div>
           
