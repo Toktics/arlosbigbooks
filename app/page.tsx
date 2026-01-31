@@ -623,15 +623,15 @@ export default function Home() {
             </p>
             
             {/* Hand-drawn image - floats bottom center on mobile, bottom left on desktop */}
-            <div className="float-none md:float-left mt-4 md:mt-0 md:mr-12 md:-ml-8 md:-mb-8 flex justify-center md:block">
+            <div className="float-none md:float-left mt-4 md:mt-0 md:mr-16 md:-ml-4 md:-mb-4 flex justify-center md:block">
               <img 
                 src="/images/Inside.png" 
                 alt="Hand-drawn illustration" 
-                className="w-32 h-32 md:w-56 md:h-56 -rotate-12"
+                className="w-32 h-32 md:w-48 md:h-48 -rotate-12"
               />
             </div>
             
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed clear-left">
               When Martin was little, his own mum read Ladybird books with him every night. Every few weeks, a new one would arrive, and bedtime became something magical. He still has those books today, and now writes stories to create those same memories for his grandson, who lovingly calls him Gan Gan.
             </p>
             
