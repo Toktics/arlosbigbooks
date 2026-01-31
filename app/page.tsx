@@ -597,18 +597,18 @@ export default function Home() {
           </h2>
           
           <div className="bg-blue-50 rounded-3xl p-8 md:p-12 relative overflow-visible">
-            {/* Hand-drawn image - top right - pushed into white margin */}
+            {/* Hand-drawn image - top center on mobile, top right on desktop */}
             <img 
               src="/images/Outside.png" 
               alt="Hand-drawn illustration" 
-              className="absolute -top-24 -right-24 md:-top-32 md:-right-32 w-48 h-48 md:w-64 md:h-64 rotate-12 z-10"
+              className="absolute -top-20 left-1/2 -translate-x-1/2 md:left-auto md:-translate-x-0 md:-top-32 md:-right-32 w-40 h-40 md:w-64 md:h-64 rotate-12 z-10"
             />
             
-            {/* Hand-drawn image - bottom left - pushed into white margin */}
+            {/* Hand-drawn image - bottom center on mobile, bottom left on desktop */}
             <img 
               src="/images/Inside.png" 
               alt="Hand-drawn illustration" 
-              className="absolute -bottom-24 -left-24 md:-bottom-32 md:-left-32 w-48 h-48 md:w-64 md:h-64 -rotate-12 z-10"
+              className="absolute -bottom-20 left-1/2 -translate-x-1/2 md:left-0 md:-translate-x-0 md:-bottom-32 md:-left-32 w-40 h-40 md:w-64 md:h-64 -rotate-12 z-10"
             />
             
             <p className="text-xl text-gray-700 mb-6 leading-relaxed">
