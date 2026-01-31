@@ -584,60 +584,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Meet the Author */}
-      <section id="author" className="py-20 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold mb-8 text-gray-800 text-center">
-            Meet the Author
-          </h2>
-          
-          {/* Container with space for decorative images */}
-          <div className="bg-blue-50 rounded-3xl p-8 md:p-12 relative overflow-visible">
-            {/* Hand-drawn image - floats top center on mobile, top right on desktop */}
-            <div className="float-none md:float-right mb-4 md:mb-0 md:ml-6 md:-mr-20 md:-mt-20 flex justify-center md:block">
-              <img 
-                src="/images/Outside.png" 
-                alt="Hand-drawn illustration" 
-                className="w-32 h-32 md:w-56 md:h-56 rotate-12"
-              />
+      {/* Meet the Author - Brief Teaser */}
+      <section id="author" className="py-20 px-4 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-4xl font-bold mb-6 text-gray-800 font-[var(--font-fredoka)]">
+                  Meet Martin King
+                </h2>
+                <p className="text-xl text-gray-700 mb-6 leading-relaxed">
+                  <strong>Grandfather, storyteller, adventure-seeker.</strong> Martin writes <strong>rhyming bedtime stories</strong> that celebrate imagination, family bonds, and the magic of everyday moments.
+                </p>
+                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                  From creating the world's first AR adventure books to writing heartwarming stories for his grandson Arlo, Martin's journey as a <strong>children's book author</strong> is filled with creativity and love.
+                </p>
+                <a 
+                  href="/author"
+                  className="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  Read Martin's Full Story →
+                </a>
+              </div>
+              
+              <div className="flex justify-center">
+                <img 
+                  src="/images/Outside.png" 
+                  alt="Martin King - children's book author and grandfather" 
+                  className="w-64 h-64 object-contain rotate-6 hover:rotate-12 transition-transform duration-300"
+                />
+              </div>
             </div>
-            
-            <p className="text-xl text-gray-700 mb-6 leading-relaxed clear-none">
-              Martin King writes stories that are full of imagination, adventure, and the kind of moments that make children giggle at bedtime.
-            </p>
-            
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              As a child, Martin was never very good at sitting still. He had what he calls "ants in my pants" — always off on missions with friends, exploring woods, crawling through caves, climbing hills, and inventing daring adventures. Those childhood escapades later became the inspiration behind his Jack Hunter Adventure series for older readers.
-            </p>
-            
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Back in 2009, long before most people had heard of it, Martin had the unusual idea to combine books with augmented reality, creating the world's first interactive AR adventure stories, where children unlocked parts of the game by reading the book. He wanted to make stories especially exciting for children who loved adventure more than sitting still.
-            </p>
-            
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed italic font-semibold">
-              But life has a way of taking detours.
-            </p>
-            
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Years later, along came his grandson Arlo, and everything changed again. Evenings filled with nursery rhymes, bedtime stories, and tiny everyday adventures reignited Martin's love of storytelling, and led to the creation of <em>Arlo's Big Yawn</em>, the first book in the <em>Arlo's Big</em> picture book series.
-            </p>
-            
-            {/* Hand-drawn image - floats bottom center on mobile, bottom left on desktop */}
-            <div className="float-none md:float-left mt-4 md:mt-0 md:mr-20 md:ml-0 md:mb-0 flex justify-center md:block">
-              <img 
-                src="/images/Inside.png" 
-                alt="Hand-drawn illustration" 
-                className="w-32 h-32 md:w-40 md:h-40 -rotate-12"
-              />
-            </div>
-            
-            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              When Martin was little, his own mum read Ladybird books with him every night. Every few weeks, a new one would arrive, and bedtime became something magical. He still has those books today, and now writes stories to create those same memories for his grandson, who lovingly calls him Gan Gan.
-            </p>
-            
-            <p className="text-xl text-gray-800 font-semibold leading-relaxed clear-left">
-              Martin believes that the best children's stories are the ones that feel big, funny, warm, and just a little bit surprising... because sometimes small days turn into BIG adventures.
-            </p>
           </div>
         </div>
       </section>
