@@ -204,21 +204,20 @@ export default function Characters() {
                  }}>
               
               {/* FRONT - Crayon texture background */}
-              <div className="relative rounded-[40%_60%_70%_30%/60%_40%_60%_40%] p-8 shadow-2xl border-8 border-red-500 hover:scale-105 transition-all duration-300 overflow-hidden"
+              <div className="relative rounded-[40%_60%_70%_30%/60%_40%_60%_40%] shadow-2xl border-8 border-red-500 hover:scale-105 transition-all duration-300 overflow-hidden aspect-square"
                    style={{
                      filter: 'drop-shadow(4px 4px 0px rgba(220, 38, 38, 0.3))',
                      backfaceVisibility: 'hidden',
-                     background: 'white',
                    }}>
                 {/* Crayon texture PNG background */}
                 <img
                   src="/images/crayons/Arlo.png"
                   alt=""
-                  className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+                  className="absolute inset-0 w-full h-full object-contain pointer-events-none"
                 />
 
-                <div className="text-center relative z-10">
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-800 font-[var(--font-fredoka)] drop-shadow-sm">
+                <div className="absolute bottom-6 left-0 right-0 text-center z-10">
+                  <h2 className="text-4xl md:text-5xl font-bold text-white font-[var(--font-fredoka)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
                     Arlo
                   </h2>
                 </div>
