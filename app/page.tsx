@@ -600,41 +600,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Meet the Author - Brief Teaser */}
-      <section id="author" className="py-20 px-4 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <h2 className="text-4xl font-bold mb-6 text-gray-800 font-[var(--font-fredoka)]">
-                  Meet Martin King
-                </h2>
-                <p className="text-xl text-gray-700 mb-6 leading-relaxed">
-                  <strong>Grandfather, storyteller, adventure-seeker.</strong> Martin writes <strong>rhyming bedtime stories</strong> that celebrate imagination, family bonds, and the magic of everyday moments.
-                </p>
-                <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-                  From creating the world's first AR adventure books to writing heartwarming stories for his grandson Arlo, Martin's journey as a <strong>children's book author</strong> is filled with creativity and love.
-                </p>
-                <a 
-                  href="/author"
-                  className="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-                >
-                  Read Martin's Full Story →
-                </a>
-              </div>
-              
-              <div className="flex justify-center">
-                <img 
-                  src="/images/Outside.png" 
-                  alt="Martin King - children's book author and grandfather" 
-                  className="w-64 h-64 object-contain rotate-6 hover:rotate-12 transition-transform duration-300"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Newsletter Signup */}
       <section className="py-20 px-4 bg-gradient-to-br from-red-500 to-orange-500 text-white">
         <div className="max-w-3xl mx-auto text-center">
