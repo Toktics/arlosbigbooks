@@ -367,65 +367,40 @@ export default function Home() {
 
       {/* Arlo's Activity Zone */}
       <section className="py-20 px-4 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 relative overflow-hidden">
-        {/* Lava Lamp Effect - TESTING WITH OBVIOUS COLORS */}
-        <motion.div
-          className="absolute w-96 h-96 rounded-full blur-2xl"
+        {/* SIMPLE TEST - Static colored divs, no animation */}
+        <div
+          className="absolute w-64 h-64 rounded-full bg-black opacity-50"
           style={{ 
-            background: 'radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)',
             left: '10%',
-            top: '20%',
-            zIndex: 5
-          }}
-          animate={{
-            y: [0, -100, 0],
-            scale: [1, 1.2, 1],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        
-        <motion.div
-          className="absolute w-80 h-80 rounded-full blur-2xl"
-          style={{ 
-            background: 'radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.25) 50%, transparent 100%)',
-            right: '10%',
             top: '30%',
-            zIndex: 5
+            zIndex: 999
           }}
-          animate={{
-            y: [0, 80, 0],
-            scale: [1, 1.3, 1],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 2
-          }}
-        />
+        >
+          <p className="text-white text-center pt-28 font-bold">TEST 1</p>
+        </div>
         
-        <motion.div
-          className="absolute w-72 h-72 rounded-full blur-2xl"
+        <div
+          className="absolute w-64 h-64 rounded-full bg-white opacity-50"
           style={{ 
-            background: 'radial-gradient(circle, rgba(139,0,139,0.4) 0%, rgba(186,85,211,0.2) 50%, transparent 100%)',
-            left: '40%',
+            right: '10%',
+            top: '40%',
+            zIndex: 999
+          }}
+        >
+          <p className="text-black text-center pt-28 font-bold">TEST 2</p>
+        </div>
+        
+        <div
+          className="absolute w-64 h-64 rounded-full bg-blue-500 opacity-50"
+          style={{ 
+            left: '50%',
             top: '50%',
-            zIndex: 5
+            transform: 'translateX(-50%)',
+            zIndex: 999
           }}
-          animate={{
-            y: [0, -60, 0],
-            scale: [1, 1.4, 1],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 4
-          }}
-        />
+        >
+          <p className="text-white text-center pt-28 font-bold">TEST 3</p>
+        </div>
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
@@ -604,7 +579,7 @@ export default function Home() {
             </p>
             
             {/* Hand-drawn image - floats bottom center on mobile, bottom left on desktop */}
-            <div className="float-none md:float-left mt-4 md:mt-0 md:mr-6 md:-ml-20 md:-mb-20 flex justify-center md:block">
+            <div className="float-none md:float-left mt-4 md:mt-0 md:mr-8 md:-ml-16 md:-mb-16 flex justify-center md:block">
               <img 
                 src="/images/Inside.png" 
                 alt="Hand-drawn illustration" 
