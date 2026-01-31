@@ -48,7 +48,7 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link href="#author" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
+            <Link href="/author" className="text-gray-800 font-semibold hover:text-red-500 transition-colors">
               AUTHOR
             </Link>
           </li>
@@ -108,7 +108,7 @@ export default function Header() {
             </li>
             <li>
               <Link 
-                href="#author" 
+                href="/author" 
                 className="block px-4 py-3 text-gray-800 font-semibold hover:bg-red-50 hover:text-red-500 transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
