@@ -623,7 +623,7 @@ export default function Home() {
             </p>
             
             {/* Hand-drawn image - floats bottom center on mobile, bottom left on desktop */}
-            <div className="float-none md:float-left mt-4 md:mt-0 md:mr-10 md:-ml-12 md:-mb-12 flex justify-center md:block">
+            <div className="float-none md:float-left mt-4 md:mt-0 md:mr-12 md:-ml-8 md:-mb-8 flex justify-center md:block">
               <img 
                 src="/images/Inside.png" 
                 alt="Hand-drawn illustration" 
