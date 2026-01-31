@@ -638,7 +638,21 @@ export default function Home() {
             Meet the Author
           </h2>
           
-          <div className="bg-blue-50 rounded-3xl p-8 md:p-12">
+          <div className="bg-blue-50 rounded-3xl p-8 md:p-12 relative overflow-hidden">
+            {/* Hand-drawn image - top right */}
+            <img 
+              src="/images/Outside.png" 
+              alt="Hand-drawn illustration" 
+              className="absolute top-4 right-4 w-24 h-24 md:w-32 md:h-32 opacity-20 rotate-12"
+            />
+            
+            {/* Hand-drawn image - bottom left */}
+            <img 
+              src="/images/Inside.png" 
+              alt="Hand-drawn illustration" 
+              className="absolute bottom-4 left-4 w-24 h-24 md:w-32 md:h-32 opacity-20 -rotate-12"
+            />
+            
             <p className="text-xl text-gray-700 mb-6 leading-relaxed">
               Martin King writes stories that are full of imagination, adventure, and the kind of moments that make children giggle at bedtime.
             </p>
