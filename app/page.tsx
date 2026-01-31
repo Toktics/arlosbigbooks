@@ -367,42 +367,40 @@ export default function Home() {
 
       {/* Arlo's Activity Zone */}
       <section className="py-20 px-4 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 relative overflow-hidden">
-        {/* Lava Lamp Effect - Visible contrasting blobs */}
+        {/* Lava Lamp Effect - TESTING WITH OBVIOUS COLORS */}
         <motion.div
-          className="absolute w-96 h-96 rounded-full blur-3xl"
+          className="absolute w-96 h-96 rounded-full blur-2xl"
           style={{ 
-            background: 'radial-gradient(circle, rgba(220,38,38,0.3) 0%, rgba(239,68,68,0.15) 50%, transparent 100%)',
-            left: '5%',
+            background: 'radial-gradient(circle, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, transparent 100%)',
+            left: '10%',
             top: '20%',
-            zIndex: 1
+            zIndex: 5
           }}
           animate={{
-            y: [0, -150, 0],
-            x: [0, 50, 0],
+            y: [0, -100, 0],
             scale: [1, 1.2, 1],
           }}
           transition={{
-            duration: 15,
+            duration: 8,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
         
         <motion.div
-          className="absolute w-80 h-80 rounded-full blur-3xl"
+          className="absolute w-80 h-80 rounded-full blur-2xl"
           style={{ 
-            background: 'radial-gradient(circle, rgba(253,224,71,0.4) 0%, rgba(250,204,21,0.2) 50%, transparent 100%)',
+            background: 'radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.25) 50%, transparent 100%)',
             right: '10%',
-            top: '40%',
-            zIndex: 1
+            top: '30%',
+            zIndex: 5
           }}
           animate={{
-            y: [0, 100, 0],
-            x: [0, -40, 0],
+            y: [0, 80, 0],
             scale: [1, 1.3, 1],
           }}
           transition={{
-            duration: 18,
+            duration: 10,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 2
@@ -410,44 +408,22 @@ export default function Home() {
         />
         
         <motion.div
-          className="absolute w-72 h-72 rounded-full blur-3xl"
+          className="absolute w-72 h-72 rounded-full blur-2xl"
           style={{ 
-            background: 'radial-gradient(circle, rgba(236,72,153,0.3) 0%, rgba(244,114,182,0.15) 50%, transparent 100%)',
+            background: 'radial-gradient(circle, rgba(139,0,139,0.4) 0%, rgba(186,85,211,0.2) 50%, transparent 100%)',
             left: '40%',
-            top: '60%',
-            zIndex: 1
+            top: '50%',
+            zIndex: 5
           }}
           animate={{
-            y: [0, -120, 0],
-            x: [0, 60, 0],
+            y: [0, -60, 0],
             scale: [1, 1.4, 1],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 5
-          }}
-        />
-        
-        <motion.div
-          className="absolute w-64 h-64 rounded-full blur-3xl"
-          style={{ 
-            background: 'radial-gradient(circle, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 50%, transparent 100%)',
-            left: '70%',
-            top: '25%',
-            zIndex: 1
-          }}
-          animate={{
-            y: [0, 80, 0],
-            x: [0, -30, 0],
-            scale: [1, 1.1, 1],
           }}
           transition={{
             duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
-            delay: 7
+            delay: 4
           }}
         />
         
