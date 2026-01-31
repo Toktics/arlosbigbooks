@@ -495,8 +495,8 @@ export default function Home() {
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
-            <h2 className="text-5xl font-bold text-white mb-4 font-[var(--font-fredoka)] drop-shadow-lg flex items-center justify-center gap-4">
-              <img src="/images/characters/ActivityZoneArlo.png" alt="Arlo" className="w-16 h-16 md:w-20 md:h-20" />
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-[var(--font-fredoka)] drop-shadow-lg flex items-center justify-center gap-4">
+              <img src="/images/characters/ActivityZoneArlo.png" alt="Arlo" className="w-24 h-24 md:w-28 md:h-28" />
               ARLO'S BIG ACTIVITY ZONE
             </h2>
             <p className="text-2xl text-white font-semibold drop-shadow-md">
@@ -521,11 +521,11 @@ export default function Home() {
                 className="absolute top-1/2 right-8 -translate-y-1/2 w-40 h-40 object-contain z-10"
               />
               
-              <div className="relative z-20 max-w-[60%]">
-                <h3 className="text-4xl font-bold text-white mb-3 font-[var(--font-fredoka)] drop-shadow-md">
+              <div className="relative z-20 max-w-[55%] pr-2">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3 font-[var(--font-fredoka)] drop-shadow-md">
                   Aria's<br/>Coloring Pages
                 </h3>
-                <p className="text-xl text-white mb-4 leading-relaxed font-semibold drop-shadow-sm">
+                <p className="text-lg md:text-xl text-white mb-3 md:mb-4 leading-relaxed font-semibold drop-shadow-sm">
                   Bring Arlo's Big Yawn to life! Perfect for ages 3–6.
                 </p>
                 <button className="bg-white text-pink-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-pink-50 transition-colors shadow-lg">
@@ -550,11 +550,11 @@ export default function Home() {
                 className="absolute top-1/2 right-8 -translate-y-1/2 w-40 h-40 object-contain z-10"
               />
               
-              <div className="relative z-20 max-w-[60%]">
-                <h3 className="text-4xl font-bold text-white mb-3 font-[var(--font-fredoka)] drop-shadow-md">
+              <div className="relative z-20 max-w-[55%] pr-2">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3 font-[var(--font-fredoka)] drop-shadow-md">
                   Mateo's<br/>Word Fun
                 </h3>
-                <p className="text-xl text-white mb-4 leading-relaxed font-semibold drop-shadow-sm">
+                <p className="text-lg md:text-xl text-white mb-3 md:mb-4 leading-relaxed font-semibold drop-shadow-sm">
                   Rhyming games and read-aloud prompts for kids!
                 </p>
                 <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-50 transition-colors shadow-lg">
@@ -579,11 +579,11 @@ export default function Home() {
                 className="absolute top-1/2 right-8 -translate-y-1/2 w-40 h-40 object-contain z-10"
               />
               
-              <div className="relative z-20 max-w-[60%]">
-                <h3 className="text-4xl font-bold text-white mb-3 font-[var(--font-fredoka)] drop-shadow-md">
+              <div className="relative z-20 max-w-[55%] pr-2">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3 font-[var(--font-fredoka)] drop-shadow-md">
                   Charlie's<br/>Story Time
                 </h3>
-                <p className="text-xl text-white mb-4 leading-relaxed font-semibold drop-shadow-sm">
+                <p className="text-lg md:text-xl text-white mb-3 md:mb-4 leading-relaxed font-semibold drop-shadow-sm">
                   Make bedtime stories interactive and silly!
                 </p>
                 <button className="bg-white text-orange-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-50 transition-colors shadow-lg">
@@ -608,11 +608,11 @@ export default function Home() {
                 className="absolute top-1/2 right-8 -translate-y-1/2 w-40 h-40 object-contain z-10"
               />
               
-              <div className="relative z-20">
-                <h3 className="text-4xl font-bold text-white mb-3 font-[var(--font-fredoka)] drop-shadow-md">
+              <div className="relative z-20 max-w-[55%] pr-2">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-2 md:mb-3 font-[var(--font-fredoka)] drop-shadow-md">
                   Luca's<br/>Create Your Own
                 </h3>
-                <p className="text-xl text-white mb-4 leading-relaxed font-semibold drop-shadow-sm">
+                <p className="text-lg md:text-xl text-white mb-3 md:mb-4 leading-relaxed font-semibold drop-shadow-sm">
                   Draw Arlo's next BIG adventure — what grows huge next?
                 </p>
                 <button className="bg-white text-green-600 px-8 py-4 rounded-full font-bold text-lg hover:bg-green-50 transition-colors shadow-lg">
