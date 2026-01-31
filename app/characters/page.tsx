@@ -1,11 +1,5 @@
 'use client'
 
-export const metadata = {
-  title: "Meet Arlo's Characters | Funny Picture Book Friends for Kids Ages 3-6",
-  description: "Get to know Arlo and his loveable friends! Explore the memorable characters from Arlo's Big Books - funny animal friends, playful personalities, and heartwarming relationships perfect for bedtime stories.",
-  keywords: "picture book characters, children's book characters, funny animal characters, bedtime story characters, Arlo characters, kids book friends",
-}
-
 export default function Characters() {
   return (
     <main className="min-h-screen bg-white relative overflow-hidden">
