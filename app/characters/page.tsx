@@ -1,6 +1,14 @@
 'use client'
 
+import { useState } from 'react'
+
 export default function Characters() {
+  const [flipped, setFlipped] = useState<Record<string, boolean>>({})
+
+  const handleFlip = (characterId: string) => {
+    setFlipped(prev => ({ ...prev, [characterId]: !prev[characterId] }))
+  }
+
   return (
     <main className="min-h-screen bg-white relative overflow-hidden">
       {/* Paper texture overlay - very subtle */}
@@ -25,17 +33,17 @@ export default function Characters() {
           </svg>
         </h1>
         <p className="text-xl md:text-2xl text-gray-600 mt-6 font-[var(--font-fredoka)]">
-          Click on each friend to learn more!
+          Click on each friend to flip and learn more!
         </p>
       </div>
 
-      {/* Main character area - hand-drawn chaos! */}
-      <div className="px-4 py-8 pb-20 relative min-h-[900px]">
-        <div className="max-w-7xl mx-auto relative">
+      {/* Main character area - hand-drawn chaos! SPREAD OUT MORE */}
+      <div className="px-4 py-8 pb-20 relative" style={{ minHeight: '1400px' }}>
+        <div className="max-w-[1600px] mx-auto relative">
           
           {/* Hand-drawn doodles scattered around */}
-          {/* Star doodle */}
-          <div className="absolute top-10 right-20 hidden md:block animate-pulse" style={{ animationDuration: '3s' }}>
+          {/* Star doodle - top right */}
+          <div className="absolute top-10 right-32 hidden md:block animate-pulse" style={{ animationDuration: '3s' }}>
             <svg width="60" height="60" viewBox="0 0 60 60">
               <path d="M30,5 L35,20 L50,25 L35,30 L30,45 L25,30 L10,25 L25,20 Z" 
                     fill="none" 
@@ -46,8 +54,8 @@ export default function Characters() {
             </svg>
           </div>
 
-          {/* Heart doodle */}
-          <div className="absolute top-40 left-10 hidden md:block animate-pulse" style={{ animationDuration: '4s' }}>
+          {/* Heart doodle - left side */}
+          <div className="absolute top-64 left-16 hidden md:block animate-pulse" style={{ animationDuration: '4s' }}>
             <svg width="50" height="50" viewBox="0 0 50 50">
               <path d="M25,40 C25,40 10,30 10,20 C10,15 13,12 17,12 C20,12 23,14 25,17 C27,14 30,12 33,12 C37,12 40,15 40,20 C40,30 25,40 25,40 Z" 
                     fill="none" 
@@ -57,8 +65,8 @@ export default function Characters() {
             </svg>
           </div>
 
-          {/* Swirl doodle */}
-          <div className="absolute bottom-20 right-40 hidden lg:block" style={{ transform: 'rotate(-15deg)' }}>
+          {/* Swirl doodle - bottom right */}
+          <div className="absolute bottom-40 right-64 hidden lg:block" style={{ transform: 'rotate(-15deg)' }}>
             <svg width="70" height="70" viewBox="0 0 70 70">
               <path d="M35,10 Q45,15 45,25 Q45,35 35,35 Q25,35 25,25 Q25,20 30,18" 
                     fill="none" 
@@ -68,8 +76,8 @@ export default function Characters() {
             </svg>
           </div>
 
-          {/* Simple flower doodle */}
-          <div className="absolute top-96 left-32 hidden lg:block" style={{ transform: 'rotate(25deg)' }}>
+          {/* Simple flower doodle - middle left */}
+          <div className="absolute top-[600px] left-48 hidden lg:block" style={{ transform: 'rotate(25deg)' }}>
             <svg width="50" height="50" viewBox="0 0 50 50">
               <circle cx="25" cy="25" r="8" fill="#FFD700" opacity="0.6"/>
               <circle cx="25" cy="15" r="6" fill="#FF69B4" opacity="0.5"/>
@@ -79,34 +87,21 @@ export default function Characters() {
             </svg>
           </div>
 
-          {/* ARLO - Big centered blob (red/pink) */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 md:w-96 group cursor-pointer z-20"
-               style={{ transform: 'translate(-50%, 0) rotate(-3deg)' }}>
-            {/* Crayon blob background */}
-            <div className="relative bg-gradient-to-br from-red-400 to-pink-400 rounded-[40%_60%_70%_30%/60%_40%_60%_40%] p-8 shadow-2xl border-8 border-red-500 group-hover:scale-105 transition-all duration-300"
-                 style={{ 
-                   filter: 'drop-shadow(4px 4px 0px rgba(220, 38, 38, 0.3))',
-                 }}>
-              <div className="text-center">
-                <img 
-                  src="/images/characters/ArloBedYawn.png" 
-                  alt="Arlo - curious little boy from Arlo's Big Yawn"
-                  className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-3 drop-shadow-lg transform group-hover:rotate-6 transition-transform"
-                  style={{ filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.2))' }}
-                />
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 font-[var(--font-fredoka)] drop-shadow-md">
-                  Arlo
-                </h2>
-                <p className="text-white text-lg font-semibold drop-shadow-sm">
-                  The star! Curious & imaginative
-                </p>
-              </div>
-            </div>
+          {/* Star doodle - middle */}
+          <div className="absolute top-[800px] left-1/2 hidden md:block" style={{ transform: 'translateX(-50%)' }}>
+            <svg width="50" height="50" viewBox="0 0 50 50">
+              <path d="M25,5 L28,18 L40,20 L30,28 L33,42 L25,35 L17,42 L20,28 L10,20 L22,18 Z" 
+                    fill="none" 
+                    stroke="#FFA500" 
+                    strokeWidth="3" 
+                    strokeLinecap="round"/>
+            </svg>
           </div>
 
-          {/* Wobbly line from Arlo to Mouse */}
-          <svg className="absolute top-48 left-1/4 w-48 h-32 pointer-events-none hidden md:block" style={{ transform: 'translate(-20%, 0)' }}>
-            <path d="M100,10 Q80,40 60,50 T20,80" 
+          {/* CONNECTING LINES - MORE OF THEM */}
+          {/* Arlo to Mouse */}
+          <svg className="absolute top-72 left-[15%] w-64 h-48 pointer-events-none hidden md:block">
+            <path d="M200,10 Q150,60 100,80 T20,120" 
                   stroke="#FF6B9D" 
                   strokeWidth="6" 
                   fill="none" 
@@ -115,30 +110,9 @@ export default function Characters() {
                   opacity="0.4"/>
           </svg>
 
-          {/* MOUSE - Left side blob (orange) */}
-          <div className="absolute top-60 left-8 md:left-20 w-56 md:w-64 group cursor-pointer z-10"
-               style={{ transform: 'rotate(8deg)' }}>
-            <div className="relative bg-gradient-to-br from-orange-400 to-yellow-400 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] p-6 shadow-2xl border-8 border-orange-500 group-hover:scale-105 transition-all duration-300"
-                 style={{ filter: 'drop-shadow(3px 3px 0px rgba(234, 88, 12, 0.3))' }}>
-              <div className="text-center">
-                <img 
-                  src="/images/characters/MouseInCar.png" 
-                  alt="Mouse - speedy friend in tiny car"
-                  className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-2 drop-shadow-lg"
-                />
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
-                  Mouse
-                </h3>
-                <p className="text-white text-sm md:text-base font-semibold drop-shadow-sm">
-                  Speedy & playful!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Wobbly line from Arlo to Aria */}
-          <svg className="absolute top-52 right-1/4 w-40 h-24 pointer-events-none hidden md:block">
-            <path d="M10,10 Q30,30 60,25 T130,40" 
+          {/* Arlo to Aria */}
+          <svg className="absolute top-72 right-[15%] w-64 h-48 pointer-events-none hidden md:block">
+            <path d="M10,10 Q80,60 140,80 T220,120" 
                   stroke="#FF69B4" 
                   strokeWidth="5" 
                   fill="none" 
@@ -147,30 +121,9 @@ export default function Characters() {
                   opacity="0.4"/>
           </svg>
 
-          {/* ARIA - Right side blob (pink) */}
-          <div className="absolute top-64 right-8 md:right-24 w-56 md:w-64 group cursor-pointer z-10"
-               style={{ transform: 'rotate(-12deg)' }}>
-            <div className="relative bg-gradient-to-br from-pink-400 to-rose-400 rounded-[60%_40%_30%_70%/40%_60%_70%_30%] p-6 shadow-2xl border-8 border-pink-500 group-hover:scale-105 transition-all duration-300"
-                 style={{ filter: 'drop-shadow(3px 3px 0px rgba(236, 72, 153, 0.3))' }}>
-              <div className="text-center">
-                <img 
-                  src="/images/characters/Aria.png" 
-                  alt="Aria - creative artist who loves coloring"
-                  className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-2 drop-shadow-lg"
-                />
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
-                  Aria
-                </h3>
-                <p className="text-white text-sm md:text-base font-semibold drop-shadow-sm">
-                  Creative artist! 🎨
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Wobbly line from Mouse to Cockerel */}
-          <svg className="absolute top-96 left-32 w-32 h-32 pointer-events-none hidden md:block">
-            <path d="M10,10 Q40,50 80,60 T120,100" 
+          {/* Mouse to Cockerel */}
+          <svg className="absolute top-[480px] left-[8%] w-48 h-64 pointer-events-none hidden md:block">
+            <path d="M40,10 Q60,80 50,150 T60,220" 
                   stroke="#9333EA" 
                   strokeWidth="5" 
                   fill="none" 
@@ -179,123 +132,637 @@ export default function Characters() {
                   opacity="0.4"/>
           </svg>
 
-          {/* COCKEREL - Lower left blob (purple) */}
-          <div className="absolute top-[520px] left-12 md:left-32 w-52 md:w-60 group cursor-pointer z-10"
-               style={{ transform: 'rotate(-5deg)' }}>
-            <div className="relative bg-gradient-to-br from-purple-400 to-violet-400 rounded-[70%_30%_50%_50%/60%_40%_60%_40%] p-6 shadow-2xl border-8 border-purple-500 group-hover:scale-105 transition-all duration-300"
-                 style={{ filter: 'drop-shadow(3px 3px 0px rgba(147, 51, 234, 0.3))' }}>
-              <div className="text-center">
-                <img 
-                  src="/images/characters/Cockerel.png" 
-                  alt="Cockerel - colorful proud bird"
-                  className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2 drop-shadow-lg"
-                />
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
-                  Cockerel
-                </h3>
-                <p className="text-white text-sm md:text-base font-semibold drop-shadow-sm">
-                  Dramatic & showy!
-                </p>
+          {/* Aria to Brown Bird */}
+          <svg className="absolute top-[480px] right-[12%] w-48 h-32 pointer-events-none hidden md:block">
+            <path d="M180,10 Q120,40 80,60 T20,80" 
+                  stroke="#14B8A6" 
+                  strokeWidth="5" 
+                  fill="none" 
+                  strokeLinecap="round"
+                  strokeDasharray="4,6"
+                  opacity="0.4"/>
+          </svg>
+
+          {/* Mateo to Charlie */}
+          <svg className="absolute top-[780px] left-[35%] w-56 h-48 pointer-events-none hidden md:block">
+            <path d="M10,10 Q60,60 120,80 T200,100" 
+                  stroke="#EAB308" 
+                  strokeWidth="5" 
+                  fill="none" 
+                  strokeLinecap="round"
+                  strokeDasharray="3,7"
+                  opacity="0.4"/>
+          </svg>
+
+          {/* Charlie to Luca */}
+          <svg className="absolute top-[920px] left-[48%] w-64 h-32 pointer-events-none hidden md:block">
+            <path d="M10,10 Q80,40 150,50 T250,60" 
+                  stroke="#22C55E" 
+                  strokeWidth="5" 
+                  fill="none" 
+                  strokeLinecap="round"
+                  strokeDasharray="4,8"
+                  opacity="0.4"/>
+          </svg>
+
+          {/* Cockerel to Mum & Dad */}
+          <svg className="absolute top-[880px] left-[12%] w-48 h-48 pointer-events-none hidden md:block">
+            <path d="M10,10 Q40,50 30,100 T40,180" 
+                  stroke="#38BDF8" 
+                  strokeWidth="5" 
+                  fill="none" 
+                  strokeLinecap="round"
+                  strokeDasharray="5,7"
+                  opacity="0.4"/>
+          </svg>
+
+          {/* ARLO - Big centered blob at top (red/pink) */}
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-80 md:w-[420px] cursor-pointer z-20"
+               style={{ 
+                 transform: 'translate(-50%, 0) rotate(-3deg)',
+                 perspective: '1000px'
+               }}
+               onClick={() => handleFlip('arlo')}>
+            <div className={`relative transition-all duration-700 transform-style-3d ${flipped['arlo'] ? 'rotate-y-180' : ''}`}
+                 style={{ 
+                   transformStyle: 'preserve-3d',
+                   transform: flipped['arlo'] ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                 }}>
+              
+              {/* FRONT */}
+              <div className="relative rounded-[40%_60%_70%_30%/60%_40%_60%_40%] p-8 shadow-2xl border-8 border-red-500 hover:scale-105 transition-all duration-300"
+                   style={{ 
+                     filter: 'drop-shadow(4px 4px 0px rgba(220, 38, 38, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     background: 'linear-gradient(135deg, rgba(248, 113, 113, 0.3) 0%, rgba(251, 207, 232, 0.3) 100%)',
+                   }}>
+                {/* Crayon scribble fill */}
+                <svg className="absolute inset-0 w-full h-full rounded-[40%_60%_70%_30%/60%_40%_60%_40%] opacity-60" style={{ pointerEvents: 'none' }}>
+                  <defs>
+                    <pattern id="arlo-scribble" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+                      <path d="M0,5 Q10,3 20,5 T40,5" stroke="#EF4444" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,15 Q10,13 20,15 T40,15" stroke="#F87171" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,25 Q10,23 20,25 T40,25" stroke="#DC2626" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.3"/>
+                      <path d="M0,35 Q10,33 20,35 T40,35" stroke="#FCA5A5" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#arlo-scribble)"/>
+                </svg>
+                
+                <div className="text-center relative z-10">
+                  <img 
+                    src="/images/characters/ArloBedYawn.png" 
+                    alt="Arlo - curious little boy"
+                    className="w-36 h-36 md:w-44 md:h-44 mx-auto mb-3 drop-shadow-lg"
+                  />
+                  <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 font-[var(--font-fredoka)] drop-shadow-md">
+                    Arlo
+                  </h2>
+                  <p className="text-white text-lg md:text-xl font-semibold drop-shadow-sm">
+                    The star! Curious & imaginative
+                  </p>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="absolute inset-0 rounded-[40%_60%_70%_30%/60%_40%_60%_40%] p-8 shadow-2xl border-8 border-red-500"
+                   style={{ 
+                     filter: 'drop-shadow(4px 4px 0px rgba(220, 38, 38, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     transform: 'rotateY(180deg)',
+                     background: 'linear-gradient(135deg, rgba(248, 113, 113, 0.95) 0%, rgba(251, 207, 232, 0.95) 100%)',
+                   }}>
+                <div className="text-center h-full flex flex-col justify-center">
+                  <h3 className="text-2xl font-bold text-white mb-4 font-[var(--font-fredoka)]">About Arlo</h3>
+                  <div className="space-y-2 text-white text-sm md:text-base">
+                    <p>⭐ <strong>Personality:</strong> Adventurous, playful, full of wonder</p>
+                    <p>📚 <strong>Appears in:</strong> Every book!</p>
+                    <p>💭 <strong>Fun Fact:</strong> His yawns get REALLY big...</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* MATEO - Center-right blob (blue) */}
-          <div className="absolute top-[480px] left-1/2 -translate-x-12 w-56 md:w-64 group cursor-pointer z-10"
-               style={{ transform: 'translateX(-50px) rotate(6deg)' }}>
-            <div className="relative bg-gradient-to-br from-blue-400 to-indigo-400 rounded-[40%_60%_40%_60%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-blue-500 group-hover:scale-105 transition-all duration-300"
-                 style={{ filter: 'drop-shadow(3px 3px 0px rgba(59, 130, 246, 0.3))' }}>
-              <div className="text-center">
-                <img 
-                  src="/images/characters/Mateo.png" 
-                  alt="Mateo - word wizard who loves rhymes"
-                  className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-2 drop-shadow-lg"
-                />
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
-                  Mateo
-                </h3>
-                <p className="text-white text-sm md:text-base font-semibold drop-shadow-sm">
-                  Word wizard! 📖
-                </p>
+          {/* MOUSE - Far left (orange) - SPREAD OUT */}
+          <div className="absolute top-80 left-[8%] w-64 md:w-72 cursor-pointer z-10"
+               style={{ 
+                 transform: 'rotate(8deg)',
+                 perspective: '1000px'
+               }}
+               onClick={() => handleFlip('mouse')}>
+            <div className={`relative transition-all duration-700`}
+                 style={{ 
+                   transformStyle: 'preserve-3d',
+                   transform: flipped['mouse'] ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                 }}>
+              
+              {/* FRONT */}
+              <div className="relative rounded-[30%_70%_70%_30%/30%_30%_70%_70%] p-6 shadow-2xl border-8 border-orange-500 hover:scale-105 transition-all duration-300"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(234, 88, 12, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.3) 0%, rgba(253, 224, 71, 0.3) 100%)',
+                   }}>
+                <svg className="absolute inset-0 w-full h-full rounded-[30%_70%_70%_30%/30%_30%_70%_70%] opacity-60">
+                  <defs>
+                    <pattern id="mouse-scribble" x="0" y="0" width="35" height="35" patternUnits="userSpaceOnUse">
+                      <path d="M0,7 Q8,5 17,7 T35,7" stroke="#F97316" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,17 Q8,15 17,17 T35,17" stroke="#FB923C" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,27 Q8,25 17,27 T35,27" stroke="#FBBF24" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.3"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#mouse-scribble)"/>
+                </svg>
+                
+                <div className="text-center relative z-10">
+                  <img 
+                    src="/images/characters/MouseInCar.png" 
+                    alt="Mouse - speedy friend"
+                    className="w-28 h-28 md:w-32 md:h-32 mx-auto mb-2 drop-shadow-lg"
+                  />
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
+                    Mouse
+                  </h3>
+                  <p className="text-white text-base font-semibold drop-shadow-sm">
+                    Speedy & playful!
+                  </p>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="absolute inset-0 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] p-6 shadow-2xl border-8 border-orange-500"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(234, 88, 12, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     transform: 'rotateY(180deg)',
+                     background: 'linear-gradient(135deg, rgba(251, 146, 60, 0.95) 0%, rgba(253, 224, 71, 0.95) 100%)',
+                   }}>
+                <div className="text-center h-full flex flex-col justify-center">
+                  <h3 className="text-xl font-bold text-white mb-3 font-[var(--font-fredoka)]">About Mouse</h3>
+                  <div className="space-y-2 text-white text-sm">
+                    <p>🚗 <strong>Loves:</strong> Driving fast</p>
+                    <p>⚡ Quick, clever & fun</p>
+                    <p>🎉 Drives across pages!</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* BROWN BIRD - Upper right blob (teal) */}
-          <div className="absolute top-[420px] right-12 md:right-28 w-52 md:w-56 group cursor-pointer z-10"
-               style={{ transform: 'rotate(10deg)' }}>
-            <div className="relative bg-gradient-to-br from-teal-400 to-cyan-400 rounded-[50%_50%_60%_40%/40%_60%_50%_50%] p-5 shadow-2xl border-8 border-teal-500 group-hover:scale-105 transition-all duration-300"
-                 style={{ filter: 'drop-shadow(3px 3px 0px rgba(20, 184, 166, 0.3))' }}>
-              <div className="text-center">
-                <img 
-                  src="/images/characters/BrownBird.png" 
-                  alt="Brown Bird - friendly flying friend"
-                  className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2 drop-shadow-lg"
-                />
-                <h3 className="text-xl md:text-2xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
-                  Brown Bird
-                </h3>
-                <p className="text-white text-sm font-semibold drop-shadow-sm">
-                  Gentle & kind!
-                </p>
+          {/* ARIA - Far right (pink) - SPREAD OUT */}
+          <div className="absolute top-80 right-[8%] w-64 md:w-72 cursor-pointer z-10"
+               style={{ 
+                 transform: 'rotate(-12deg)',
+                 perspective: '1000px'
+               }}
+               onClick={() => handleFlip('aria')}>
+            <div className={`relative transition-all duration-700`}
+                 style={{ 
+                   transformStyle: 'preserve-3d',
+                   transform: flipped['aria'] ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                 }}>
+              
+              {/* FRONT */}
+              <div className="relative rounded-[60%_40%_30%_70%/40%_60%_70%_30%] p-6 shadow-2xl border-8 border-pink-500 hover:scale-105 transition-all duration-300"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(236, 72, 153, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     background: 'linear-gradient(135deg, rgba(244, 114, 182, 0.3) 0%, rgba(251, 113, 133, 0.3) 100%)',
+                   }}>
+                <svg className="absolute inset-0 w-full h-full rounded-[60%_40%_30%_70%/40%_60%_70%_30%] opacity-60">
+                  <defs>
+                    <pattern id="aria-scribble" x="0" y="0" width="35" height="35" patternUnits="userSpaceOnUse">
+                      <path d="M0,7 Q8,5 17,7 T35,7" stroke="#EC4899" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,17 Q8,15 17,17 T35,17" stroke="#F472B6" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,27 Q8,25 17,27 T35,27" stroke="#FB7185" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.3"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#aria-scribble)"/>
+                </svg>
+                
+                <div className="text-center relative z-10">
+                  <img 
+                    src="/images/characters/Aria.png" 
+                    alt="Aria - creative artist"
+                    className="w-28 h-28 md:w-32 md:h-32 mx-auto mb-2 drop-shadow-lg"
+                  />
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
+                    Aria
+                  </h3>
+                  <p className="text-white text-base font-semibold drop-shadow-sm">
+                    Creative artist! 🎨
+                  </p>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="absolute inset-0 rounded-[60%_40%_30%_70%/40%_60%_70%_30%] p-6 shadow-2xl border-8 border-pink-500"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(236, 72, 153, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     transform: 'rotateY(180deg)',
+                     background: 'linear-gradient(135deg, rgba(244, 114, 182, 0.95) 0%, rgba(251, 113, 133, 0.95) 100%)',
+                   }}>
+                <div className="text-center h-full flex flex-col justify-center">
+                  <h3 className="text-xl font-bold text-white mb-3 font-[var(--font-fredoka)]">About Aria</h3>
+                  <div className="space-y-2 text-white text-sm">
+                    <p>🎨 Loves coloring</p>
+                    <p>✏️ Creative & artistic</p>
+                    <p>📄 Brings stories to life!</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* CHARLIE - Lower center blob (yellow/orange) */}
-          <div className="absolute top-[650px] left-1/2 -translate-x-1/2 translate-x-20 w-52 md:w-60 group cursor-pointer z-10"
-               style={{ transform: 'translate(calc(-50% + 80px), 0) rotate(-8deg)' }}>
-            <div className="relative bg-gradient-to-br from-yellow-400 to-orange-400 rounded-[35%_65%_70%_30%/65%_35%_65%_35%] p-5 shadow-2xl border-8 border-yellow-500 group-hover:scale-105 transition-all duration-300"
-                 style={{ filter: 'drop-shadow(3px 3px 0px rgba(234, 179, 8, 0.3))' }}>
-              <div className="text-center">
-                <img 
-                  src="/images/characters/Charlie.png" 
-                  alt="Charlie - storytelling character"
-                  className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2 drop-shadow-lg"
-                />
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
-                  Charlie
-                </h3>
-                <p className="text-white text-sm md:text-base font-semibold drop-shadow-sm">
-                  Storyteller! 🌙
-                </p>
+          {/* COCKEREL - Lower left (purple) - MORE SPREAD */}
+          <div className="absolute top-[600px] left-[12%] w-60 md:w-64 cursor-pointer z-10"
+               style={{ 
+                 transform: 'rotate(-5deg)',
+                 perspective: '1000px'
+               }}
+               onClick={() => handleFlip('cockerel')}>
+            <div className={`relative transition-all duration-700`}
+                 style={{ 
+                   transformStyle: 'preserve-3d',
+                   transform: flipped['cockerel'] ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                 }}>
+              
+              {/* FRONT */}
+              <div className="relative rounded-[70%_30%_50%_50%/60%_40%_60%_40%] p-6 shadow-2xl border-8 border-purple-500 hover:scale-105 transition-all duration-300"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(147, 51, 234, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     background: 'linear-gradient(135deg, rgba(192, 132, 252, 0.3) 0%, rgba(167, 139, 250, 0.3) 100%)',
+                   }}>
+                <svg className="absolute inset-0 w-full h-full rounded-[70%_30%_50%_50%/60%_40%_60%_40%] opacity-60">
+                  <defs>
+                    <pattern id="cockerel-scribble" x="0" y="0" width="35" height="35" patternUnits="userSpaceOnUse">
+                      <path d="M0,7 Q8,5 17,7 T35,7" stroke="#9333EA" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,17 Q8,15 17,17 T35,17" stroke="#C084FC" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,27 Q8,25 17,27 T35,27" stroke="#A78BFA" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.3"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#cockerel-scribble)"/>
+                </svg>
+                
+                <div className="text-center relative z-10">
+                  <img 
+                    src="/images/characters/Cockerel.png" 
+                    alt="Cockerel - colorful bird"
+                    className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-2 drop-shadow-lg"
+                  />
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
+                    Cockerel
+                  </h3>
+                  <p className="text-white text-base font-semibold drop-shadow-sm">
+                    Dramatic & showy!
+                  </p>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="absolute inset-0 rounded-[70%_30%_50%_50%/60%_40%_60%_40%] p-6 shadow-2xl border-8 border-purple-500"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(147, 51, 234, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     transform: 'rotateY(180deg)',
+                     background: 'linear-gradient(135deg, rgba(192, 132, 252, 0.95) 0%, rgba(167, 139, 250, 0.95) 100%)',
+                   }}>
+                <div className="text-center h-full flex flex-col justify-center">
+                  <h3 className="text-xl font-bold text-white mb-3 font-[var(--font-fredoka)]">About Cockerel</h3>
+                  <div className="space-y-2 text-white text-sm">
+                    <p>🌈 Bright colorful feathers</p>
+                    <p>🎭 Dramatic & proud</p>
+                    <p>🪽 Flies away at the end!</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* LUCA - Bottom right blob (green) */}
-          <div className="absolute top-[720px] right-16 md:right-40 w-52 md:w-56 group cursor-pointer z-10"
-               style={{ transform: 'rotate(15deg)' }}>
-            <div className="relative bg-gradient-to-br from-green-400 to-emerald-400 rounded-[45%_55%_40%_60%/55%_45%_60%_40%] p-5 shadow-2xl border-8 border-green-500 group-hover:scale-105 transition-all duration-300"
-                 style={{ filter: 'drop-shadow(3px 3px 0px rgba(34, 197, 94, 0.3))' }}>
-              <div className="text-center">
-                <img 
-                  src="/images/characters/Luca.png" 
-                  alt="Luca - imagination expert"
-                  className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-2 drop-shadow-lg"
-                />
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
-                  Luca
-                </h3>
-                <p className="text-white text-sm md:text-base font-semibold drop-shadow-sm">
-                  Imagination! ✨
-                </p>
+          {/* MATEO - Center (blue) - MORE SPREAD */}
+          <div className="absolute top-[740px] left-[38%] w-64 md:w-72 cursor-pointer z-10"
+               style={{ 
+                 transform: 'rotate(6deg)',
+                 perspective: '1000px'
+               }}
+               onClick={() => handleFlip('mateo')}>
+            <div className={`relative transition-all duration-700`}
+                 style={{ 
+                   transformStyle: 'preserve-3d',
+                   transform: flipped['mateo'] ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                 }}>
+              
+              {/* FRONT */}
+              <div className="relative rounded-[40%_60%_40%_60%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-blue-500 hover:scale-105 transition-all duration-300"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(59, 130, 246, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     background: 'linear-gradient(135deg, rgba(96, 165, 250, 0.3) 0%, rgba(99, 102, 241, 0.3) 100%)',
+                   }}>
+                <svg className="absolute inset-0 w-full h-full rounded-[40%_60%_40%_60%/50%_50%_50%_50%] opacity-60">
+                  <defs>
+                    <pattern id="mateo-scribble" x="0" y="0" width="35" height="35" patternUnits="userSpaceOnUse">
+                      <path d="M0,7 Q8,5 17,7 T35,7" stroke="#3B82F6" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,17 Q8,15 17,17 T35,17" stroke="#60A5FA" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,27 Q8,25 17,27 T35,27" stroke="#6366F1" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.3"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#mateo-scribble)"/>
+                </svg>
+                
+                <div className="text-center relative z-10">
+                  <img 
+                    src="/images/characters/Mateo.png" 
+                    alt="Mateo - word wizard"
+                    className="w-28 h-28 md:w-32 md:h-32 mx-auto mb-2 drop-shadow-lg"
+                  />
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
+                    Mateo
+                  </h3>
+                  <p className="text-white text-base font-semibold drop-shadow-sm">
+                    Word wizard! 📖
+                  </p>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="absolute inset-0 rounded-[40%_60%_40%_60%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-blue-500"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(59, 130, 246, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     transform: 'rotateY(180deg)',
+                     background: 'linear-gradient(135deg, rgba(96, 165, 250, 0.95) 0%, rgba(99, 102, 241, 0.95) 100%)',
+                   }}>
+                <div className="text-center h-full flex flex-col justify-center">
+                  <h3 className="text-xl font-bold text-white mb-3 font-[var(--font-fredoka)]">About Mateo</h3>
+                  <div className="space-y-2 text-white text-sm">
+                    <p>📖 Loves rhymes & reading</p>
+                    <p>✨ Word games expert</p>
+                    <p>🎯 Makes learning fun!</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* MUM & DAD - Bottom left blob (soft blue) */}
-          <div className="absolute top-[760px] left-8 md:left-24 w-56 md:w-64 group cursor-pointer z-10"
-               style={{ transform: 'rotate(-10deg)' }}>
-            <div className="relative bg-gradient-to-br from-sky-400 to-blue-400 rounded-[55%_45%_45%_55%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-sky-500 group-hover:scale-105 transition-all duration-300"
-                 style={{ filter: 'drop-shadow(3px 3px 0px rgba(56, 189, 248, 0.3))' }}>
-              <div className="text-center">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
-                  Mum & Dad
-                </h3>
-                <p className="text-white text-sm md:text-base font-semibold drop-shadow-sm">
-                  Loving & patient! ❤️
-                </p>
+          {/* BROWN BIRD - Upper right (teal) - MORE SPREAD */}
+          <div className="absolute top-[620px] right-[15%] w-60 md:w-64 cursor-pointer z-10"
+               style={{ 
+                 transform: 'rotate(10deg)',
+                 perspective: '1000px'
+               }}
+               onClick={() => handleFlip('brownbird')}>
+            <div className={`relative transition-all duration-700`}
+                 style={{ 
+                   transformStyle: 'preserve-3d',
+                   transform: flipped['brownbird'] ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                 }}>
+              
+              {/* FRONT */}
+              <div className="relative rounded-[50%_50%_60%_40%/40%_60%_50%_50%] p-5 shadow-2xl border-8 border-teal-500 hover:scale-105 transition-all duration-300"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(20, 184, 166, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     background: 'linear-gradient(135deg, rgba(45, 212, 191, 0.3) 0%, rgba(34, 211, 238, 0.3) 100%)',
+                   }}>
+                <svg className="absolute inset-0 w-full h-full rounded-[50%_50%_60%_40%/40%_60%_50%_50%] opacity-60">
+                  <defs>
+                    <pattern id="brownbird-scribble" x="0" y="0" width="35" height="35" patternUnits="userSpaceOnUse">
+                      <path d="M0,7 Q8,5 17,7 T35,7" stroke="#14B8A6" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,17 Q8,15 17,17 T35,17" stroke="#2DD4BF" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,27 Q8,25 17,27 T35,27" stroke="#22D3EE" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.3"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#brownbird-scribble)"/>
+                </svg>
+                
+                <div className="text-center relative z-10">
+                  <img 
+                    src="/images/characters/BrownBird.png" 
+                    alt="Brown Bird - friendly"
+                    className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-2 drop-shadow-lg"
+                  />
+                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
+                    Brown Bird
+                  </h3>
+                  <p className="text-white text-sm font-semibold drop-shadow-sm">
+                    Gentle & kind!
+                  </p>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="absolute inset-0 rounded-[50%_50%_60%_40%/40%_60%_50%_50%] p-5 shadow-2xl border-8 border-teal-500"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(20, 184, 166, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     transform: 'rotateY(180deg)',
+                     background: 'linear-gradient(135deg, rgba(45, 212, 191, 0.95) 0%, rgba(34, 211, 238, 0.95) 100%)',
+                   }}>
+                <div className="text-center h-full flex flex-col justify-center">
+                  <h3 className="text-lg font-bold text-white mb-3 font-[var(--font-fredoka)]">About Brown Bird</h3>
+                  <div className="space-y-2 text-white text-sm">
+                    <p>☁️ Loves soaring high</p>
+                    <p>😊 Gentle & helpful</p>
+                    <p>🌟 Surprise moments!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* CHARLIE - Lower center-right (yellow/orange) - MORE SPREAD */}
+          <div className="absolute top-[940px] left-[55%] w-60 md:w-64 cursor-pointer z-10"
+               style={{ 
+                 transform: 'rotate(-8deg)',
+                 perspective: '1000px'
+               }}
+               onClick={() => handleFlip('charlie')}>
+            <div className={`relative transition-all duration-700`}
+                 style={{ 
+                   transformStyle: 'preserve-3d',
+                   transform: flipped['charlie'] ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                 }}>
+              
+              {/* FRONT */}
+              <div className="relative rounded-[35%_65%_70%_30%/65%_35%_65%_35%] p-5 shadow-2xl border-8 border-yellow-500 hover:scale-105 transition-all duration-300"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(234, 179, 8, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     background: 'linear-gradient(135deg, rgba(250, 204, 21, 0.3) 0%, rgba(251, 146, 60, 0.3) 100%)',
+                   }}>
+                <svg className="absolute inset-0 w-full h-full rounded-[35%_65%_70%_30%/65%_35%_65%_35%] opacity-60">
+                  <defs>
+                    <pattern id="charlie-scribble" x="0" y="0" width="35" height="35" patternUnits="userSpaceOnUse">
+                      <path d="M0,7 Q8,5 17,7 T35,7" stroke="#EAB308" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,17 Q8,15 17,17 T35,17" stroke="#FACC15" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,27 Q8,25 17,27 T35,27" stroke="#FB923C" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.3"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#charlie-scribble)"/>
+                </svg>
+                
+                <div className="text-center relative z-10">
+                  <img 
+                    src="/images/characters/Charlie.png" 
+                    alt="Charlie - storyteller"
+                    className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-2 drop-shadow-lg"
+                  />
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
+                    Charlie
+                  </h3>
+                  <p className="text-white text-sm md:text-base font-semibold drop-shadow-sm">
+                    Storyteller! 🌙
+                  </p>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="absolute inset-0 rounded-[35%_65%_70%_30%/65%_35%_65%_35%] p-5 shadow-2xl border-8 border-yellow-500"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(234, 179, 8, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     transform: 'rotateY(180deg)',
+                     background: 'linear-gradient(135deg, rgba(250, 204, 21, 0.95) 0%, rgba(251, 146, 60, 0.95) 100%)',
+                   }}>
+                <div className="text-center h-full flex flex-col justify-center">
+                  <h3 className="text-xl font-bold text-white mb-3 font-[var(--font-fredoka)]">About Charlie</h3>
+                  <div className="space-y-2 text-white text-sm">
+                    <p>🌙 Makes bedtime fun</p>
+                    <p>📚 Interactive stories</p>
+                    <p>🎭 Silly & imaginative!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* LUCA - Bottom right (green) - MORE SPREAD */}
+          <div className="absolute top-[1040px] right-[18%] w-60 md:w-64 cursor-pointer z-10"
+               style={{ 
+                 transform: 'rotate(15deg)',
+                 perspective: '1000px'
+               }}
+               onClick={() => handleFlip('luca')}>
+            <div className={`relative transition-all duration-700`}
+                 style={{ 
+                   transformStyle: 'preserve-3d',
+                   transform: flipped['luca'] ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                 }}>
+              
+              {/* FRONT */}
+              <div className="relative rounded-[45%_55%_40%_60%/55%_45%_60%_40%] p-5 shadow-2xl border-8 border-green-500 hover:scale-105 transition-all duration-300"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(34, 197, 94, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     background: 'linear-gradient(135deg, rgba(74, 222, 128, 0.3) 0%, rgba(16, 185, 129, 0.3) 100%)',
+                   }}>
+                <svg className="absolute inset-0 w-full h-full rounded-[45%_55%_40%_60%/55%_45%_60%_40%] opacity-60">
+                  <defs>
+                    <pattern id="luca-scribble" x="0" y="0" width="35" height="35" patternUnits="userSpaceOnUse">
+                      <path d="M0,7 Q8,5 17,7 T35,7" stroke="#22C55E" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,17 Q8,15 17,17 T35,17" stroke="#4ADE80" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,27 Q8,25 17,27 T35,27" stroke="#10B981" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.3"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#luca-scribble)"/>
+                </svg>
+                
+                <div className="text-center relative z-10">
+                  <img 
+                    src="/images/characters/Luca.png" 
+                    alt="Luca - imagination"
+                    className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-2 drop-shadow-lg"
+                  />
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
+                    Luca
+                  </h3>
+                  <p className="text-white text-sm md:text-base font-semibold drop-shadow-sm">
+                    Imagination! ✨
+                  </p>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="absolute inset-0 rounded-[45%_55%_40%_60%/55%_45%_60%_40%] p-5 shadow-2xl border-8 border-green-500"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(34, 197, 94, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     transform: 'rotateY(180deg)',
+                     background: 'linear-gradient(135deg, rgba(74, 222, 128, 0.95) 0%, rgba(16, 185, 129, 0.95) 100%)',
+                   }}>
+                <div className="text-center h-full flex flex-col justify-center">
+                  <h3 className="text-xl font-bold text-white mb-3 font-[var(--font-fredoka)]">About Luca</h3>
+                  <div className="space-y-2 text-white text-sm">
+                    <p>✨ Imagination expert</p>
+                    <p>🎨 Create adventures</p>
+                    <p>💭 Dream big!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* MUM & DAD - Bottom left (sky blue) - MORE SPREAD */}
+          <div className="absolute top-[1100px] left-[15%] w-64 md:w-72 cursor-pointer z-10"
+               style={{ 
+                 transform: 'rotate(-10deg)',
+                 perspective: '1000px'
+               }}
+               onClick={() => handleFlip('mumdad')}>
+            <div className={`relative transition-all duration-700`}
+                 style={{ 
+                   transformStyle: 'preserve-3d',
+                   transform: flipped['mumdad'] ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                 }}>
+              
+              {/* FRONT */}
+              <div className="relative rounded-[55%_45%_45%_55%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-sky-500 hover:scale-105 transition-all duration-300"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(56, 189, 248, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.3) 0%, rgba(59, 130, 246, 0.3) 100%)',
+                   }}>
+                <svg className="absolute inset-0 w-full h-full rounded-[55%_45%_45%_55%/50%_50%_50%_50%] opacity-60">
+                  <defs>
+                    <pattern id="mumdad-scribble" x="0" y="0" width="35" height="35" patternUnits="userSpaceOnUse">
+                      <path d="M0,7 Q8,5 17,7 T35,7" stroke="#38BDF8" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,17 Q8,15 17,17 T35,17" stroke="#3B82F6" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.4"/>
+                      <path d="M0,27 Q8,25 17,27 T35,27" stroke="#60A5FA" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.3"/>
+                    </pattern>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#mumdad-scribble)"/>
+                </svg>
+                
+                <div className="text-center relative z-10">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 font-[var(--font-fredoka)] drop-shadow-md">
+                    Mum & Dad
+                  </h3>
+                  <p className="text-white text-base md:text-lg font-semibold drop-shadow-sm">
+                    Loving & patient! ❤️
+                  </p>
+                </div>
+              </div>
+
+              {/* BACK */}
+              <div className="absolute inset-0 rounded-[55%_45%_45%_55%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-sky-500"
+                   style={{ 
+                     filter: 'drop-shadow(3px 3px 0px rgba(56, 189, 248, 0.3))',
+                     backfaceVisibility: 'hidden',
+                     transform: 'rotateY(180deg)',
+                     background: 'linear-gradient(135deg, rgba(56, 189, 248, 0.95) 0%, rgba(59, 130, 246, 0.95) 100%)',
+                   }}>
+                <div className="text-center h-full flex flex-col justify-center">
+                  <h3 className="text-xl font-bold text-white mb-3 font-[var(--font-fredoka)]">About Mum & Dad</h3>
+                  <div className="space-y-2 text-white text-sm">
+                    <p>❤️ Warm & understanding</p>
+                    <p>🏠 Create bedtime magic</p>
+                    <p>✨ Love Arlo's delays!</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
