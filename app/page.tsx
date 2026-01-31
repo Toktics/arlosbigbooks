@@ -367,40 +367,84 @@ export default function Home() {
 
       {/* Arlo's Activity Zone */}
       <section className="py-20 px-4 bg-gradient-to-br from-yellow-400 via-orange-400 to-red-400 relative overflow-hidden">
-        {/* SIMPLE TEST - Static colored divs, no animation */}
-        <div
-          className="absolute w-64 h-64 rounded-full bg-black opacity-50"
+        {/* Lava Lamp Effect - Solid colors with lower opacity, bigger blur */}
+        <motion.div
+          className="absolute w-80 h-80 rounded-full bg-purple-600 opacity-20 blur-3xl"
           style={{ 
-            left: '10%',
-            top: '30%',
-            zIndex: 999
+            left: '5%',
+            top: '20%',
+            zIndex: 5
           }}
-        >
-          <p className="text-white text-center pt-28 font-bold">TEST 1</p>
-        </div>
+          animate={{
+            y: [0, -80, 0],
+            x: [0, 40, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
         
-        <div
-          className="absolute w-64 h-64 rounded-full bg-white opacity-50"
+        <motion.div
+          className="absolute w-72 h-72 rounded-full bg-red-700 opacity-25 blur-3xl"
           style={{ 
-            right: '10%',
-            top: '40%',
-            zIndex: 999
+            right: '8%',
+            top: '35%',
+            zIndex: 5
           }}
-        >
-          <p className="text-black text-center pt-28 font-bold">TEST 2</p>
-        </div>
+          animate={{
+            y: [0, 60, 0],
+            x: [0, -30, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3
+          }}
+        />
         
-        <div
-          className="absolute w-64 h-64 rounded-full bg-blue-500 opacity-50"
+        <motion.div
+          className="absolute w-64 h-64 rounded-full bg-orange-600 opacity-20 blur-3xl"
           style={{ 
-            left: '50%',
-            top: '50%',
-            transform: 'translateX(-50%)',
-            zIndex: 999
+            left: '45%',
+            top: '55%',
+            zIndex: 5
           }}
-        >
-          <p className="text-white text-center pt-28 font-bold">TEST 3</p>
-        </div>
+          animate={{
+            y: [0, -50, 0],
+            x: [0, 25, 0],
+            scale: [1, 1.4, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 6
+          }}
+        />
+        
+        <motion.div
+          className="absolute w-96 h-96 rounded-full bg-yellow-300 opacity-15 blur-3xl"
+          style={{ 
+            right: '15%',
+            top: '60%',
+            zIndex: 5
+          }}
+          animate={{
+            y: [0, 70, 0],
+            scale: [1, 1.25, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 9
+          }}
+        />
         
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-12">
