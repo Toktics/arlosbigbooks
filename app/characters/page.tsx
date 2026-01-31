@@ -256,37 +256,26 @@ export default function Characters() {
                  }}>
               
               {/* FRONT */}
-              <div className="relative rounded-[30%_70%_70%_30%/30%_30%_70%_70%] p-6 shadow-2xl border-8 border-orange-500 hover:scale-105 transition-all duration-300 overflow-hidden"
-                   style={{ 
+              <div className="relative rounded-[30%_70%_70%_30%/30%_30%_70%_70%] shadow-2xl border-8 border-orange-500 hover:scale-105 transition-all duration-300 overflow-hidden aspect-square"
+                   style={{
                      filter: 'drop-shadow(3px 3px 0px rgba(234, 88, 12, 0.3))',
                      backfaceVisibility: 'hidden',
-                     background: 'white',
                    }}>
-                <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }} viewBox="0 0 300 300">
-                  <defs>
-                    <pattern id="teddie-scribble" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(50)">
-                      <line x1="0" y1="2" x2="18" y2="2" stroke="#F97316" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                      <line x1="0" y1="7" x2="18" y2="7" stroke="#FB923C" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
-                      <line x1="0" y1="12" x2="18" y2="12" stroke="#FBBF24" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                    </pattern>
-                  </defs>
-                  <ellipse cx="150" cy="150" rx="135" ry="135" fill="url(#teddie-scribble)"/>
-                </svg>
-                
-                <div className="text-center relative z-10">
-                  <img 
-                    src="/images/characters/MouseInCar.png" 
-                    alt="Teddie The Little Mouse"
-                    className="w-28 h-28 md:w-32 md:h-32 mx-auto mb-3 drop-shadow-lg"
-                  />
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 font-[var(--font-fredoka)] leading-tight">
+                <img
+                  src="/images/crayons/Teddie.png"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+                />
+
+                <div className="absolute bottom-4 left-0 right-0 text-center z-10">
+                  <h3 className="text-xl md:text-2xl font-bold text-white font-[var(--font-fredoka)] leading-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
                     Teddie The<br/>Little Mouse
                   </h3>
                 </div>
               </div>
 
               {/* BACK */}
-              <div className="absolute inset-0 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] p-6 shadow-2xl border-8 border-orange-500 bg-gradient-to-br from-orange-400 to-yellow-400"
+              <div className="absolute inset-0 rounded-[30%_70%_70%_30%/30%_30%_70%_70%] p-6 shadow-2xl border-8 border-orange-500 bg-gradient-to-br from-orange-400 to-yellow-400 aspect-square"
                    style={{ 
                      filter: 'drop-shadow(3px 3px 0px rgba(234, 88, 12, 0.3))',
                      backfaceVisibility: 'hidden',
@@ -318,37 +307,26 @@ export default function Characters() {
                  }}>
               
               {/* FRONT */}
-              <div className="relative rounded-[60%_40%_30%_70%/40%_60%_70%_30%] p-6 shadow-2xl border-8 border-pink-500 hover:scale-105 transition-all duration-300 overflow-hidden"
-                   style={{ 
+              <div className="relative rounded-[60%_40%_30%_70%/40%_60%_70%_30%] shadow-2xl border-8 border-pink-500 hover:scale-105 transition-all duration-300 overflow-hidden aspect-square"
+                   style={{
                      filter: 'drop-shadow(3px 3px 0px rgba(236, 72, 153, 0.3))',
                      backfaceVisibility: 'hidden',
-                     background: 'white',
                    }}>
-                <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }} viewBox="0 0 300 300">
-                  <defs>
-                    <pattern id="aria-scribble" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
-                      <line x1="0" y1="2" x2="18" y2="2" stroke="#EC4899" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                      <line x1="0" y1="7" x2="18" y2="7" stroke="#F472B6" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
-                      <line x1="0" y1="12" x2="18" y2="12" stroke="#FB7185" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                    </pattern>
-                  </defs>
-                  <ellipse cx="150" cy="150" rx="135" ry="135" fill="url(#aria-scribble)"/>
-                </svg>
-                
-                <div className="text-center relative z-10">
-                  <img 
-                    src="/images/characters/Aria.png" 
-                    alt="Aria"
-                    className="w-28 h-28 md:w-32 md:h-32 mx-auto mb-3 drop-shadow-lg"
-                  />
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 font-[var(--font-fredoka)]">
+                <img
+                  src="/images/crayons/Aria.png"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+                />
+
+                <div className="absolute bottom-4 left-0 right-0 text-center z-10">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white font-[var(--font-fredoka)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
                     Aria
                   </h3>
                 </div>
               </div>
 
               {/* BACK */}
-              <div className="absolute inset-0 rounded-[60%_40%_30%_70%/40%_60%_70%_30%] p-6 shadow-2xl border-8 border-pink-500 bg-gradient-to-br from-pink-400 to-rose-400"
+              <div className="absolute inset-0 rounded-[60%_40%_30%_70%/40%_60%_70%_30%] p-6 shadow-2xl border-8 border-pink-500 bg-gradient-to-br from-pink-400 to-rose-400 aspect-square"
                    style={{ 
                      filter: 'drop-shadow(3px 3px 0px rgba(236, 72, 153, 0.3))',
                      backfaceVisibility: 'hidden',
@@ -380,30 +358,19 @@ export default function Characters() {
                  }}>
               
               {/* FRONT */}
-              <div className="relative rounded-[70%_30%_50%_50%/60%_40%_60%_40%] p-6 shadow-2xl border-8 border-purple-500 hover:scale-105 transition-all duration-300 overflow-hidden"
-                   style={{ 
+              <div className="relative rounded-[70%_30%_50%_50%/60%_40%_60%_40%] shadow-2xl border-8 border-purple-500 hover:scale-105 transition-all duration-300 overflow-hidden aspect-square"
+                   style={{
                      filter: 'drop-shadow(3px 3px 0px rgba(147, 51, 234, 0.3))',
                      backfaceVisibility: 'hidden',
-                     background: 'white',
                    }}>
-                <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }} viewBox="0 0 280 280">
-                  <defs>
-                    <pattern id="kurtis-scribble" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(60)">
-                      <line x1="0" y1="2" x2="18" y2="2" stroke="#9333EA" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                      <line x1="0" y1="7" x2="18" y2="7" stroke="#C084FC" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
-                      <line x1="0" y1="12" x2="18" y2="12" stroke="#A78BFA" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                    </pattern>
-                  </defs>
-                  <ellipse cx="140" cy="140" rx="125" ry="125" fill="url(#kurtis-scribble)"/>
-                </svg>
-                
-                <div className="text-center relative z-10">
-                  <img 
-                    src="/images/characters/Cockerel.png" 
-                    alt="Kurtis The Cockerel"
-                    className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-3 drop-shadow-lg"
-                  />
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 font-[var(--font-fredoka)] leading-tight">
+                <img
+                  src="/images/crayons/Kurtis.png"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+                />
+
+                <div className="absolute bottom-4 left-0 right-0 text-center z-10">
+                  <h3 className="text-xl md:text-2xl font-bold text-white font-[var(--font-fredoka)] leading-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
                     Kurtis The<br/>Cockerel
                   </h3>
                 </div>
@@ -442,37 +409,26 @@ export default function Characters() {
                  }}>
               
               {/* FRONT */}
-              <div className="relative rounded-[40%_60%_40%_60%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-blue-500 hover:scale-105 transition-all duration-300 overflow-hidden"
-                   style={{ 
+              <div className="relative rounded-[40%_60%_40%_60%/50%_50%_50%_50%] shadow-2xl border-8 border-blue-500 hover:scale-105 transition-all duration-300 overflow-hidden aspect-square"
+                   style={{
                      filter: 'drop-shadow(3px 3px 0px rgba(59, 130, 246, 0.3))',
                      backfaceVisibility: 'hidden',
-                     background: 'white',
                    }}>
-                <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }} viewBox="0 0 300 300">
-                  <defs>
-                    <pattern id="mateo-scribble" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(-60)">
-                      <line x1="0" y1="2" x2="18" y2="2" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                      <line x1="0" y1="7" x2="18" y2="7" stroke="#60A5FA" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
-                      <line x1="0" y1="12" x2="18" y2="12" stroke="#6366F1" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                    </pattern>
-                  </defs>
-                  <ellipse cx="150" cy="150" rx="135" ry="135" fill="url(#mateo-scribble)"/>
-                </svg>
-                
-                <div className="text-center relative z-10">
-                  <img 
-                    src="/images/characters/Mateo.png" 
-                    alt="Mateo"
-                    className="w-28 h-28 md:w-32 md:h-32 mx-auto mb-3 drop-shadow-lg"
-                  />
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 font-[var(--font-fredoka)]">
+                <img
+                  src="/images/crayons/Mateo.png"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+                />
+
+                <div className="absolute bottom-4 left-0 right-0 text-center z-10">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white font-[var(--font-fredoka)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
                     Mateo
                   </h3>
                 </div>
               </div>
 
               {/* BACK */}
-              <div className="absolute inset-0 rounded-[40%_60%_40%_60%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-blue-500 bg-gradient-to-br from-blue-400 to-indigo-400"
+              <div className="absolute inset-0 rounded-[40%_60%_40%_60%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-blue-500 bg-gradient-to-br from-blue-400 to-indigo-400 aspect-square"
                    style={{ 
                      filter: 'drop-shadow(3px 3px 0px rgba(59, 130, 246, 0.3))',
                      backfaceVisibility: 'hidden',
@@ -504,37 +460,26 @@ export default function Characters() {
                  }}>
               
               {/* FRONT */}
-              <div className="relative rounded-[50%_50%_60%_40%/40%_60%_50%_50%] p-5 shadow-2xl border-8 border-teal-500 hover:scale-105 transition-all duration-300 overflow-hidden"
-                   style={{ 
+              <div className="relative rounded-[50%_50%_60%_40%/40%_60%_50%_50%] shadow-2xl border-8 border-teal-500 hover:scale-105 transition-all duration-300 overflow-hidden aspect-square"
+                   style={{
                      filter: 'drop-shadow(3px 3px 0px rgba(20, 184, 166, 0.3))',
                      backfaceVisibility: 'hidden',
-                     background: 'white',
                    }}>
-                <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }} viewBox="0 0 280 280">
-                  <defs>
-                    <pattern id="pip-scribble" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
-                      <line x1="0" y1="2" x2="18" y2="2" stroke="#14B8A6" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                      <line x1="0" y1="7" x2="18" y2="7" stroke="#2DD4BF" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
-                      <line x1="0" y1="12" x2="18" y2="12" stroke="#22D3EE" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                    </pattern>
-                  </defs>
-                  <ellipse cx="140" cy="140" rx="125" ry="125" fill="url(#pip-scribble)"/>
-                </svg>
-                
-                <div className="text-center relative z-10">
-                  <img 
-                    src="/images/characters/BrownBird.png" 
-                    alt="Pip The Brown Bird"
-                    className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-3 drop-shadow-lg"
-                  />
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 font-[var(--font-fredoka)] leading-tight">
+                <img
+                  src="/images/crayons/Pip.png"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+                />
+
+                <div className="absolute bottom-4 left-0 right-0 text-center z-10">
+                  <h3 className="text-xl md:text-2xl font-bold text-white font-[var(--font-fredoka)] leading-tight" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
                     Pip The<br/>Brown Bird
                   </h3>
                 </div>
               </div>
 
               {/* BACK */}
-              <div className="absolute inset-0 rounded-[50%_50%_60%_40%/40%_60%_50%_50%] p-5 shadow-2xl border-8 border-teal-500 bg-gradient-to-br from-teal-400 to-cyan-400"
+              <div className="absolute inset-0 rounded-[50%_50%_60%_40%/40%_60%_50%_50%] p-5 shadow-2xl border-8 border-teal-500 bg-gradient-to-br from-teal-400 to-cyan-400 aspect-square"
                    style={{ 
                      filter: 'drop-shadow(3px 3px 0px rgba(20, 184, 166, 0.3))',
                      backfaceVisibility: 'hidden',
@@ -566,30 +511,19 @@ export default function Characters() {
                  }}>
               
               {/* FRONT */}
-              <div className="relative rounded-[35%_65%_70%_30%/65%_35%_65%_35%] p-5 shadow-2xl border-8 border-yellow-500 hover:scale-105 transition-all duration-300 overflow-hidden"
-                   style={{ 
+              <div className="relative rounded-[35%_65%_70%_30%/65%_35%_65%_35%] shadow-2xl border-8 border-yellow-500 hover:scale-105 transition-all duration-300 overflow-hidden aspect-square"
+                   style={{
                      filter: 'drop-shadow(3px 3px 0px rgba(234, 179, 8, 0.3))',
                      backfaceVisibility: 'hidden',
-                     background: 'white',
                    }}>
-                <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }} viewBox="0 0 280 280">
-                  <defs>
-                    <pattern id="charlie-scribble" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(-50)">
-                      <line x1="0" y1="2" x2="18" y2="2" stroke="#EAB308" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                      <line x1="0" y1="7" x2="18" y2="7" stroke="#FACC15" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
-                      <line x1="0" y1="12" x2="18" y2="12" stroke="#FB923C" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                    </pattern>
-                  </defs>
-                  <ellipse cx="140" cy="140" rx="125" ry="125" fill="url(#charlie-scribble)"/>
-                </svg>
-                
-                <div className="text-center relative z-10">
-                  <img 
-                    src="/images/characters/Charlie.png" 
-                    alt="Charlie"
-                    className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-3 drop-shadow-lg"
-                  />
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 font-[var(--font-fredoka)]">
+                <img
+                  src="/images/crayons/Charlie.png"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+                />
+
+                <div className="absolute bottom-4 left-0 right-0 text-center z-10">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white font-[var(--font-fredoka)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
                     Charlie
                   </h3>
                 </div>
@@ -628,37 +562,26 @@ export default function Characters() {
                  }}>
               
               {/* FRONT */}
-              <div className="relative rounded-[45%_55%_40%_60%/55%_45%_60%_40%] p-5 shadow-2xl border-8 border-green-500 hover:scale-105 transition-all duration-300 overflow-hidden"
-                   style={{ 
+              <div className="relative rounded-[45%_55%_40%_60%/55%_45%_60%_40%] shadow-2xl border-8 border-green-500 hover:scale-105 transition-all duration-300 overflow-hidden aspect-square"
+                   style={{
                      filter: 'drop-shadow(3px 3px 0px rgba(34, 197, 94, 0.3))',
                      backfaceVisibility: 'hidden',
-                     background: 'white',
                    }}>
-                <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }} viewBox="0 0 280 280">
-                  <defs>
-                    <pattern id="luca-scribble" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
-                      <line x1="0" y1="2" x2="18" y2="2" stroke="#22C55E" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                      <line x1="0" y1="7" x2="18" y2="7" stroke="#4ADE80" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
-                      <line x1="0" y1="12" x2="18" y2="12" stroke="#10B981" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                    </pattern>
-                  </defs>
-                  <ellipse cx="140" cy="140" rx="125" ry="125" fill="url(#luca-scribble)"/>
-                </svg>
-                
-                <div className="text-center relative z-10">
-                  <img 
-                    src="/images/characters/Luca.png" 
-                    alt="Luca"
-                    className="w-24 h-24 md:w-28 md:h-28 mx-auto mb-3 drop-shadow-lg"
-                  />
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 font-[var(--font-fredoka)]">
+                <img
+                  src="/images/crayons/Luca.png"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+                />
+
+                <div className="absolute bottom-4 left-0 right-0 text-center z-10">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white font-[var(--font-fredoka)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
                     Luca
                   </h3>
                 </div>
               </div>
 
               {/* BACK */}
-              <div className="absolute inset-0 rounded-[45%_55%_40%_60%/55%_45%_60%_40%] p-5 shadow-2xl border-8 border-green-500 bg-gradient-to-br from-green-400 to-emerald-400"
+              <div className="absolute inset-0 rounded-[45%_55%_40%_60%/55%_45%_60%_40%] p-5 shadow-2xl border-8 border-green-500 bg-gradient-to-br from-green-400 to-emerald-400 aspect-square"
                    style={{ 
                      filter: 'drop-shadow(3px 3px 0px rgba(34, 197, 94, 0.3))',
                      backfaceVisibility: 'hidden',
@@ -690,37 +613,26 @@ export default function Characters() {
                  }}>
               
               {/* FRONT */}
-              <div className="relative rounded-[55%_45%_45%_55%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-sky-500 hover:scale-105 transition-all duration-300 overflow-hidden"
-                   style={{ 
+              <div className="relative rounded-[55%_45%_45%_55%/50%_50%_50%_50%] shadow-2xl border-8 border-sky-500 hover:scale-105 transition-all duration-300 overflow-hidden aspect-square"
+                   style={{
                      filter: 'drop-shadow(3px 3px 0px rgba(56, 189, 248, 0.3))',
                      backfaceVisibility: 'hidden',
-                     background: 'white',
                    }}>
-                <svg className="absolute inset-0 w-full h-full" style={{ pointerEvents: 'none' }} viewBox="0 0 300 300">
-                  <defs>
-                    <pattern id="mum-scribble" x="0" y="0" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(-35)">
-                      <line x1="0" y1="2" x2="18" y2="2" stroke="#38BDF8" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                      <line x1="0" y1="7" x2="18" y2="7" stroke="#3B82F6" strokeWidth="3" strokeLinecap="round" opacity="0.6"/>
-                      <line x1="0" y1="12" x2="18" y2="12" stroke="#60A5FA" strokeWidth="3" strokeLinecap="round" opacity="0.7"/>
-                    </pattern>
-                  </defs>
-                  <ellipse cx="150" cy="150" rx="135" ry="135" fill="url(#mum-scribble)"/>
-                </svg>
-                
-                <div className="text-center relative z-10">
-                  <img 
-                    src="/images/characters/ArlosMum.png" 
-                    alt="Arlo's Mum"
-                    className="w-28 h-28 md:w-32 md:h-32 mx-auto mb-3 drop-shadow-lg"
-                  />
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-800 font-[var(--font-fredoka)]">
+                <img
+                  src="/images/crayons/Mum.png"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-contain pointer-events-none"
+                />
+
+                <div className="absolute bottom-4 left-0 right-0 text-center z-10">
+                  <h3 className="text-2xl md:text-3xl font-bold text-white font-[var(--font-fredoka)]" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
                     Arlo's Mum
                   </h3>
                 </div>
               </div>
 
               {/* BACK */}
-              <div className="absolute inset-0 rounded-[55%_45%_45%_55%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-sky-500 bg-gradient-to-br from-sky-400 to-blue-400"
+              <div className="absolute inset-0 rounded-[55%_45%_45%_55%/50%_50%_50%_50%] p-6 shadow-2xl border-8 border-sky-500 bg-gradient-to-br from-sky-400 to-blue-400 aspect-square"
                    style={{ 
                      filter: 'drop-shadow(3px 3px 0px rgba(56, 189, 248, 0.3))',
                      backfaceVisibility: 'hidden',
